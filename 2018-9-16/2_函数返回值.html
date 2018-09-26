@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box"></div>
+<script>
+    /*
+        函数返回值:
+            return
+        每个函数100%有返回值，默认返回值为undefined
+
+        当函数调用的时候会做两件事
+            1.执行函数体内的代码
+            2.执行返回值
+
+        函数名 + 括号 = return 后面的值
+
+        当"一个"运算结果需要在外部访问的时候，就要用return
+
+        let box = d.getElementById('box')
+        
+    */    
+    // function fn(){
+    //     console.log(1);
+    //     // return undefined
+    //     return true;
+    // }
+    // let a = fn();
+    // fn();
+    // console.log( a );
+
+    // function f(){
+    //     function fn(a,b){
+    //         console.log(a*b+b);
+    //     }
+    // }
+    // function fn(a,b){
+    //     console.log(a*b+b);
+    //     return a * b + b;
+    // }
+    // let num = fn(5,10);
+    // console.log(num);
+
+    /*
+        obj = {
+            name:'xxx',
+            fn:function(){},
+            b:true
+        }
+    */
+
+    // const obj = {
+    //     getById:function(el){
+    //        return document.getElementById(el);
+    //     }
+    // }
+    // let box = obj.getById('box');
+    // console.log(box);
+
+    function fn(a,b){
+        console.log(a + b);//3
+        return b*a;
+    }
+    let y = fn(1,2);
+    console.log(y);
+    
+</script>
+</body>
+</html>

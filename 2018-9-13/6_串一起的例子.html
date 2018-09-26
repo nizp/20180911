@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">上一个</button>
+    <button id="btn2">下一个</button>
+    <img alt="" id="img">
+<script>
+    const btn = document.getElementById('btn');
+    const btn2 = document.getElementById('btn2');
+    const img = document.getElementById('img');
+    let arr = ['img/a1.jpg','img/a2.jpg','img/a3.jpg','img/a4.jpg','img/1.png'];
+    // let num = -1;
+    let num1 = 0;
+    /*
+        数组的length - 1一定是最后一个
+    */
+    btn2.onclick = function(){
+        // num++;
+        // if(num <= arr.length - 1){
+        //     img.src = arr[num];
+        // }
+        // console.log(num1%=arr.length)
+        num1 = num1 % arr.length;
+        img.src = arr[num1];  //4%4  0
+        num1 ++;
+    }
+
+
+
+
+
+    // let num = 1;
+    // btn2.onclick = function(){
+        // num ++;
+        // if(num > 4){
+        //     num = 1;
+        // }
+        // img.src = `img/a${num}.jpg`
+
+        // if(num < 4){
+        //     img.src = `img/a${++num}.jpg`;
+        // }
+   //}
+
+   
+</script>
+</body>
+</html>

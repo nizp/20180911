@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        arr.forEach(function(el,i,all){
+
+        },this);
+
+        //不能使用continue或者break
+        //forEach中不能跳出，只能跳过(return跳过)
+    */    
+    let arr = [1,2,3,4,5];
+    arr.forEach(function(el,i,all){
+        // console.log(el,i,all)
+        // if(el == 2){
+        //     continue;
+        // }
+        if(el == 2){
+            return;
+        }
+        alert(el);
+    });
+</script>
+</body>
+</html>

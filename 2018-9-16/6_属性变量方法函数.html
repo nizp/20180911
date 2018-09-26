@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        变量、属性
+
+            前面没主 -> 变量
+            前面有主 -> 属性
+
+
+        函数  前面没主 -> this -> window
+        方法  前面有主 -> this -> 主
+
+    */   
+   let a = 10;
+   function b(){
+       console.log(this);//window
+   }
+   
+   let obj = {
+       a:10,
+       b:function(){
+        //    alert(2);
+            console.log(this);
+       }
+   }
+    //document.getE...
+   b();
+   obj.b();
+//    a++;
+//    obj.a ++;
+//    alert(obj.a); //11
+
+   
+</script>
+</body>
+</html>

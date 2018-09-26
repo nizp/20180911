@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        在数组的后面追加一项(至少两种办法)：____1___        
+        删除数组的最后一项(至少两种办法)：_____2_____
+        写出循环遍历数组中每一项的方法(至少两种)： ___3__      
+        数组从小到大排序(可以处理10以上的数字)：____4____
+        实现找到第n项到第m项(包括第n项和第m项)的内容，返回一个新的数组(原有数组不变)：___5___
+    */ 
+    let arr = [1,2,10,'11',8,5];
+    // arr.push(3);
+    // arr.splice(2,0,3);
+    // arr.length = 3;
+    // arr[arr.length] = 3;
+
+    // arr.pop();
+    // arr.splice(1,1);
+    // arr.length = arr.length-1;
+
+    
+    // for(){}
+    //forEach
+    //while
+    //for in
+    //setInterval
+    
+    // let arr2 = [1,2,3,4,6,7,8];
+    // let i = 0;
+    // let timer = setInterval(function(){
+    //     if(i >= arr2.length){
+    //         clearInterval(timer);
+    //     }else{
+    //         console.log(arr2[i]);
+    //         i++;
+    //     }
+    // });
+
+    // arr.sort(function(a,b){return a-b});
+    // let onOff = true;
+    // for(let i=0;i<arr.length-1;i++){
+    //     onOff = true;
+    //     for(let j=0;j<arr.length-1-i;j++){
+    //         if(arr[j] > arr[j+1]){
+    //             let c = arr[j];
+    //             arr[j] = arr[j+1];
+    //             arr[j+1] = c;
+    //             onOff = false;
+    //         }
+    //     }
+    //     if(onOff){
+    //         break;
+    //     }
+    // }
+
+    
+    console.log( arr.slice(3,5) );
+    console.log(arr);
+
+
+
+    
+</script>
+</body>
+</html>

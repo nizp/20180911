@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 在JS中用单引号或者双引号包起来的内容都是字符串
+    // 1. 有索引
+    // 2. 有length
+    // 3. 字符串的运算 特殊 +： 字符串的拼接  -  *  /
+    let  str = "zhufengpei"
+    //console.log(str[3]);
+    //console.log(str.length);
+    // 1. charAt : 通过索引获取字符
+    //console.log(str.charAt(1));
+    // 2. toUpperCase  : 把小写字母转成大写字母
+    // console.log(str.toUpperCase());
+    // 3.toLowerCase : 把大写字母转小写
+
+    // 4. substr  : 字符串的截取;
+    // 从索引m开始，截取n个
+    // console.log(str.substr(2, 3));
+    // 5. substring : 从索引m开始，截取到索引n;不包含n这一项
+    //console.log(str.substring(4, -100));
+    //console.log(str);
+    // 6.slice  从索引m开始，截取到索引n;不包含n这一项;原有字符串不变；支持负数；
+    //console.log(str.slice(2, -1));
+    //console.log(str);
+    // 7.includes: 检测当前字符串是否存在；存在返回true，不存在返回false；
+    //console.log(str.includes("a"));
+    // 8.indexOf : 检测当前字符串第一次出现的索引位置；如果不存在，返回-1
+    // 9.lastIndexOf : 检测当前字符串最后一次出现的索引位置；如果不存在，返回-1
+    // 10 .trim
+        //trimLeft  trimRight
+    //console.log(str.indexOf("a"));
+
+    // 11.replace : 字符串的替换
+    // replace(old,new); 用新的字符替换成旧的字符；
+    console.log(str.replace("u", "n"));
+
+</script>
+</body>
+</html>

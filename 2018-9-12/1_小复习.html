@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<script>
+window.onload = function(){
+    // console.log(document.getElementById('box'))
+    // console.log( document.getElementById('box2') );
+}
+
+/*
+    王诗进 （找不到元素的结果抄10遍）
+    找不到元素就是null
+    null
+
+    霍亚涛（获取元素内容10编）
+        innerText
+        innerHTML
+
+    
+*/
+
+ 
+</script>
+</head>
+<body>
+    <div id="box">12321</div>
+<script>
+    /*
+        1.ECMAScript、DOM、BOM
+
+        2.
+            script一般放在body的结束标签的上面
+            如果没有，记得加上window.onload
+
+            src去引入外部的js，带有src的script是不能在标签内再次写入代码，不然出不来。
+
+            元素找不到为null，变量找不到就会报错，报错会影响js的正常运行
+        
+        3. 常量:const    变量:let
+
+        4.innerHTML（既能读文本也能写解构）、innerText、value:获取表单内容
+
+        5.typeof 检测数据类型
+
+
+    */    
+   
+
+
+    // function a(){}  let a
+    // alert(a);
+    // console.log(20);
+
+
+    let w = '200px';
+    let h = '100';
+    let red = 'red';
+    const box = document.getElementById('box');
+
+    box.innerHTML = '<div style=width:'+w+';height:'+h+'px;background:'+red+'></div>';
+
+    
+</script>
+<script>
+    // let a = 10;
+    // alert(80); //虽然40行报错会影响41行的代码，但是不会影响45行的代码，因为是2个script标签。
+</script>
+<script src="1.js">
+    // console.log(10);//10是出不来的
+</script>
+</body>
+</html>

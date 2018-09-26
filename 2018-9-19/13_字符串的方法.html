@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        字符串的方法:(字符串的方法是不会改变原字符串的)
+            str.charAt(0)
+            str.charCodeAt() //转unicode
+            String.fromCharCode // unicode转字符
+            indexOf(string,index)  找到返回位置，找不到返回-1
+            lastIndexOf(string,index)  从后往前找
+            split('-') -> 数组 ['','']  ''->'' []   join('')把数组转字符串，用字符来链接
+            substring 截取字符串的
+            substr(起始,个数)
+            toUpperCase 大写
+            toLowerCase 小写
+            trim  取前后的空格
+
+
+ 
+
+    */  
+//    ''.charCodeAt  
+//    String.fromCharCode
+    
+    // String.prototype.substring = function(){
+    //     alert('哈哈');
+    //     return undefined;
+    // }
+
+    let str = 'mdskfhoecj p ke2';
+    let s = str.substring(13,15);
+
+    // console.log(str.slice(-1)); //参数可以为负数
+    console.log( str.substring(-1) );
+
+    // console.log( s );
+    // console.log(str);
+
+
+
+</script>
+</body>
+</html>

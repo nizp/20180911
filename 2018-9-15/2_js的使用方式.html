@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <button onclick="alert(123)">点击</button> -->
+    <button id="btn">点击</button>
+<script src="1.js">alert(321)</script>
+<script>
+    /*
+        中级全栈开发工程师
+            前端 + 后端
+            PC + 移动
+            新框架
+        高级全栈开发工程师
+
+        行内式
+            在元素中直接写代码
+        内嵌
+            在script标签中直接写代码
+        外链
+            通过script src=""
+            注意:
+                <script src="1.js">alert(321)<script>
+                321是不会执行的
+
+        一般使用外链和内嵌，一般是把script放到body结束标签的上面
+
+        因为页面内容是从上往下执行代码的，放到底部保证能够获取元素 
+
+
+    */  
+    document.getElementById('btn').onclick = function(){
+        alert(1);
+    }
+   
+
+
+
+</script>
+</body>
+</html>

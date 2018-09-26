@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <img id="img" src="img/a1.jpg" alt="">
+    
+<script>
+    let timer = null;
+    let num = 1;
+    timer = setInterval(function(){
+        num++;
+        if(num > 4) num = 1;
+        img.src = 'img/a'+ num +'.jpg';
+    },3000);
+
+
+</script>
+</body>
+</html>

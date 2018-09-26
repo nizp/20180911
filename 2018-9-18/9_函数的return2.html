@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        只有函数 + () 才能执行，别的数据加()就报错。 
+        
+      *** return 下面的代码都不会执行。
+    */
+    // let c = 10;
+    // let a = 20;
+    // function fn(c,a){
+    //     console.log(a+c); //30
+    //     return function(a,c){
+    //         return 1;
+    //     }
+    // }
+    // let z = fn(a,c);
+    // console.log(z); //return的函数
+    // z(); //不发生，但是执行了的
+    // console.log(z()());// 1() 报错
+
+
+    
+    // function fn(){
+    //     alert(1);
+    //     return 1;
+    //     alert(2);//2是不会弹的
+    // }
+    // fn();
+
+    /*
+        形参可以配置默认值，如果没有实参直接走形参
+        如果有实参就走实参。
+    */
+    function fn(a=10,b=20){
+        console.log(a,b);
+    }
+    fn(1,2);
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 函数：递归；
+    // 递归： 在函数题内部调用函数它自己，让其执行；在递归中，一般都有中止的判断条件；
+    /*function A() {
+        A();
+        console.log(1)
+    }
+    A();*/
+
+    // 求1-100之间是3并且是是5倍数的和；
+    /*let total = 0;
+    for(let  i=0;i<100;i++){
+        if(i%3===0&&i%5===0){
+            total+=i;
+        }
+    }*/
+
+    // 用递归的方式求出求1-100之间是3并且是是5倍数的和；
+
+    function sum(num) {
+        // num =100;   return sum(99)
+        // num =99                   sum(98)
+        // num =98                   sum(97)
+        // ....                      sum(90)
+        // 90                          90 + sum(89)
+        // 89                          90 + sum(88)
+        // ...
+        /// 75                         90+75 + sum(74)
+        //  1                          90 +75 + 60 +... + sum(0)
+        //  0                          90 +75 + 60 +... + 0
+        if(num<1){
+            return 0;
+        }
+        if(num%3===0&&num%5===0){
+           return num + sum(num-1)
+        }else{
+            return sum(num-1)
+        }
+
+    }
+    let total = sum(100);
+    console.log(total);
+
+
+</script>
+</body>
+</html>

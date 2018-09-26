@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        321
+        <span>123</span>
+    </div>
+    <button>内容</button>
+    <input type="button" value="内容">
+<script>
+    /*
+        读写都行
+        innerHTML 操作元素内容，包含结构、文字
+        innerText 操作元素的文本，只有文本
+
+        value可以操作表单元素中的内容
+
+        ***页面中的所有内容都是字符串。
+    */ 
+    // box.innerHTML = '<p>这个是P标签</p>';
+    // box.innerText = '<p>这个是P标签</p>';
+    // console.log(box.innerHTML)
+    console.log(box.innerText);//321 123
+   
+
+
+</script>
+</body>
+</html>

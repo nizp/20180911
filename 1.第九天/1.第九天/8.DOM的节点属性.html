@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+   <div id="box">
+       倪老师很帅
+       <!--11111-->
+       <div>
+           <div id="child"></div>
+       </div>
+       <span id="span"></span>
+   </div>
+<script>
+    // DOM : document object  model(数据)
+    // 其实就是HTML中的标签；在JS中叫元素；
+
+    // 节点类型；四种节点类型;节点都是对象数据类型的；
+    // 空格和换行都是文本节点；
+    //              nodeType      nodeName      nodeValue
+    // 元素节点           1         大写的标签名      null
+    // 文本节点           3          #text          文本的内容
+    // 注释节点           8          #comment       注释的内容
+    // document          9          #document      null
+  /* let span = document.getElementById("span");
+    console.log(span.nodeValue);*/
+    let  box = document.getElementById("box");
+    let  span = document.getElementById("span");
+
+    // 1. childNodes : 获取当前元素的所有子节点;类数组
+    console.log(box.childNodes);
+    // 2. children : 获取当前元素所有的子元素节点；
+    console.log(box.children);
+
+    // 3.parentNode : 获取当前元素的父亲节点
+    //  document 的父亲节点是null；
+    console.log(document.body.parentNode.parentNode.parentNode);
+
+    // 4.nextSibling : 获取下一个弟弟节点；
+    //   nextElementSibling : 获取下一个弟弟的元素节点； IE8以下不兼容
+    // console.log(child.parentNode.nextSibling.nextSibling);
+    // console.log(child.parentNode.nextElementSibling);
+
+    // 5.previousSibling : 上一个哥哥节点
+    //  previousElementSibling : 上一个哥哥元素节点  IE8以下不兼容
+
+    // 6. firstChild : 第一个子节点
+    // firstElementChild : 第一个子元素节点 IE8以下不兼容
+    console.log(box.firstChild);
+    console.log(box.firstElementChild);
+
+    // 7.lastChild : 最后一个子节点
+    // lastElementChild : 最后一个子元素节点// IE8以下不兼容
+
+
+
+
+
+</script>
+</body>
+</html>

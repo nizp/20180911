@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+#btn1{
+    background: yellow;
+}
+#box{
+    width:100px;
+    height: 100px;
+    border:1px solid #000;
+    background: red;
+    transition: .5s;
+}
+</style>
+</head>
+<body>
+    <button id="btn1">点击1</button>
+    <div id="box"></div>
+<script>
+    /*
+        变量:
+            可变的量
+                var es3 
+                let es6
+                class
+            变量是用来存储数据的，为了复用
+
+            let btn1 = document.getElementById('btn1')
+
+            命名规范:
+                大驼峰命名法
+                    GetElementById
+                        每个单词首字母大小
+
+                小驼峰命名法
+                    getElementById
+                        第一个单词小写，后面的首字母大写
+
+            严格区分大小写的      
+                let a = 10;
+                let A = 11;
+
+            *** 首字母不能为数字，可以为字母、_、$、中文
+
+            不能使用关键字或者保留字
+                关键字：当前js使用的名字
+                        this  
+                保留字: 当前没有使用，但是未来有可能使用的名字
+                        class
+
+
+
+        常量:
+            不可变的量
+                const
+                只要敢变，就报错
+
+        简单类型(基本类型):
+            数字（1）、字符串（'字符串'）、布尔值（true）、undefined、null
+        复合（复杂类型）
+            对象、smybol
+            {}、[]、function、regexp...
+
+        简单类型的数据和复合类型的数据不是一个空间。
+
+        简单类型的赋值就是赋值。
+        复杂类型的赋值为赋址（空间）。
+
+        Invalid or unexpected token 语法错误
+
+        js中声明变量是不用声明数据类型的，给这个值开多少空间
+
+        简单
+        复杂
+
+    */
+    // document.getElementById('btn1').onclick = function(){
+    //     document.getElementById('box').style.height = '0px';
+    //     document.getElementById('box').style.width = '0px';
+    //     document.getElementById('box').style.opacity = '0';
+    // }
+
+    let btn1 = document.getElementById('btn1');
+    let box = document.getElementById('box');
+
+
+    // let a = 10;
+    // console.log(a);
+    // a = 11;
+    // console.log(a);
+
+
+    // const a = 10;
+    // a = 11;
+    // console.log(a);
+
+    // let a1 = 10;
+    // console.log(a1);
+
+    // let this1 = 10;
+    let 小霍 = 10;
+
+    console.log(小霍);
+
+    btn1.onclick = function(){
+        box.style.height = '0px';
+        box.style.width = '0px';
+        box.style.opacity = '0';
+    }
+</script>
+</body>
+</html>

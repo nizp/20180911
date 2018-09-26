@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>4</button>
+<script>
+    /*
+        forEach()  专门用来循环数组  
+            2个参数:
+                1.回调函数
+                    还有3个参数
+                        1).每个数组
+                        2).索引
+                        3)整个数组
+                2.改变this指向
+
+    */
+    let arr = [1,2,3,4,5,6];
+
+    // arr.forEach(function(a,b,c){
+    //     // console.log(a,b,c);
+    //     console.log(this);
+    // },document);
+
+    const btns = Array.from(document.querySelectorAll('button'));
+
+    let b = btns.forEach((el,i) => {
+        el.onclick = function(){
+            alert(i);
+        }
+    });
+
+    // console.log(b); //undefined
+
+    // btns.forEach(function(el,i){
+    //     el.onclick = function(){
+    //         alert(i);
+    //     }
+    // });
+    
+    // console.log([1,2,3,4,5,6].push(7));
+    // console.log(btns.push(5))
+    // console.log(btns);
+
+
+
+
+</script>
+</body>
+</html>

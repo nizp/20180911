@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body id="body">
+<script>
+    /*
+        document.write()
+    */    
+
+   
+    fn();
+    setInterval(fn,1000);
+
+    function fn(){
+        let d = new Date;
+        let y = d.getFullYear();
+        let m = d.getMonth() + 1;
+        let dd = d.getDate();
+        let H = d.getHours();
+        let M = d.getMinutes();
+        let S = d.getSeconds();
+        
+        body.innerHTML = `${y}年${toDou(m)}月${toDou(dd)}
+        日${toDou(H)}小时${toDou(M)}分${toDou(S)}秒`;
+
+    }
+
+    function toDou(n){
+        return n<10?'0'+n:''+n;
+    }
+
+
+
+
+</script>
+</body>
+</html>

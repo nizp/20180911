@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        toUpperCase()
+            把小写转成大写
+        
+        font-size -> fontSize
+
+        写个函数，能够把-后面的首字母转成大写
+    */
+    let str = 'zhufeng';
+    let str2 = 'font-size';
+
+    function fn(str){
+        let str1= str.indexOf('-');
+        let s1 = str.substring(0,str1);
+        return s1 + str[str1+1].toUpperCase() + str.substring(str1+2);
+        // console.log(str[str1+1].toUpperCase())
+    }
+    let s = fn(str2);
+    let s2 = fn('background-image');
+    console.log(s2);
+
+    // console.log(str[0].toUpperCase());
+    
+    
+</script>
+</body>
+</html>

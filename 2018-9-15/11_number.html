@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        number:
+            正数、负数、浮点数
+
+            Number('1') -> 1 ;
+            Number('') -> 0
+            Number('') -> 0
+            Number([]) -> 0
+            Number(null) -> 0
+
+        NaN：不是一个数字，如果遇到非法的数学运算就是NaN
+        typeof 一元运算符 转化出来的值就是（小写的，字符串）数据类型
+            没有 null  -> object
+            有  function
+        isNaN  是NaN   true:是NaN false: 不是NaN
+
+        parseInt(string,位数) 
+            把字符串转10进制的整数
+        parseFloat('string')
+            把字符串转成数字，转浮点数
+        toFixed
+            保留几位小数
+                如果位数+1 >= 5就进一  
+                如果位数+1 < 5就舍去
+            number.toFixed()
+            
+        浮点数运算是不精确的
+    */    
+
+   let str = '1px';
+//    console.log(typeof (typeof Number(str))); //number
+
+    // console.log(isNaN(Number(str)));
+    // console.log(isNaN(1));
+    // console.log(isNaN('')); // false
+
+    let num = 10.5545;
+    console.log(num.toFixed(2)); //字符串
+
+    /*
+        isNaN
+        Number('') -> 0  isNaN(0) -> false
+    */
+
+</script>
+</body>
+</html>

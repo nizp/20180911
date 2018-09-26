@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+img{
+    transition: 1s;
+}
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <img  src="img/a1.jpg" alt="">
+    <img  src="img/a2.jpg" alt="">
+    <img src="img/a3.jpg" alt="">
+    <img  src="img/a4.jpg" alt="">
+    
+<script>
+    let timer = null;
+    let num = -1;
+    let imgs = document.querySelectorAll('img');
+    timer = setInterval(function(){
+        num++;
+        imgs[num].style.opacity = 0;
+        
+    },3000);
+
+
+</script>
+</body>
+</html>

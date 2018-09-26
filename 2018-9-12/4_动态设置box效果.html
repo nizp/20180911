@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+#box{
+    width:100px;
+    height:100px;
+    border:1px solid #000;
+}
+</style>
+</head>
+<body>
+    属性名:<input type="text" id="txt">
+    属性值:<input type="text" id="txt2">
+    <button id="btn">设置</button>
+    <div id="box"></div>
+<script>
+    const txt = document.getElementById('txt');
+    const txt2 = document.getElementById('txt2');
+    const btn = document.getElementById('btn');
+    const box = document.getElementById('box');
+
+    /*
+        obj = {
+            style:{
+                width:100px,
+                height:100px
+            }
+        }
+        let b = 'height';
+        obj.style.width
+        obj.style['height']
+    */
+
+    btn.onclick = function(){
+        let val1 = txt.value;
+        let val2 = txt2.value;
+        // console.log(box.style.val1);
+        box['style'][val1] = val2;
+        // console.log(val1,val2);
+        // box['style'][val1] = val2;
+    }
+
+</script>
+</body>
+</html>

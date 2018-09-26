@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box"></div>
+<script>
+    /*
+        为什么要拼接？
+            因为不拼接，字符串 + 别的数据类型都是字符串
+
+            '<p>'+ 可变的值 +'</p>'
+    */
+
+    let str = '1';
+    //<p>1</p>;
+    // console.log(typeof (str + {}));
+    // console.log('<p>'+str+'</p>'); //'str'
+
+    let w = 300;
+    let h = 200;
+    let b = 'pink';
+    let box = document.getElementById('box');
+
+    // box.innerHTML = '<p>'+str+'</p>';
+    // box.innerHTML = '<p style="width:'+w+'px;height:'+h+'px;background:'+b+'"></p>'
+    
+    // box.innerHTML = '<p style="width:'+ w +'px;height:'+ h +'px;background:'+ b +'"></p>'
+    box.innerHTML = `<p style="width:${w}px;height:${h}px;background:${b}"></p>`;
+//<p style="width:100px;height:100px;background:red"></p>
+
+
+    
+    
+
+</script>
+</body>
+</html>

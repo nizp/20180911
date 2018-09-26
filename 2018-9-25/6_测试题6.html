@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        面试题：
+        获取1~100之间，所有即能被五整除，也能被三整除的数字，
+        相加的和
+        使用FOR循环处理的，只能获取8分，使用递归处理的，可以获取15分
+    */  
+    let num = 0;  
+    for(let i=1;i<=100;i++){
+        if(i%5 == 0 && i%3 == 0){
+            //    console.log(i);
+                num += i;
+        }
+    }
+    // console.log(num);//315
+
+    // function sum(num){
+    //     //终止递归
+    //     if(num <= 0)return 0;
+    //     if(num%5 == 0 && num%3 == 0){
+    //         return num + sum(num-1);
+    //     }
+    //     if(num%5 != 0 || num%3 != 0){
+    //         return sum(num-1);
+    //     }
+    // }
+
+    // console.log( sum(100) );
+
+
+    function sum2(n){
+        if(n<=1)return 1;
+        return n + sum2(n-1);
+    }
+    /*
+        function sum2(5){
+            return 5 + sum2(5-1);  5+10
+        }
+
+        function sum2(4){
+            return 4 + sum2(4-1);  4+6
+        }
+
+        function sum2(3){
+            return 3 + sum2(3-1); 3+3 6
+        }
+
+        function sum2(2){
+            return 2 + sum2(2-1);  2+1 
+        }
+
+        function sum2(1){
+            if(n<=1)return 1;
+        }
+    
+    */
+
+    console.log( sum2(5) );//5+4+3+2+1  15
+    
+
+    
+</script>
+</body>
+</html>

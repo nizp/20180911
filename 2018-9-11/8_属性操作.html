@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">123456</div>
+    <input type="text" value="内容" id="txt" />
+<script>
+    /*
+        box = {
+            style:{
+                width:'',
+                height:123
+            }
+        }
+    */
+    let obj = {
+        a:10,
+        style:{
+            width:'100px',
+            height:'200px'
+        },
+        value:'内容'
+    }    
+
+    console.log(obj.style.height);
+
+    //读
+    // console.log(obj.a);
+    // console.log(obj.style.width);
+
+    //写操作
+    obj.style.width = '200px';
+
+    // console.log(obj);
+
+
+    /*
+        去box中读写内容
+
+        innerText:操作文本
+
+        innerHTML:操作元素内部的属性
+
+        value:操作表单元素value值
+
+        a.href
+        img.src
+        ....
+
+    */
+
+    let box = document.getElementById('box');
+
+    // box.innerText = '<p>呵呵,我把你改了</p>';
+
+    box.innerHTML = '<strong>呵呵,我把你改了</strong>';
+
+    // console.log(box.innerText);
+    // console.log(box.innerHTML);
+
+    let txt = document.getElementById('txt');
+
+    console.dir(txt.value);
+
+    txt.value = '上课不要睡觉!';
+
+
+
+</script>
+</body>
+</html>

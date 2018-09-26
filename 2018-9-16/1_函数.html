@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // function fn1(){
+
+    // } 
+    /*
+      当一个函数被创建的时候，自动会在这个函数内挂有一些属性和方法
+      常用的:
+        name、prototype、__proto__属性
+        apply()、call()、bind() 方法
+
+        arguments实参的集合,类数组[]
+        
+
+        *只有对象下才能加属性和方法
+         简单类型是不能加属性和方法的，
+         null和undefined加属性||方法就报错
+
+    */
+    // console.dir(fn1);
+
+    // let n = '';
+    // console.log(n.num);
+
+
+    function fn1(a){
+        /*
+            27行的a是1,就是传入的实参
+        */
+        a = 3;
+        console.log(a);//3
+        // arguments[0] = 2;
+        a = 3;
+        /*
+            33行a=3  因为a已经被赋值了（被修改了）;
+        */
+        arguments.a = 10;
+        // let s = 1;
+        // s.a = 100000;
+        // console.log(arguments.a);
+        // console.log(s.a); //undefined
+        // console.log(arguments[0]);
+        // console.log(a == arguments[0]);
+    }   
+    fn1(1,2);
+    
+    
+
+</script>
+</body>
+</html>

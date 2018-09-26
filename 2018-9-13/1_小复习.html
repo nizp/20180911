@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        null:
+            元素获取不到
+            正则中没有匹配项
+            销毁对象
+
+        undefined:
+            变量没有赋值的时候
+            对象中查不到某个属性
+            函数默认的返回值
+
+        string: 
+            '' "" ``
+            有length，只能读，不能写
+            let name = '李子杰';
+            '我的名字叫{},我要好好学习!'
+
+        number,
+        undefined,
+        null,
+        boolean
+        object
+        ,symbol
+
+    */
+    let obj = {
+       "city":'北京',
+       arr:[{
+           "num":20
+       },4,5,8]
+    }
+//    console.log(obj.arr[0].num);
+    // console.log(obj.city1);
+    // console.log(obj.arr[5]);
+    // let arr = 'arr';
+    // console.log(obj["arr"][2]);
+
+    // delete obj.arr;
+    // console.log(obj);
+
+    let name = '李子杰';
+    // let str = '我的名字叫{'+name+'},我要好好学习!';
+    let str = `我的名字叫{${name}},我要好好学习!`;
+    // console.log(str);
+    // console.log(Boolean(''));//false
+    // console.log(Boolean(' '));//true
+    // console.log(parseInt('px'));//NaN
+    // console.log(Number(''));//0
+
+
+    // console.log(10 + 20 + '5.5');
+    /*
+        判断一数数字是不是一个整数？
+    */
+   let num = 10.5;
+//    console.log( parseInt(num) == parseFloat(num) )
+
+    // console.log(Boolean(0)); //false
+    // console.log(Boolean(-10));//true
+
+    // let nn = 100.46753746728362;
+    // console.log(typeof nn.toFixed(3));
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

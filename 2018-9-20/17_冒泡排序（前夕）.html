@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let arr = [4,8,3,6,1,11];
+
+    /*
+
+    */
+   let a = 10;
+   let b = 5;
+//    let c = a;
+//    a = b;
+//    b = c;
+
+    a = a+b; //15
+    b = a - b; //10
+    a = a - b; //5
+
+//    console.log(a,b);
+
+    //假设
+    // let onOff = true; //对的
+    // if(true){ //错的条件
+    //     onOff = false;   
+    // }
+    // console.log(onOff); //验证之后是错的
+
+    let arr2 = [1,2,3,4,5,7,6]; //从小到大
+
+    let onOff2 = true;//假设是从小到大
+    for(let i=0;i<arr2.length;i++){
+        if(arr2[i] > arr2[i+1]){
+            onOff2 = false; //错误的
+        }
+    }
+    console.log(onOff2);
+
+</script>
+</body>
+</html>

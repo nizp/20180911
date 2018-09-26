@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">按钮</button>
+    <ul id="ul">
+        <li id="li1">1</li>
+        <li id="li2">2</li>
+        <li id="li3">3</li>
+        <li id="li4">4</li>
+        <li id="li1">1</li>
+        <li id="li2">2</li>
+        <li id="li3">3</li>
+        <li id="li4">4</li>
+        <li id="li1">1</li>
+        <li id="li2">2</li>
+        <li id="li3">3</li>
+        <li id="li4">4</li>
+        <li id="li1">1</li>
+        <li id="li2">2</li>
+        <li id="li3">3</li>
+        <li id="li4">4</li>
+        <li id="li1">1</li>
+        <li id="li2">2</li>
+        <li id="li3">3</li>
+        <li id="li4">4</li>
+        <li id="li1">1</li>
+        <li id="li2">2</li>
+        <li id="li3">3</li>
+        <li id="li4">4</li>
+
+        <li id="li1">1</li>
+        <li id="li2">2</li>
+        <li id="li3">3</li>
+        <li id="li4">4</li>
+
+    </ul>
+<script>
+    // const li1 = document.getElementById('li1');
+    // const li2 = document.getElementById('li2');
+    // const li3 = document.getElementById('li3');
+    // const li4 = document.getElementById('li4');
+
+    const lis = document.getElementsByTagName('li');
+    /*
+        getElementsByTagName  获取一组元素 
+            类数组（类似于数组）:
+                有length，有下标，但是默认不能使用数组的方法。
+
+        if(i<lis.length){}
+        for(var i=0;i<lis.length;i++){}
+
+    */
+
+    
+
+    // lis.push(5);
+    // console.log(lis); //lis不能使用数组的push方法
+
+    // let arr = [1,2,3,4];
+    // arr.push(5);
+    // console.log(arr);  //push就是给arr最后添加5
+
+    const btn = document.getElementById('btn');
+
+    btn.onclick = function(){
+        for(let i=0;i<lis.length;i++){
+            console.log(i);
+            lis[i].style.background = 'red';
+        }
+        // lis[0].style.background = 'red';
+        // lis[3].style.background = 'red';
+        // li2.style.background = 'red';
+        // li3.style.background = 'red';
+        // li4.style.background = 'red';
+    }
+</script>
+</body>
+</html>

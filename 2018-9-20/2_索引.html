@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button>按钮一</button>
+    <button>按钮二</button>
+    <button>按钮三</button>
+    <div id="box">11111</div>
+<script>
+    /*
+        目的:
+            点第一个按钮输出0
+            点第二个按钮输出1
+            点第三个按钮输出2
+    */
+    let arr = [11111,222222,333333];
+    const btns = document.querySelectorAll('button');
+    // btns[0].num = 0;
+    // console.log(btns[0].)
+
+    // btns[0].num = 0;
+    // btns[1].num = 1;
+    // btns[2].num = 2;
+
+    // var num = 0;
+
+    // num = 1
+    // num = 2
+    // num = 3
+
+    // console.log(num);
+
+    for(var i=0;i<3;i++){
+        btns[i].num = i;
+        // var num = i;
+        btns[i].onclick = function(){
+            // console.log(btns[1].num);
+            console.log(i);
+            box.innerHTML = arr[this.num];
+        }   
+    }
+
+
+
+</script>
+</body>
+</html>

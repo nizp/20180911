@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // console.dir(new Array());
+    /*
+        slice
+        split
+        splice
+            能够增删改查数组
+            第一个参数:
+                起始位置
+            第二个参数:
+                删除几个
+            第三个参数:
+                添加 || 替换的内容
+
+            *只有删除操作，返回值才不是空白数组，是删除的那个数据
+
+
+    */    
+   let arr = [1,2,3];
+//    console.log( arr.splice(0,1) );  //[1]
+
+    // arr.splice(0,2,'一');
+
+    console.log(arr.splice(3,0,'四'));
+
+   console.log(arr);
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        利用对象的特性来去重
+            
+    */
+
+    
+
+    let arr = [1,7,2,3,6,3,5,6,7,7,7];
+
+    // console.log(arr.some(function(el,i,all){
+    //     // console.log(el);
+    //     return el == 7;
+    // }));//true,false
+    let arr2 = [];//arr2不重复的数组
+    for(let i=0;i<arr.length;i++){
+        //true,false   
+        let a = arr2.some(function(el){
+            return el == arr[i];
+        });
+        if(!a){
+            arr2.push(arr[i]);
+        }
+    }
+
+    console.log(arr2);
+
+
+
+    
+
+    
+
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<link id="link" rel="stylesheet" href="">
+</head>
+<body>
+    <button id="btn1">换黄色</button>
+    <button id="btn2">换绿色</button>
+<script>
+    /*
+        一般声明元素使用const
+    */
+   const btn1 = document.getElementById('btn1');
+   const btn2 = document.getElementById('btn2');
+   const link = document.getElementById('link');
+
+    btn1.onclick = function(){
+        link.href = './css/1.css';
+    }
+    btn2.onclick = function(){
+        link.href = './css/2.css';
+    }
+
+
+</script>
+</body>
+</html>

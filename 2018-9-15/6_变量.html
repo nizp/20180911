@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+#box{
+    width:100px;
+    height: 100px;
+    background: #000;
+    transition: 1s;
+    color: #fff;
+}
+/* .deg{
+    transform:rotate(360deg);
+    border-radius: 50% 50%;
+} */
+</style>
+</head>
+<body>
+    <button id="btn">转</button>
+    <div id="box">
+        额2u3821372813721
+    </div>
+<script>
+    /*
+        变量:
+            可变的量
+            为了存储一些数据，为了复用
+
+            变量名:
+                首字母不能为数字
+                首可以是字母、_、$
+                还不能是关键字、保留字
+                严格区分大小写
+                一般用小驼峰命名
+                    get Element
+                关键字:
+                    js中已经使用的
+                    let let = 10 错的
+                保留字:
+                    js现在没有用，但是未来会用
+                    class 类
+                
+
+
+            let ES6
+                暂存死区
+                    在声明之后用，不然会报错xx is not defined
+                
+                声明之后可以不赋值，默认为undefined
+
+                变量名不能重复
+
+            var ES3
+
+        常量:
+            不可变的量
+            存一个固定不变的数据
+
+            注意:
+                声明之后要立马赋值，不然会报错
+
+        onclick 点击
+    */    
+    let btn = document.querySelector('#btn');
+    let box = document.querySelector('#box');
+
+    // console.log(num);
+
+    let num = 0;
+    // num = 10;
+
+    // let num = true;
+
+    // let nn;
+    // console.log(nn);
+
+
+    // const a = 10;
+    // const b;
+    // a = 1; //常量不可变
+    // console.log(b); //Missing initializer in const declaration
+
+    // alert(a);
+    // var a = 30;
+    // var a = 50;
+    // alert(a);
+    
+
+    btn.onclick = function(){
+        // document.querySelector('#box').className = 'deg';
+        box.style.borderRadius = '50% 50%';
+        box.style.transform = 'rotate(360deg)';
+    }
+</script>
+</body>
+</html>

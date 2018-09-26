@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        new Date 时间对象
+
+        可以拿到当前客户端的时间，是不可靠的
+
+        前端都不安全，服务器的时间相对安全
+
+        倒计时
+        数码时钟
+    */ 
+//    console.log(new Date);
+    let d = new Date; 
+    // console.log(d.getTime()); //时间戳 ，number类型
+    // console.log(+d);//获取时间戳的方式
+    let y = d.getFullYear();
+    let m = d.getMonth() + 1; //月份需要 +1
+    let dd = d.getDate(); //日
+    let ddd = d.getDay(); //周几  周天为0 
+    let H = d.getHours();//小时
+    let M = d.getMinutes(); //分
+    let S = d.getSeconds();//秒
+    console.log(S);
+
+    console.log(y+'年'+tDou(m)+'月'+tDou(dd)+'日'+tDou(H)+'小时'+tDou(M)+'分'+tDou(S)+'秒');
+
+    // 0-9
+    function tDou(n){
+        // if(n < 10){
+        //     return '0'+n;   //'08'
+        // }else{
+        //     return ''+n; //10
+        // }
+        return n<10?'0'+n:''+n;
+    }
+    // tDou(9);
+    let yy = tDou(9); //使用返回值
+
+    console.log(  tDou(9) ); //使用返回值
+
+
+    // let y = tDou(9);
+    // console.log( y() );
+
+
+
+
+</script>
+</body>
+</html>

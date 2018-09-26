@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        先进大循环一次，再执行完小循环，再进大循环一次
+        .....
+
+       *** 深坑:
+        如果是*单纯*的for套for，那么第二个的变量名和第一个for的变量名不要一样
+        不然会有意想不到的“惊喜”
+
+        下面这种不是单纯的for套for
+        for(){
+            lis[i].onclick = function(){
+                for(){
+                    
+                }
+            }
+        }
+
+    */
+
+    for(var i=0;i<5;i++){
+        alert('大循环'+i);
+        for(var j=0;j<3;j++){
+            alert('小循环'+j);
+        }
+    }
+
+
+    // for(var i=0;i<5;){
+    //     alert('大循环的' + i); //大循环的0,4.....
+    //     for(var i=0;i<3;i++){
+    //         alert('小循环'+ i);
+    //         console.log(i); //0,1,2
+    //     }
+    //     alert(i);
+    //     i++;
+    // }
+</script>
+</body>
+</html>

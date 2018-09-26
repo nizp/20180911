@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+.y{
+    height:10px;
+}
+</style>
+</head>
+<body>
+    <div id="box">
+        <div class="y"></div>
+    </div>
+    <div id="box2">
+        <div class="y"></div>
+    </div>
+    <!-- <input type="text" name="user"> -->
+<script>
+    /*
+        页面中有这样一个DIV标签
+            <div id=’div1’ class=’box’></div> ，
+        想获取到这个元素可以用哪些方法(至少两种办法,可以不兼容)
+
+        1.用Id
+            document.getElementById('div1');
+            document.querySelector('#div1');
+            document.querySelectorAll('#div1')[0];
+
+        2.用class
+            document.getElementsByClassName('box');
+            document.querySelector('.box');
+            document.querySelectorAll('.box')[0];
+
+        3.用标签名:
+            document.getElementsByTagName('div')[0];
+            document.querySelector('div');
+            document.querySelectorAll('div')[0];
+
+
+       动态创建一个p标签，并且把其添加到body的末尾位置：
+
+            
+
+       
+       获取上一个哥哥元素节点：
+            target.previousElementSibling();
+       
+       字符串截取的三种方法：
+            substring
+            substr
+            slice
+
+       把字符串中某个字符进行替换的方法：
+
+
+    */    
+
+    // const y = document.querySelectorAll('.y');
+
+    /*
+        代码缓存
+    */
+    const box2 = document.getElementById('box2');
+    // const y = box2.getElementsByClassName('y')[0];
+    const y = box2.getElementsByTagName('div')[0];
+    y.style.background = 'red';
+
+    // for(let i=0;i<y.length;i++){
+    //     if(i == 1){
+    //         y[i].style.background = 'red';
+    //     }   
+    // }
+    console.log(y);
+
+
+    /*
+        动态创建P标签
+    */
+
+    // let p = document.createElement('p');
+    let body = document.getElementsByTagName('body')[0];
+    // p.innerHTML = '我是p标签';
+    // body.appendChild(p);
+
+    // body.innerHTML += '<p>pppppppp</p>';
+
+    /*
+        chrome独有:
+            console.time(); /开始/
+            console.timeEnd();/结束/
+
+        5247.7939453125ms
+        4850.862060546875ms
+        5014.672119140625ms
+
+        584.112060546875ms
+        621.52197265625ms
+        1098.179931640625ms
+        840.736083984375ms
+
+
+        685.39892578125ms
+        731.72900390625ms
+        697.852783203125ms
+
+
+
+        
+
+    */
+    let html = ''; 
+    // for(let i=0;i<1000;i++){
+    //     console.time('计时器');
+    //     // body.innerHTML += '<p>pppppppp</p>'; //耗性能 
+    // //    html += '<p>pppppppp</p>';
+    //     let p = document.createElement('p');
+    //     p.innerHTML = 'pppppppp';
+    //     body.appendChild(p);
+    // }
+    
+
+    // console.log(html);
+    // body.innerHTML += html; //1次
+    console.timeEnd('计时器');
+
+
+
+
+    /*
+        把字符串中某个字符进行替换的方法：
+    */
+
+    let str = '珠峰培训'; //陪
+
+    // console.log( str.split('培') ) //['珠峰','训']
+
+    // console.log( str.split('培').join('陪') );
+
+    // console.log( str.substring(0,2) + '陪' + str.substring(str.lastIndexOf('训')) );
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button>0</button>
+    <button>0</button>
+    <button>0</button>
+<script>
+    /*
+        this -> 这个
+            1.事件绑定的是谁this就是谁
+
+    */
+    // let num = 0;
+    // btn.num = 0;
+    // btn.onclick = function(){
+    //     // num ++;
+    //     this.num ++;
+    //     this.innerText = this.num;
+    //     console.log(this.num);
+    // }
+
+    const btns = document.querySelectorAll('button');
+    // let num1 = 0;
+    // let num2 = 0;
+    // let num3 = 0;
+    for(var i=0;i<btns.length;i++){
+        btns[i].num = 0;
+        btns[i].onclick = function(){
+            this.num ++;
+            this.innerText = this.num;
+        }
+    }
+
+    /*
+        我:200
+        你:300
+        ta:200
+    */
+
+</script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 数组的算法： 去重  冒泡排序  插入排序  快速排序
+    // 1.去重： 将重复的项删掉
+   // let ary = [12,45,66,78,66,12,88,45];
+    //1.indexOf
+/*    let  a = [];
+    // 循环ary的每一项；把其放进数组a中，如果重复，将不再放进去
+    for(let i=0;i<ary.length;i++){
+        let cur = ary[i];
+        if(a.indexOf(cur)===-1){
+            a.push(cur);
+        }
+    }
+    console.log(a);
+    ary=a;
+    console.log(ary);*/
+
+    // 2.对象的属性名不能重复的特点
+    // 如果对象的属性名重复，后面会将前面的进行覆盖；
+   /* let obj = {a:1,a:100};
+    console.log(obj);*/
+    let ary = [12,45,66,78,45,12,88,45];
+    let obj = {};
+    for (let i = 0; i < ary.length; i++) {
+        // 1.cur  == 12  {12:12}
+        let cur = ary[i];
+        if(obj[cur]===cur){
+            // 如果此判断成立，那么说明该项是重复的；
+            // 数组塌陷问题：如果删掉数组的某一项，那么该项成员后面的所有的成员的索引都要进行重新计算，这样是很消耗性能的；
+            //ary.splice(i,1);
+            ary[i] = ary[ary.length-1];// 将数组的最后一项覆盖当前项；
+            ary.length--;// 将数组的最后一项删除；
+            i--;
+            continue;// 结束本轮循环；
+        }
+        // 给obj这个对象新增键值对；
+        obj[cur] = cur;
+        //1. obj  {12:12}
+        // 2.obj  {12:12,45:45}
+        // 3.obj  {12:12,45:45,66:66}
+        // 4.obj  {12:12,45:45,66:66,78:78}
+        // 5.obj  {}
+    }
+    console.log(ary);
+    console.log(obj);
+    // 放在等号的右边是在获取值；如果放在等号的左边是在被赋值；
+    let  obj = {a:1};
+    let h = obj["a"];
+    obj["b"] = 10;
+    if(obj["c"]){
+        console.log(100);
+    }
+
+   // 删除数组的最后一项你有几种方法
+    // 1. pop  splice   ary.length--;
+
+    //3.排序的去重；
+    // 1. 先对数组进行排序；
+    // 2. 判断相邻的两项是否相等，如果相等，说明该项是重复项；删去即可；
+
+    // 数组的去重
+    let ary = [12,45,66,78,45,12,88,45];
+    let obj = {};
+    for (let i = 0; i < ary.length; i++) {
+        // 1.cur  == 12  {12:12}
+        let cur = ary[i];
+        if(obj[cur]===cur){
+            ary[i] = ary[ary.length-1];
+            ary.length--;
+            i--;
+            continue;
+        }
+        obj[cur] = cur;
+    }
+
+
+</script>
+</body>
+</html>

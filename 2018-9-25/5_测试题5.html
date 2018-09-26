@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        写一个sum方法来实现任意数求和功能
+        （说明：任意数求和指的是，
+            在方法执行的时候，
+            不管传多少个数字，
+            都可以进行累加求和；
+            对于传递进来的是非有效数字要进行屏蔽；
+            最后把求出的和返回到函数的外面；
+        ）
+    */    
+
+    function sum(){
+        let num = 0;
+        for(let i=0;i<arguments.length;i++){
+            if(typeof arguments[i] === 'number' && parseInt(arguments[i]) === parseInt(arguments[i])){
+                // console.log(arguments[i])
+                num += arguments[i];
+            }
+        }
+        return num;
+    }
+    let s = sum(1,2,3,'2px',54,true,'',function(){},{});
+    
+    console.log( s );
+
+
+
+</script>
+</body>
+</html>

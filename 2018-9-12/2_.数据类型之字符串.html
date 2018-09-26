@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">12312321</div>
+    <input type="text" id="txt" />
+    <button id="btn">按钮</button>
+<script>
+    /*
+        typeof 能够查看数据类型，查看出来的值为小写的字符串。
+
+
+        注意:
+            typeof 出来的值跟ECMAscript中的结果是有出入的
+
+            ECMAscript规定的数据类型:
+
+                number、string、boolean、null、undefined、object、symbol
+
+            typeof的数据类型:
+                number、string、boolean、undefined、object、symbol、function
+
+
+            ***字符串加别的任何数据都是字符串（除了symbol）
+
+            '' "" ``
+    */    
+
+   console.log(1+'100');
+   console.log('100'+'100');
+   console.log(typeof (''+true));
+   console.log(typeof (''+undefined));
+   console.log(typeof(''+{})); //[object Object]
+
+    console.log(typeof(''+[1,2,3]));//'1,2,3'
+    console.log('zhufeng'.length);
+
+    let aaa = 'a';
+    let num = 200;
+    // console.log(`zhu${aaa}feng`);
+    // console.log('zhu'+ aaa +'feng');
+    /*
+        <div style="width:100px"></div>
+        1.切成2个字符串
+            '<div style="width:100'
+            'px"></div>'
+
+        2.第一个字符串 + num
+            '<div style="width:' + num 
+            结果:
+            '<div style="width:200' 
+
+        3.第一个字符串 + 第二个字符串
+            '<div style="width:200' + 'px"></div>'
+            结果:
+                '<div style="width:200px"></div>'
+
+    */
+    console.log('<div style="width:' + num + 'px"></div>');
+
+    console.log('' + Symbol()); //字符串 + Symbol是报错
+
+    // console.log('zhufeng'.length);
+
+
+
+
+
+
+   let box = document.getElementById('box');
+   let txt = document.getElementById('txt');
+   let btn = document.getElementById('btn');
+
+
+    btn.onclick = function(){
+        //console.log(typeof box.innerText);
+        //  console.log(typeof txt.value);
+        //  console.log(txt.value);
+        
+        box.innerHTML = '哈哈，我把你改了';
+
+    }
+
+
+    console.log(typeof '123'); //'string'
+
+    console.log(typeof (typeof 123)); //'string'
+
+    function a(){}
+    console.log(typeof a); //'function'
+
+
+
+
+
+</script>
+</body>
+</html>

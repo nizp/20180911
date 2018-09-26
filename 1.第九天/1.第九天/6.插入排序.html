@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 插入排序；
+    // 原理： 从原有的数组中取出每一项，放入新的数组中；拿到最新的数组成员后，会从后向前进行比较，如果比后面一项小，且比前面一项大，那么将此项放入这个位置；
+    let  ary = [12,3,88,100,67,39,20,99];
+    let newAry = [];
+    newAry.push(ary[0]);// [12]
+    for(let i=1;i<ary.length;i++){
+        // 获取当前的数组成员项
+        // i =1   3
+        // i=2    88
+        // i=3    100
+        // i=4   67
+        let  cur = ary[i];
+        // 从新的数组的最后一项开始比较；
+        for(let j=newAry.length-1;j>=0;j--){
+            // i =1    [3,12,88]\
+            // j=1
+            if(cur<newAry[j]){
+                if(j===0){
+                    // 当满足比这一项小，且当前j===0;说明已经比较到了数组的第一项；将这一项放在数组的最前面；
+                    newAry.unshift(cur);
+                }
+            }else{
+                // 将最新的一项放在索引为j的这一项的后面；需要加1；
+                newAry.splice(j+1,0,cur);
+                // 一旦把该项放到数组中，需要中止里面的循环；
+                break;
+            }
+        }
+    }
+    console.log(newAry);
+
+    /* let  a = [12,3];
+    a.splice(1+1,0,88)
+    console.log(a);*/
+
+    let  ary = [12,3,88,100,67,39,20,99];
+    let newAry = [];
+    newAry.push(ary[0]);
+    for(let i=1;i<ary.length;i++){
+        let  cur = ary[i];
+        for(let j=newAry.length-1;j>=0;j--){
+            if(cur<newAry[j]){
+                if(j===0){
+                    newAry.unshift(cur);
+                }
+            }else{
+                newAry.splice(j+1,0,cur);
+                break;
+            }
+        }
+    }
+    console.log(newAry);
+
+
+</script>
+</body>
+</html>

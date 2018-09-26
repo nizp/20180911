@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   
+    <input type="button" value="按钮一(0)">
+    <input type="button" value="按钮二(0)">
+    <input type="button" value="按钮三(0)">
+   
+<script>    
+
+    /*
+        1.获取所有按钮，添加点击
+        2.给每个按钮加自定义属性，值为0
+        3.点谁加谁
+        4.写>2的判断，禁用按钮, else做的事显示value
+    */
+    //获取一组按钮
+    const btn = document.querySelectorAll('input');
+    /*
+        循环所有的按钮，给按钮加事件绑定函数
+    */
+    for(let i=0;i<btn.length;i++){
+        //通过这个循环给每个按钮加上了一个index的自定义属性，值为0
+        btn[i].index = 0;
+        btn[i].onclick = function(){
+        //点击当前按钮的时候，就让当前按钮index++
+            this.index ++;
+            //如果当前的index大于2，就禁止点击
+            if(this.index > 2){
+                this.disabled = true;
+            }else{
+                //当前index小于等于2的时候就显示点击次数。
+                this.value = `按钮一(${this.index})`;
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // let num = 0;
+    // btn.onclick = function(){
+    //     num ++;
+    //     if(num > 2){
+    //         btn.disabled = true;
+    //     }else{
+    //         btn.value = `按钮一(${num})`;
+    //     }
+        
+    //     if(num < 2){
+    //         num ++;
+    //         btn.value = `按钮一(${num})`;
+    //     }else{
+    //         btn.disabled = true;
+    //     }
+        
+    // }
+</script>
+</body>
+</html>

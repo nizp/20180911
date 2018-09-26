@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="t1"> +
+    <input type="text" id="t2">
+    <button id="btn">求值</button>
+<script>
+    const t1 = document.getElementById('t1');
+    const t2 = document.getElementById('t2');
+    const btn = document.getElementById('btn');
+    /*
+        parseFloat(字符串);
+
+            把字符串转成小数或者整数
+            浮点数的运算，在计算机中是不够精确的。
+            0.1 + 0.2 不是0.3
+
+        number.toFixed(num)
+            保留几位小数 
+                注意:
+                    保留的时候会看保留位数+1的值，会走四舍五入
+    */
+    
+    btn.onclick = function(){
+        let tv1 = t1.value;
+        let tv2 = t2.value;
+        console.log(parseFloat(tv1) + parseFloat(tv2));
+    }
+
+    let num = 1.43599999999999999999;
+
+    console.log(num.toFixed(2));
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button id="box">0</button>
+<script>
+    /*
+        ++   x+1  自增
+        --   x-1  自减
+        += 
+        
+        content.innerHTML = content.innerHTML + '<p>131</p>'
+        content.innerHTML += '<p>131</p>'
+
+        前自增 和 后自增
+        ++num   num ++
+    */   
+   let num = 1;
+// num = num + 1;
+// num += 2;
+    // num ++;
+    // ++ num;
+    // alert(num ++ == ++ num);
+    // alert(++ num == num++);
+//    console.log(num);
+
+    // alert(num++ == num++);
+
+    const box = document.getElementById('box');
+
+    box.onclick = function(){
+        box.innerHTML = ++ box.innerHTML;
+    }
+
+
+
+
+
+</script>
+</body>
+</html>

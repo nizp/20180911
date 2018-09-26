@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button>按钮一</button>
+    <button>按钮二</button>
+    <button>按钮三</button>
+    <div id="box">11111</div>
+<script>
+    /*
+        getAttribute('获取谁')  获取
+        setAttribute('定义谁','定义成什么')  定义
+    */
+    let arr = [11111,222222,333333];
+    const btns = document.querySelectorAll('button');
+    
+
+    for(var i=0;i<3;i++){
+        btns[i].setAttribute('index',i);
+        btns[i].onclick = function(){
+           // console.log(arr[this.getAttribute('index')])
+            // box.innerHTML = arr[this.getAttribute('index')];
+            // console.log(this.index);
+        }
+    }
+
+
+
+
+
+
+    
+    
+</script>
+</body>
+</html>

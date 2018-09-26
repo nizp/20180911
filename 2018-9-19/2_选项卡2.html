@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+.active{
+    background: yellow;
+}
+div{
+    width:150px;
+    height:50px;
+    border: 1px solid #000;
+    display: none;
+}
+div.show{
+    display: block;
+}
+
+</style>
+</head>
+<body>
+    <button class="active">新闻</button>
+    <button>体育</button>
+    <button>游戏</button>
+    <div class="show">风台</div>
+    <div>不穿队服</div>
+    <div>lrng夺冠了</div>
+
+<script>
+
+    /*
+        1.获取div,button元素,把默认class存起来
+        2.给每个按钮加事件、添加索引 for  
+        3.把刚才的class清除，当前的按钮加上active
+        4.当前点击按钮的索引，对应到div中
+        5.把这一次变成，下一次的上一次
+
+    */
+   const divs = document.querySelectorAll('div'),
+   btns = document.querySelectorAll('button');
+   let btn = btns[0]; //存默认的按钮
+
+    for(var i=0;i<btns.length;i++){
+        btns[i].index = i;
+        btns[i].onclick = function(){
+            btn.className = '';
+            //把第一次对应的divs清空
+            divs[btn.index].className = '';
+
+            this.className = 'active';
+            divs[this.index].className = 'show';
+
+            btn = this; //把这次按钮变为下一次的，上一次
+        }
+    }
+
+    
+   
+
+</script>
+</body>
+</html>

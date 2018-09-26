@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   <input type="text" id="txt">
+   <button id="btn">提交</button>
+<script>
+    /*
+        判断才有逻辑，才能叫编程语言。
+
+        if(条件,会转化为布尔值){
+
+        } else {
+
+        }
+        如果怎么样进if，否则进else
+
+        if(条件一){
+
+        }else if(条件二){
+
+        }else{
+            //第一个条件和第二个条件都不满足
+        }
+    */
+    // if(1){
+    //     console.log('真');
+    // }else{
+    //     console.log('假');
+    // }
+
+    let txt = document.getElementById('txt');
+    let btn = document.getElementById('btn');
+
+    btn.onclick = function(){
+        let tV = txt.value;
+        if(Number(tV) >= 90){
+            if(Number(tV) >= 95){
+                alert('恭喜你,月入30k!~');
+            }else{
+                alert('恭喜你,月入20k!~');
+            }
+        }else if(Number(tV) >= 60){
+            alert('恭喜你,月入12k!~');
+        }else{
+            alert('恭喜你,转行失败!~');
+        }
+    }
+
+    // if(1){
+    //     console.log('真');
+    // }else{
+    //     console.log('假');
+    // }
+
+
+</script>
+</body>
+</html>

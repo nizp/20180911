@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 数组的排序
+    // 1.sort 排序； 实现从小到大排序；
+    //let  ary = [12,3,88,100,67,39,20,99];
+    let ary = [1,2,3,4,5,6,7,8];
+    for(let j=0;j<ary.length-1;j++){
+        // j=0; 将最大值放在数组的最后面
+        // j=1 将数组第二大值放在了数组的倒数第二个位置
+        // j=2 将数组第三大值放在了数组的倒数第三个位置
+        // 外面循环一次，里面循环八次；
+        let flag = true;// 标识的作用；
+        for(let i=0;i<ary.length-1-j;i++){
+            console.log(1);
+            if(ary[i]>ary[i+1]){
+                // 说明前面一项比后面一项大；
+                // 让这两项交换位置；用第三方变量进行承接；把第二项给了temp;然后把第一项给了第二项；又把temp给了第一项；
+                // 循环了一整轮，将数组中的最大值放在了数组的最后面；
+                let temp= ary[i+1];
+                ary[i+1] = ary[i];
+                ary[i] = temp;
+                flag = false;
+            }
+        }
+        if(flag){
+            break;// 终止整个大循环；
+        }
+    }
+    console.log(ary);
+
+
+    let ary = [1,2,3,4,5,6,7,8];
+    for(let j=0;j<ary.length-1;j++){
+        let flag = true;
+        for(let i=0;i<ary.length-1-j;i++){
+            console.log(1);
+            if(ary[i]>ary[i+1]){
+                let temp= ary[i+1];
+                ary[i+1] = ary[i];
+                ary[i] = temp;
+                flag = false;
+            }
+        }
+        if(flag){
+            break;
+        }
+    }
+    console.log(ary);
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width:200px;
+            height:50px;
+            text-align: center;
+            line-height: 50px;
+            border: 1px solid blue;
+            border-radius: 10px;
+            margin:100px auto;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<script>
+    let box = document.getElementById("box");
+    function getCode() {
+        let str = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        // 一共有62个字符；只需要产生一个随机的索引；【0-61】
+        // 通过随机的索引，去获取随机的字符；
+        let newStr = "";
+        let i = 0;
+        while(i<4){
+            // 每循环一次，获取一个0-61 的随机数；获取四个；
+            let index = Math.round(Math.random()*61);
+            let cur = str[index];
+            // 如果该字符之前不存在，那么返回-1；如果存在大于-1；不需要i++;
+            // "abc"   "ABC"   "a" "A"
+            if(newStr.toUpperCase().indexOf(cur.toUpperCase())===-1){
+                newStr+=cur;
+                i++;
+            }
+        }
+        box.innerHTML = newStr;
+    };
+    box.onclick =getCode;
+    getCode();
+
+
+    function getCode() {
+        let str = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        let newStr = "";
+        let i = 0;
+        while(i<4){
+            let index = Math.round(Math.random()*61);
+            let cur = str[index];
+            if(newStr.toUpperCase().indexOf(cur.toUpperCase())===-1){
+                newStr+=cur;
+                i++;
+            }
+        }
+        box.innerHTML = newStr;
+    };
+</script>
+</body>
+</html>

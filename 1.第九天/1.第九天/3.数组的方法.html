@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 数组 对象；在项目中，后端返回给前端的数据一般是数组或者是对象；
+    // pop  push  shift  unshift  splice  slice  sort  reverse    join  concat  indexOf  lastIndexOf  forEach  map  every  some  filter
+
+    // 1. pop
+
+    //let ary = [1,29,9,"a",101];
+    //let a = ary.pop();
+    //console.log(a);// [1,29,9,"a"]
+    // 2.push
+    //console.log(ary.push(108,109));
+    // 3.shift
+
+    // 4.unshift
+
+    //5.splice :
+    //console.log(ary.splice(2, 2));
+    //console.log(ary.splice);
+    //ary.splice(2,2,1)
+    // console.log(ary.splice(2,0,1));
+    //let ary = [18,9,90,88,101];
+    // 6.slice :
+   /* console.log(ary.slice(-3,-1));
+    console.log(ary);*/
+
+   // 7.sort :
+   /*let a =ary.sort(function(a,b){return b-a});
+   console.log(a);*/
+   // 8.reverse
+   // ary.reverse();
+    //console.log(ary);
+    // 9.concat
+   //let newAry = [99,88,66]
+    //console.log(ary.concat());
+    /*let ary = [18,9,90,88,101];
+    let a  = ary.concat(12,13,14).pop()
+    console.log(a);// [18,9,90,88,101,12,13,14]
+    console.log(ary);*///[18, 9, 90, 88, 101]
+    
+    // 10.join
+    /*console.log(ary.join(""));
+    console.log(ary);*/
+
+    // 11.indexOf
+    //console.log(ary.indexOf(10));
+    // 12.lastIndexOf
+    // 13.forEach
+   /*let b =  ary.forEach(function (item,index) {
+        //数组有多少项，那么就执行多少次
+        console.log(item);
+        console.log(index);
+        return 1;
+    })
+    console.log(b);// undefined
+    let a =  ary.map(function (item,index) {
+        //数组有多少项，那么就执行多少次
+        console.log(item);
+        console.log(index);
+        return 100;
+    })*/
+    //console.log(a);
+
+    let ary =  [18,9,90,88,90,101];
+    /*let a = ary.every(function (item,index) {
+        console.log(1);
+        return item>5
+    });
+    console.log(a);*/
+    /*let a = ary.some(function (item,index) {
+        return item>200
+    })
+    console.log(a);*/
+    // 只要0  NaN "" null  undefined 转布尔是false；其他都是true；
+    let a = ary.filter(function (item,index) {
+        return !item>60;
+    });
+    console.log(a);
+
+</script>
+</body>
+</html>

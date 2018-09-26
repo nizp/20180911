@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        filter:
+            返回一个过滤后数据
+    */    
+    let arr = [1,2,3,4];
+
+    let arr2 = arr.filter(function(el,i,all){
+        if(el > 2){
+            return el;
+        }
+    });
+    console.log(arr2);
+
+</script>
+</body>
+</html>

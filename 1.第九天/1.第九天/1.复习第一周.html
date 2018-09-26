@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 第一周 ：数据类型  ：
+    // 基本数据类型： number  string  boolean  null  undefined
+    // 和复合数据类型 : 对象 数组  正则  Date  函数   Math
+    // 操作语句： 循环语句和判断语句 ： for 循环 for in  while循环
+    for(let i =0;i<10;i++){
+
+    }
+    // 1.for循环
+    /*let  ary = [1,2,3];// 数组的length就是数组成员的个数；
+    console.log(ary.length);
+    for(let j =0;j<obj.length;j++){
+        console.log(100);
+    }*/
+    //
+    //let ary = [a,b]
+  /*  let a = 100;
+    let obj = {a:a,b:2};
+    console.log(obj.a);
+    console.log(obj["a"]);
+    console.log(obj.length);*/
+    // for in 循环： 一般用于循环数组对象；
+    // 获取对象的属性名对应的属性值；
+    // 在对象中，所有的属性名都是以字符串形式存在；
+      // 1. 对象名.属性名
+      // 2. 对象名["属性名"]
+  /*  for(let key in obj){
+        console.log(typeof key);// "a"  "b"
+        console.log(obj.key);
+    }*/
+
+    // while： 不知道循环多少次；
+    // 函数：定义 返回值 参数 执行 arguments
+    //函数分为两部分： 定义  执行
+    // 基本数据类型和复合数据类型的区别：
+    // 赋值 赋址；一个是操作值的，一个是操作空间地址的；
+    /*let a = 1;
+    let b  = {h:"zfpx"};// b 存储了当前的空间地址；是一个十六进制的地址xxxfff000
+    function a() { // a 是一个空间地址；
+        console.log(11);
+    }
+    a();*/
+    // 定义
+    // 1. 开辟一个空间地址
+    // 2. 把函数体中代码当做字符串存储这个空间下
+    // 3. 把这个空间地址赋值给这个函数名；
+    // 执行
+      // 1. 首先形成一个私有的作用域
+      // 2. 形参赋值
+      // 3. 变量提升
+      // 4. 代码从上到下运行
+      // 5. 栈内存是否销毁；
+
+    // 形参： 函数定义的入口
+    // 实参 ： 函数执行的传的参数
+    // arguments ： 是函数天生自带的参数集合；
+    // return : 1.把函数中的值返回出去  2.终止代码运行；
+/*   function B(v) {
+       console.log(v);// undefined
+       console.log(arguments);// 实参集合 对象；
+       // 在函数体中定义的变量都是私有变量；函数体中的变量外界是 不可以访问到的；
+       let a = 1;
+       let b = 2;
+       return a;
+   }
+   let g =  B();
+    console.log(g);*/
+
+
+</script>
+</body>
+</html>

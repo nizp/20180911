@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+#box{
+    border: 1px solid #000;
+}
+</style>
+</head>
+<body>
+    key：<input type="text">
+    value：<input type="text">
+    <button>变</button> 
+    <div id="box"></div>
+<script>
+    const btn = document.querySelector('button');
+    const box = document.querySelector('#box');
+    const txt = document.querySelectorAll('input');
+    /*
+        value获取表单元素中的内容
+    */
+
+    btn.onclick = function(){
+        // console.log(txt.value)
+        // let v = txt.value;
+        box.style[txt[0].value] = txt[1].value;//'200px';    
+    }
+
+
+</script>
+</body>
+</html>

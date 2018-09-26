@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+#box{
+    width:300px;
+    height: 50px;
+    border: 1px solid #000;
+}
+#on{
+    transition: 1s;
+    overflow: hidden;
+}
+#on.hide{
+   height: 0;
+}
+#on.show{
+    height: 50px;
+}
+.hide2{
+    display: none;
+}
+.show2{
+    display: block;
+}
+
+
+</style>
+</head>
+<body>
+    <div id="box">
+        <div id="k" class="show2">
+            <p id="font">珠峰培训</p>
+            <button id="rep">修改内容</button>
+        </div>
+        <div id="on" class="hide">
+            <input type="text"  id="txt"/>
+            <button id="add">确定</button>
+            <button id="esc">取消</button>
+        </div>
+    </div>
+<script>
+    /*
+        因为class是关键字，不能用来修改class
+
+        如果要修改class名字要用className
+
+    */
+    const repBtn = document.getElementById('rep'); //修改按钮
+    const on = document.getElementById('on'); //修改盒子
+    const k = document.getElementById('k');//包着修改内容的盒子
+    const font = document.getElementById('font');
+    const txt = document.getElementById('txt');
+    const esc = document.getElementById('esc');
+    const add = document.getElementById('add');
+
+    /*
+       1. 点击修改内容按钮，出来修改框
+    */
+    repBtn.onclick = function(){
+        on.style.transition = '1s';
+        on.className = 'show';
+        k.className = 'hide2';
+        txt.value = font.innerHTML;
+    }
+
+    /*
+        2.点击esc还原
+    */
+    esc.onclick = fn;
+    function fn(){
+        on.style.transition = 'none';
+        on.className = 'hide';
+        k.className = 'show2';
+    }
+    /*
+        点击add，确定修改p标签中的内容
+    */
+    add.onclick = function(){
+        font.innerHTML = txt.value;
+        // esc.onclick();
+        fn();
+    }
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

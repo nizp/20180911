@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        写出JS中的数据类型都有哪些：
+            简单类型:
+                number、boolean、string、null、undefined
+            复合类型:
+                object、symbol
+
+
+        数据类型检测的方法(至少写出两种)：
+            typeof
+            instanceof
+            constructor
+            Object.prototype.toString [object Object]
+            Array.isArray()
+
+
+       简要描述基本数据类型和引用数据类型的区别：
+            存储方式不一样，简单数据类型存在栈中
+            复合数据类型存在堆中。
+           
+            简单类型的赋值就是赋值
+            复合类型的赋值是赋址
+
+       怎么样才可以把传递给函数的参数值接收到(两种办法)：
+
+            1.读形参，如果没有传实参为undefined
+            2.通过arguments去获取
+       
+
+         JS中设置定时器的两种方法：
+            炸一次: setTimeout(function(a){},1000,5)
+            连续炸: setInterval(function(a){},1000,5)
+    */  
+
+    setTimeout(function(a){
+        console.log(a);
+    },1000,5);
+    
+    // let a = 10; //栈
+    // let b = a;
+    // b ++;
+    // console.log( a );
+
+    // let arr = [1,2]; //堆
+    // let arr2 = arr;
+    // arr2.push(3);
+
+    // console.log(arr);
+
+
+    function fn(a){
+        // console.log(a);
+        console.log(arguments[0]);
+        return a;
+    }
+    // fn(5);
+    // let a = 10;
+    // console.log(a);//报错
+
+    // console.log( fn(5) );
+    // let y = fn(5);
+    // console.log(y);
+    
+</script>
+</body>
+</html>

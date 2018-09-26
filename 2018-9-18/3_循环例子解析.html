@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <!-- <p>小明:</p>
+        <ul>
+            <li>xiao</li>
+            <li>xiao</li>
+        </ul> -->
+    </h1>
+<script>
+    let 小明 = {
+            home:'杭州',
+            job:'web前端',
+            age:28,
+            mm:[
+                {
+                    name:'小红',
+                    age:16,
+                    job:'高中生'
+                },
+                {
+                    name:'小如花',
+                    age:14,
+                    job:'初中生'
+                }
+            ]
+        }
+    
+    let p = '<p>小明:';
+    let ul = '<ul>';
+
+    // p += '123'; //<p>小明:home
+    for(let attr in 小明){
+        /*
+            小明:home是杭州,age是28
+        */
+        if(attr === 'mm'){
+            let mm = 小明.mm,//[{},{}];
+            len = mm.length;
+            p += '他有'+ len + '个妹妹';
+
+            /*
+                生成ul ，li
+            */
+           for(let i=0;i<len;i++){
+               ul += `
+                    <li>
+                        名字叫:${mm[i].name},
+                        今年${mm[i].age}岁,
+                        职业是:${mm[i].job}
+                    </li>
+               `;
+           }
+           ul += '</ul>';
+        //    console.log(ul);
+        }else{
+            p += attr + '是' + 小明[attr] + ',';
+        }
+        // console.log(p);
+    }
+
+    
+
+    /*
+        p += 'home'   -> <p>小明:home
+        p += 'job'    -> <p>小明:home job
+        p += 'age'    -> <p>小明:home job age
+        p += 'mm'    -> <p>小明:home job age mm
+    */
+
+    p += '</p>';//p = '<p>小明:' + '</p>'; p = p + '</p>';
+    
+    p += ul;
+
+    box.innerHTML = p;
+
+    
+
+</script>
+</body>
+</html>

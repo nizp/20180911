@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+.active{
+    background: yellow;
+}
+div{
+    width:150px;
+    height:50px;
+    border: 1px solid #000;
+    display: none;
+}
+div.show{
+    display: block;
+}
+
+</style>
+</head>
+<body>
+    <button class="active">新闻</button>
+    <button>体育</button>
+    <button>游戏</button>
+    <div class="show">风台</div>
+    <div>不穿队服</div>
+    <div>lrng夺冠了</div>
+
+<script>
+
+    /*
+        1.获取div,button元素
+        2.给每个按钮加事件、添加索引 for  
+        3.点击大清洗 ，div,button
+        4.当前的按钮加上active
+        5.当前点击按钮的索引，对应到div中
+
+    */
+   const divs = document.querySelectorAll('div'),
+   btns = document.querySelectorAll('button');
+   let num = 0;
+    //循环中不只可以做一件事
+    for(var i=0;i<btns.length;i++){
+        // num ++;
+        btns[i].index = i;//重点
+        btns[i].onclick = function(){
+            for(var j=0;j<btns.length;j++){
+                // btns[j].className = '';
+                // divs[j].className = '';
+                btns[j].className = divs[j].className = '';
+            }
+            // alert(this.index);
+            // this.className = 'active';
+            btns[this.index].className = 'active';
+            divs[this.index].className = 'show';
+        }
+    }
+    // console.log(num+'次');
+
+    
+   
+
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+.y{
+    color:gold;
+}
+</style>
+</head>
+<body>
+    <input type="text" id="txt">
+    <input type="text" id="txt2">
+    <button id="btn">搜索</button>
+    <button id="btn">替换</button>
+    <div id="div">
+        习近平表示，值此2018年国际和平日纪念活动举办之际，我谨代表中国共产党、中国政府和中国人民，并以我个人的名义，向纪念活动的举办致以热烈的祝贺！向出席纪念活动的各国嘉宾、民间和平组织、安全智库代表和各界人士表示诚挚的欢迎。
+        习近平指出，和平始终是人类社会的普遍期待与殷切向往。当今世界，和平与发展已成为时代主题，但各国面临的安全威胁日益复杂，战争威胁始终挥之不去。中华民族热爱和平，中国人民深知和平之可贵，中国坚定不移走和平发展道路，永远是世界和平的建设者、全球发展的贡献者、国际秩序的维护者。
+        <!-- <span class="y">我</span>的盛大 -->
+    </div>
+<script>
+    let inner = div.innerHTML; //没有变的
+    btn.onclick = function(){
+        let v = txt.value.trim();
+        // console.log(v,!!v);
+        if(!v){ //没有内容 
+            alert('亲!请检查填写的内容!~X');
+            return; //如果是没有内容的，下面的代码就不执行
+        }
+        // alert(1);
+        /*
+            找一找，页面中有没有要查找的字符
+        */
+       
+        if(inner.includes(v)){ //有
+            let arr = inner.split(v);
+            div.innerHTML = arr.join('<span class="y">'+ v +'</span>');
+            console.log(inner)
+        }else{
+            //没有
+            alert('回去好好反省下,是不是在捣乱?');
+        }
+
+    }
+</script>
+</body>
+</html>

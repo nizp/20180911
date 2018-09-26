@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button>按钮1</button>
+    <button>按钮2</button>
+    <button>按钮3</button>
+    <button>按钮4</button>
+    <button>按钮5</button>
+<script>
+    /*
+        当点击按钮的时候，for循环早就结束了
+        函数体内没有i，会去外面找i，而此时的i，
+        已经是循环之后的结果数了
+    */
+    const btns = document.getElementsByTagName('button');
+    for(var i=0;i<btns.length;i++){
+        // alert(i);  //5,0
+        // console.log(i);
+        btns[i].onclick = function(){
+            alert(i);//5
+        }
+    }
+    console.log(i);
+    
+</script>
+</body>
+</html>

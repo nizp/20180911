@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">下一站</button>
+    <p id="p"></p>
+<script>
+    /*
+        13号:  
+    */
+    let arr = ['西直门','大钟寺','五道口','上地','西二旗','龙泽','回龙观','霍营','立水桥','东直门'];
+    let num = 0;
+    p.innerHTML = arr[0];
+    btn.onclick = function(){
+        num ++;
+        // if(num >= arr.length){
+        //     alert('到站了')
+        // }else{
+        //     p.innerHTML = arr[num];
+        // }
+        p.innerHTML = arr[num%=arr.length];
+    }
+
+</script>
+</body>
+</html>

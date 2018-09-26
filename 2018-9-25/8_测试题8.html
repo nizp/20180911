@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+/* li:hover{
+    background: pink;
+} */
+</style>
+</head>
+<body>
+    <ul id='ul1'>
+        <li>1</li>   
+        <li>2</li>   
+        <li>3</li>   
+        <li>4</li>
+    </ul>
+<script>
+    /*
+        <body>
+            <ul id=’ul1’>
+                <li></li>   
+                <li></li>   
+                <li></li>   
+                <li></li>
+            </ul>
+        </body>
+按照上述HTML结构编写对应的JS代码，实现如下的需求：(能写出的都写出来，这样根据编写情况会酌情给分)
+->获取#ul1下的所有li,实现奇数行和偶数行的隔行变色 (奇数行红色|偶数行绿色)  ~~不要骂出题的色彩白痴哈
+->鼠标滑过每一个li让当前行的背景颜色变为粉色(pink)，鼠标离开恢复开始的颜色
+->鼠标点击每一个li弹出“我是第N个li” (n是每一个li的索引+1)
+
+
+        onmouseover 鼠标移入事件
+        onmouseout  鼠标移出事件
+    */    
+
+   const ul = document.getElementById('ul1');
+   const lis = ul.getElementsByTagName('li');
+   for(let i=0;i<lis.length;i++){
+       if( i%2 ){
+            lis[i].style.background = 'green';
+            // lis[i].bg = 'green';
+            lis[i].setAttribute('bg','green');
+       }else{  
+            lis[i].style.background = 'red';
+            // lis[i].bg = 'red';
+            lis[i].setAttribute('bg','red');
+       }
+        // lis[i].style.background = i%2?'green':'red';
+        lis[i].onmouseover = function(){
+            this.style.background = 'pink';
+        }
+        lis[i].onmouseout = function(){
+            // alert(2);
+            this.style.background = this.getAttribute('bg');
+            // console.log(this.getAttribute('bg'));
+        }
+        lis[i].onclick = function(){
+            alert('我是第'+(i+1)+'个li');
+        }
+    }
+
+
+
+
+
+</script>
+</body>
+</html>

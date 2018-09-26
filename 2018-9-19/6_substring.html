@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        substring:
+            截取指定位置（范围）的字符串
+            2个参数
+                起始位置 
+                第一种理解:
+                    结束位置，但不包含结束位置（结束位置-1）
+
+                第二种理解:
+
+                    结束位置，length
+
+                第三种理解
+
+                    知道截取多少个，起始位置+个数
+
+
+           注意:
+             如果只传一个参数，那么会从起始位置起到整个字符串结束
+    */
+    let str = '1.m.321.t.ml.txt.html';
+
+    // console.log(str.substring(5));
+    // console.log(str.substring(2,4));
+    // console.log(str.substring(12,19));
+    // console.log(str.substring(8,11));
+    // console.log(str.substring(4,7));
+        // console.log(str.substring(10,12));
+    console.log(str.substring(str.lastIndexOf('.')+1));
+
+
+
+
+</script>
+</body>
+</html>

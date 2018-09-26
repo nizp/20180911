@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+#btn1{
+    background: yellow;
+}
+#btn2{
+    background: red;
+}
+#box{
+    width:100px;
+    height: 100px;
+    border:1px solid #000;
+}
+</style>
+</head>
+<body>
+    <!-- <button onclick="alert('你动我了')">点击</button> -->
+
+    <button id="btn1">点击1</button>
+    <button id="btn2">点击2</button>
+    <div id="box"></div>
+<script src="index.js"></script>
+<script>
+    /*
+        行内注入js
+            alert 系统的提示框，里面可以放数据，
+            但是默认会被数据的toString方法去默认转换
+
+            console.log()  在浏览器中打印
+
+        script尽量放在body的上面，是能够获取到页面内容的
+        **代码从上往下执行
+
+        在script标签中去写代码
+
+            1.获取元素（标签）
+
+                通过ID的方式去获取元素。
+                    document.get Element By Id('ID名')
+
+                    . 的
+                
+                    页面中的通过id的方式去获取元素
+
+            事件:
+                点击，鼠标滚轮，触摸屏幕，键盘
+
+                点击 -> onclick
+                鼠标移入 ->  onmouseover
+
+        外链:
+            <script src="文件地址">
+
+
+        = 赋值
+                *** 把右边的值赋给左边
+
+        function 函数
+
+            把可以执行的js代码放到一个叫做function的容器里面
+
+    */   
+    // console.log( document.getElementById('btn2') );
+
+    // document.getElementById('btn1').onclick = function(){
+    //     // alert(1);
+    //     console.log(123);
+    // }
+
+    // document.getElementById('btn2').onclick = function(){
+    //     // alert(3);
+    //     // console.log(3);
+    // }
+
+        // document.getElementById('btn1').onclick = function(){
+        //     document.getElementById('box').style.display = 'none';
+        // }
+        // document.getElementById('btn2').onclick = function(){
+        //     document.getElementById('box').style.display = 'block';
+        // }
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        every
+            查看数组中的条件是否全部一致，一致true，只要有一个不一致就是false
+       全选【】   [√][][√][√]
+    */    
+    // let arr = [true,true,true];
+    let arr = [false,false,false];
+    let a = arr.every(function(el,i){
+        return !el;
+    });
+    console.log(a);
+
+</script>
+</body>
+</html>

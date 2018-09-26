@@ -1,0 +1,147 @@
+写出JS中的数据类型都有哪些：
+            简单类型:
+                number、boolean、string、null、undefined
+            复合类型:
+                object、symbol
+
+
+        数据类型检测的方法(至少写出两种)：
+            typeof
+            instanceof
+            constructor
+            Object.prototype.toString [object Object]
+            Array.isArray()
+
+
+       简要描述基本数据类型和引用数据类型的区别：
+            存储方式不一样，简单数据类型存在栈中
+            复合数据类型存在堆中。
+           
+            简单类型的赋值就是赋值
+            复合类型的赋值是赋址
+
+       怎么样才可以把传递给函数的参数值接收到(两种办法)：
+
+            1.读形参，如果没有传实参为undefined
+            2.通过arguments去获取
+       
+
+         JS中设置定时器的两种方法：
+            炸一次: setTimeout(function(a){},1000,5)
+            连续炸: setInterval(function(a){},1000,5)
+页面中有这样一个DIV标签
+            <div id=’div1’ class=’box’></div> ，
+        想获取到这个元素可以用哪些方法(至少两种办法,可以不兼容)
+
+        1.用Id
+            document.getElementById('div1');
+            document.querySelector('#div1');
+            document.querySelectorAll('#div1')[0];
+
+        2.用class
+            document.getElementsByClassName('box');
+            document.querySelector('.box');
+            document.querySelectorAll('.box')[0];
+
+        3.用标签名:
+            document.getElementsByTagName('div')[0];
+            document.querySelector('div');
+            document.querySelectorAll('div')[0];
+
+
+页面中有这样一个DIV标签
+            <div id=’div1’ class=’box’></div> ，
+        想获取到这个元素可以用哪些方法(至少两种办法,可以不兼容)
+
+        1.用Id
+            document.getElementById('div1');
+            document.querySelector('#div1');
+            document.querySelectorAll('#div1')[0];
+
+        2.用class
+            document.getElementsByClassName('box');
+            document.querySelector('.box');
+            document.querySelectorAll('.box')[0];
+
+        3.用标签名:
+            document.getElementsByTagName('div')[0];
+            document.querySelector('div');
+            document.querySelectorAll('div')[0];
+
+
+       动态创建一个p标签，并且把其添加到body的末尾位置：
+
+            
+
+       
+       获取上一个哥哥元素节点：
+            target.previousElementSibling();
+       
+       字符串截取的三种方法：
+            substring
+            substr
+            slice
+
+et arr = [1,2,6,7,3,4];
+    // console.log(Math.max(1,2,3,4,5,6))
+    // let arr2 = [];
+    // arr2.push(Math.max(...arr));
+    // console.log(Math.max(...arr));
+    // console.log(Math.min(...arr));
+
+
+Infinity正无穷大  -Infinity负无穷大
+
+
+function sum(){
+        //终止递归
+        if(arr.length >= 4)return;
+        //找一个随机
+        let s = str[Math.floor(Math.random()*str.length)];
+        //不重复才push
+        if(!arr.includes(s))arr.push(s);
+        //继续循环
+        sum();
+    }
+
+
+
+
+
+
+
+
+
+1、git与github
+
+git版本控制工具
+
+版本控制  svn
+
+day 1  a   0.1
+day 2  a + b  0.2
+day 3  a
+day 4  a + b
+
+b  a
+
+a -> b  
+
+
+github程序员“基友”网站、代码远程托管的网站
+
+每提交一次会有绿点，提交的越多，点就越深 ->所以建议大家每天的课件敲完之后都传到github上
+
+免费给一个私有域名，内容是静态的
+
+
+安装github
+
+ https://git-scm.com/
+
+
+
+
+
+
+

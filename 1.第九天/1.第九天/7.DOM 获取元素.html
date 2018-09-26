@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box"><div id="a"></div></div>
+<div class="box1">
+    <span></span>
+    <span></span>
+</div>
+<div class="box1"></div>
+<div class="box1">
+    <span></span>
+    <span></span>
+</div>
+<div class="box1" ></div>
+<input type="text" name="b">
+<script>
+    // id : 是唯一的；不要在一个页面中使用同一个id;
+    // 在JS中获取到的元素是对象数据类型的；
+    // 1. getElementById ： 通过id获取元素；
+        // get  获取
+        // element 元素
+        // by  : 通过
+        // id :
+    // getElementById这个方法的上下文只能是document；不可以是其他元素；
+    //let  con = document.getElementById("box");
+    //console.log(con.getElementsByClassName("a")[0]);
+    /*console.log(con.getElementById("a"));
+    console.log(typeof con);// "object"
+    con.style.height = "50px";*/
+
+
+    // 2.getElementsByClassName: 获取到的是一个集合；是一个类数组；
+    // 在IE8 以下是不兼容的；
+    /*let con = document.getElementsByClassName("box1")[1];
+        console.log(con);
+        con.style.height ="100px";
+        let  obj = {};
+        obj.height = 100;
+        let  a = [{}];
+        a.height = 199;
+    */
+
+    // 3. getElementsByTagName : 通过标签名来获取元素;
+    // 上下文可以是元素；
+    //let div= document.getElementsByClassName("box1")[0];
+    //console.log(div.getElementsByTagName("span"));
+
+    // 经常应用于移动端；
+    // 4. querySelector :获取的是唯一的；
+    //document.querySelector("#box")
+    console.log(document.querySelector(".box1"));
+    //$("")
+
+    // 5.querySelectorAll
+    console.log(document.querySelectorAll(".box1"));
+
+    // 6.
+    console.log(document.documentElement);
+    // 7.
+    console.log(document.body);
+
+    // 8.document.getElementsByName : 通过name属性获取元素;
+    // 一般应用于表单元素；
+
+    console.log(document.getElementsByName("b"));
+</script>
+</body>
+</html>

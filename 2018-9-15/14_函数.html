@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        function  函数
+
+        函数声明
+            fn();
+            function fn(){}
+            fn();
+        函数表达式
+            let fn = function(){}
+            fn();
+
+        核心原理
+            1.开空间
+            2.函数的内容当字符串存入到堆中
+            3.空间第一赋值给变量
+
+            步骤:
+                创建函数
+                参数赋值
+                形成新的作用域
+                预解析
+                走上下文
+                变量或参数销毁
+
+        形参:形式上的参数
+        实参:实实际际的参数
+
+        参数与参数之间用逗号分隔
+        形参和实参必须要一一对应
+
+
+    */   
+    // let fn = function(){
+    //     alert(1);
+    // }
+    // fn();  
+
+    // function fn(b,a,c,g,f,z,y){
+    //     // alert(a);
+    //     console.log(y);
+    // }
+    // fn(10,true,{},function(){}); //实参，任意数据类型
+
+    
+    /*
+        arguments  函数实参的集合，类数组
+    */
+    function fn(){
+        // console.log(arguments);
+        let num = 0;
+        for(let i=0;i < arguments.length; i++){
+            num += arguments[i];
+        }
+        console.log(num);
+    }
+    // fn(10,20);
+    fn(1,2,3,3,4);
+
+
+</script>
+</body>
+</html>

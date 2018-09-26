@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="txt">
+    <button id="btn">点击</button>
+<script>
+    /*
+        为什么要有数据类型？
+            以为数据类型进行运算，
+            不同的数据类型它的结果就不一样。
+        
+        数字:
+            1,2,3,0,-1,1.2
+
+        字符串:
+            '' 或者 ""
+            '1','2','true','你好'
+
+            标准写法:new String()
+            简写:'' 或者 ""
+
+            length属性 
+                长度 number
+
+                字符串的length只能读，不能写。
+
+        typeof:
+            去查看数据类型
+
+            注意:
+                对象、正则、数组、null  都会输出object
+
+        ***  HTML中的所有文本（value,href,src）都是字符串
+    */  
+
+    const txt = document.getElementById('txt');
+    const btn = document.getElementById('btn');
+
+    // btn.onclick = function(){
+    //     console.log(txt.value + 100);
+    // }
+
+   
+//    console.log(1+'100');
+
+    console.log(typeof '1'); //string
+    console.log(typeof 1); //number
+    console.log(typeof true);//boolean
+    console.log(typeof {}); //object
+    console.log(typeof undefined);// undefined
+    console.log(typeof []);//object
+    console.log(typeof null);//object
+    console.log(typeof Symbol());//Symbol
+
+    // let s = new String('a');
+    let s2 = "abcdef";
+    let s3 = 'abcdef';
+
+    s2.length = 1;
+    console.log(s2);
+    console.log(s3);
+   
+
+
+</script>
+</body>
+</html>

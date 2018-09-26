@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+.active{
+    background: yellow;
+}
+div{
+    width:150px;
+    height:50px;
+    border: 1px solid #000;
+    display: none;
+}
+div.show{
+    display: block;
+}
+
+</style>
+</head>
+<body>
+    <button class="active">新闻</button>
+    <button>体育</button>
+    <button>游戏</button>
+    <div class="show">风台</div>
+    <div>不穿队服</div>
+    <div>lrng夺冠了</div>
+
+<script>
+
+    /*
+        定点清除:
+        1.获取div,button元素,存索引值
+        2.循环加事件，添加索引
+        3.把存储的索引值的按钮class清掉
+        4.把存储的索引值对应的div也清掉
+        5.把当前的按钮class加上,把当前按钮对应的divs的class加上
+        6.把索引值改为这次的，以便下次使用
+
+    */
+   const divs = document.querySelectorAll('div'),
+   btns = document.querySelectorAll('button');
+   let index = 0,len = btns.length;
+   for(var i=0;i<len;i++){
+       /*
+            一个东西需要对应（关联）的时候，立马想到索引
+       */
+        btns[i].index = i;
+        btns[i].onclick = function(){
+            // btns[index].className = '';
+            // divs[index].className = '';
+            btns[index].className = divs[index].className = '';
+            // this.className = 'active';
+            btns[this.index].className = 'active';
+            divs[this.index].className = 'show';
+            index = this.index;
+        }
+   }
+
+
+
+   
+
+
+</script>
+</body>
+</html>

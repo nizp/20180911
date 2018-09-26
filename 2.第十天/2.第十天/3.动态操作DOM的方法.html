@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box" flag="a">
+    <div></div>
+    <div id="last"></div>
+    <div></div>
+</div>
+<div id="a">
+
+</div>
+<script>
+    let box = document.getElementById("box");
+    // 1.createElement； 创建一个元素
+    // createElement();// 参数： 字符串； 是一个标签名；
+    //console.log(document.createElement);
+    //console.log(document.createElement("p"));
+    //let  p = document.createElement("p")
+    // 2.appendChild:向元素末尾添加一个子节点;
+    // 容器.appendChild(新元素)
+    //box.appendChild(p);
+
+    // 3.removeChild : 删除一个子节点
+    // removeChild : 接收一个节点类型的；参数是要删除的这个元素；
+    let last = document.getElementById("last");
+    //box.removeChild(last)
+
+    // 4.replaceChild : 替换子节点
+    // replaceChild(new,old); 用新的元素替换原有的元素；
+    //let  p = document.createElement("p");
+    //box.replaceChild(p,last);
+
+    // 5.insertBefore: 将新的元素插入到指定元素的前面；
+    //insertBefore(new,old)
+   // box.insertBefore(p,last)
+
+    // 6.cloneNode ;克隆元素;接收一个布尔类型的参数；true,false ;如果不传参数，默认是false；
+    // 浅克隆
+    // 深克隆
+    //console.log(box.cloneNode(true));
+    //a.appendChild(box.cloneNode(true))
+
+    // 7.getAttribute: 获取行间属性；
+    //  setAttribute : 设置行间属性
+    //  removeAttribute: 删除行间属性；
+    //console.log(box.getAttribute("flag"));
+    //box.setAttribute("o",1)
+    box.removeAttribute("flag");
+
+</script>
+</body>
+</html>

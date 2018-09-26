@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        + (- * /  %) 括号中的符号转成数字类型
+        %:取余（模）
+            a > b   取余
+            a < b   a
+            a == b  0
+        ++ -- 
+        += *= /= %=
+        > < == ===  >= <=
+        != !==
+        || &&
+        !
+        ? :
+    */  
+    /*
+        除了symbol，别的数据类型 + 字符串都是字符串
+        隐式类型转换 
+            系统偷偷把你转了 -> toString()
+
+        alert()会调用数据的toString方法
+
+    */
+    // console.log(1 + 1); //2
+    // console.log('1' + 20); //120;
+    // console.log(typeof + '10'); 
+
+    // [],{}
+    // console.log('' + [1,2,3]);
+    // alert([1,2,3]); //1,2,3
+    // console.log([1,2,3].toString());
+
+    // console.log(''+{name:'小强'});  //[object Object]
+    // alert({name:'小强'});
+
+    // console.log('20' - 10); //number 10
+
+    // console.log(5%2); //1
+    // console.log(2%5); //2
+    // console.log(245%800);///245 
+
+    // let num = 10;
+
+    // num += 5; //num = num + 5
+    // num %= 3; // num = 10 % 3
+     
+    // console.log(num);
+
+    let num = 10;   //num+1
+    // num ++; //后自增   先找变量后 ++
+    // ++ num //前自增  先++ 后才找得到这个变量
+    
+
+    // console.log(num ++);
+    // console.log(++ num);
+    // console.log(num);
+    // console.log(num++ == ++num);//10   12
+    // console.log(num ++ == num ++);//flase
+    // console.log(++num  == 11);
+    // console.log(++num == num++);//true
+
+    // console.log(10 > 8);
+    // console.log(10 > "8");
+    // console.log("10" > "18"); //unicode编码
+
+    // console.log(10 == '10'); //ture  左右两边会转成同一数据类型;转换是有消耗的
+
+    // console.log(10 === '10');//左右两边是不会转换的，不但要值相同，数据类型也得相同
+
+    // console.log(10 != '10'); //false
+    // console.log(10 !== '10'); //true;
+
+    /*
+        ! 否 （布尔值）
+            能把真的变成假的，假的变成真的
+
+    */
+    // console.log(!'');
+    // console.log(!!'');
+
+    /*
+        a||b
+            a不成立一定会去找b,如果成立，a
+        a&&b
+            a成立一定会去找b,a不成立就不走b
+
+    */
+
+//    let a = 10;
+//    console.log(a || 1);//1
+
+    // function fn(a){
+    //     a = a || '呵呵';
+    //     console.log(a); 
+    // }
+    // fn('哈哈');
+
+    // if('身份证' && '车票'){
+    //     alert('开车');
+    // }
+
+    // let a = parseInt('') && true && [] || '' && undefined && 8 || parseInt('12px');
+    // console.log(a);
+
+    /*
+        三目，三元
+        typeof xx
+        a + b
+        ? :
+    */
+    console.log(8>6?'真':'假');
+
+
+
+
+
+
+
+    
+
+</script>
+</body>
+</html>

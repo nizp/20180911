@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //
+    // Number： 把其他数据类型的值强制转换成number类型；
+    // number :  0 整数  小数  NaN;
+    // 任何数字和NaN 运算结果都是NaN ;
+    // isNaN : 判断是不是一个NaN ; 是NaN返回true；不是返回false；
+    function sum() {
+        // arguments
+        let total = 0;
+        for(let i=0;i<arguments.length;i++){
+            let cur = Number(arguments[i]);
+            if(!isNaN(cur)){
+                total += cur;
+            }
+        }
+       return total;
+    }
+    console.log( sum(1,3,"6",true,NaN,[],"4px"));
+    sum(1,18,"60",{},false,[],888,88,99);
+
+</script>
+</body>
+</html>

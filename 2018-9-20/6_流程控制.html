@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        跳过:
+            continue
+
+        跳出:
+            break
+    */
+    // for(var i=0;i<3;i++){
+    //     if(i==1){continue}
+    //     alert(i);
+    // }  
+
+    /*
+        函数里面才能使用return，不然会报错
+    */
+    for(var i=0;i<3;i++){
+        // if(i==1){return} //报错
+        if(i==1)break;
+        alert(i);
+    }  
+    
+    function fn(){
+        for(let i=0;i<3;i++){
+            if(i == 1){return;}
+            alert(i);
+        }
+    }
+    //fn();
+    
+    // if(1<0) console.log(1); else console.log(2);
+      
+        
+</script>
+</body>
+</html>

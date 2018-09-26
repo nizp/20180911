@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">点我</button>
+<script>
+    /*
+        js的组成
+            ECMAscript、DOM、BOM
+
+            变量:
+                var、let
+            常量:
+                const
+        
+        获取元素:
+            document.getElementById()
+        
+        let box = document.getElementById('box');
+
+        box.style.width = '100px';
+
+        = 赋值
+
+        onclick  点击
+        onmouseover  -> hover
+
+        匿名函数(直接写要报错，一般匿名函数都是给事件使用):
+            function(){
+                代码
+            }
+
+        有名函数(函数声明):
+            function fn(){
+                代码
+            }
+
+        函数表达式:
+            let fn = function(){}
+            fn();
+
+        数据类型:
+            number（数字）、string（字符串）、boolean（布尔值）、object（对象）、undefined、null、smybol（唯一）
+
+
+
+        
+            
+        
+
+        
+    */    
+
+   let btn = document.getElementById('btn');
+
+   btn.onclick = function(){
+        console.log(btn);
+        console.dir(btn);
+   }
+    //函数声明
+   function fn(){
+       console.log(1);
+   }
+   //fn(); //函数调用
+
+   //匿名函数自执行
+   (function(){
+        console.log(2);
+   })();
+
+    let fn2 = function(){
+        alert(1);
+    }
+    //fn2();
+
+</script>
+</body>
+</html>

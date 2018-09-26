@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        while(条件){
+            执行
+        }
+        一般用在不知道要循环多少次
+
+        for in 循环
+            对象没有length，所以只能使用属性遍历的方式循环
+            当然，有一种特殊的对象可以使用for循环
+    */    
+    // let a = 0;
+    // while(a < 3){
+    //     console.log(a);
+    //     a++;
+    // }
+    let obj = {
+        name:'小明',
+        age:20
+    }
+    /*
+        attr 对象的属性名
+    */
+    // for(let attr in obj){
+    //     console.log(obj[attr]);
+    // }
+    // let arr = ['321',true,undefined,12];
+    // for(let i in arr){
+    //     console.log(arr[i]);
+    // }
+    // console.log(arr);
+
+
+
+
+    // console.log('age' in obj);//枚举，枚举到根
+
+
+    let obj2 = {
+        0:'123',
+        1:true,
+        2:5,
+        length:3
+    }
+    for(let i=0;i<obj2.length;i++){
+        console.log(obj2[i]);
+    }
+
+
+
+</script>
+</body>
+</html>

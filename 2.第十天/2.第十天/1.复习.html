@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    // 数组的方法
+    // pop  push  shift  unshift  splice  slice  sort  reverse  indexOf  lastIndexOf  join  concat  forEach  map   every   some   filter
+    // 数组的算法
+    // 数组去重   数组冒泡排序   插入排序   快速排序
+    // 1.数组去重
+        // 1) : indexOf
+        // 2) : 对象的属性名不能重复
+        // 3) ： 排序，然后判断相邻的两项是否相等
+    let  ary = [12,3,6,6,17,12,3];
+    ary.sort(function (a,b) {
+        return a-b;
+    });
+    for(let i=0;i<ary.length;i++){
+        if(ary[i]===ary[i+1]){
+            // 如果相邻两项重复，删除后面的一项；并且进行i--;
+            ary.splice(i+1,1);
+            i--;
+        }
+    }
+    console.log(ary);
+
+    // 2. 冒泡排序；
+    // 位置交换的方式；
+    let  a= 15;
+    let  b = 20;
+    let c = a+b;
+    let d = a-b;
+    a = (c-d)/2;
+    b = (c+d)/2
+
+    // 3.插入排序；
+
+    // 4.DOM : 获取元素的方式
+    // DOM 节点的属性
+    // 1.四种节点类型   nodeType   nodeName  nodeValue
+    // 1.元素节点        1         大写的标签名   null
+    // 2.文本节点        3          #text       文本的内容
+    // 3.注释节点        8          #comment     注释的内容
+    // 4.document       9         #document     null
+
+    // 节点的属性
+    // 1.childNodes : 所有的子节点
+    // 2.children  ： 子元素节点
+    // 3.parentNode  : 父亲节点
+    // 4.nextSibling 下一个弟弟节点
+        // nextElementSibling
+    // 5.previousSibling : 上一个哥哥节点
+        // previousElementSibling
+    // 6.firstChild
+       // firstElementChild
+    // 7.lastChild
+       // lastElementChild
+
+</script>
+</body>
+</html>

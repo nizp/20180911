@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+*{
+    margin: 0;
+    padding: 0;   
+}
+ul li{
+    float: left;
+    width:72px;
+    list-style:none;
+}
+.red{
+    color: red;
+}
+</style>
+</head>
+<body>
+    <button id="btn">下一站</button>
+    <ul id="ul">
+        <!-- <li>西直门 ></li>
+        <li class="red">大钟寺</li> -->
+    </ul>
+<script>
+    /*
+       1.生成li  
+    */
+    let arr = ['西直门','大钟寺','五道口','上地','西二旗','龙泽','回龙观','霍营','立水桥','东直门'];
+    let num = 0,
+    lis = '';
+    const ul = document.querySelector('#ul'),
+    btn = document.querySelector('#btn'),
+    len = arr.length;
+
+    for(let i=0; i<len ;i++){
+        lis += `<li class="${i==0?'red':''}">${arr[i]}  ></li>`;
+    }
+    ul.innerHTML = lis;
+
+    /*
+        2.加事件,如果要获取li，一定要在创建完li之后
+        
+        大清洗:把所有的class都清掉
+    */
+   let list = document.querySelectorAll('li');
+   btn.onclick = function(){
+       num ++;
+       //把所有的class都清掉
+        for(let i=0;i<list.length;i++){
+            list[i].className = '';
+        }
+        list[num%=list.length].className = 'red';
+   }
+
+
+
+</script>
+</body>
+</html>

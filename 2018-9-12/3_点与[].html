@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box"></div>
+<script>
+    /*
+        . 的
+        凡是能够用.的地方都能用[]
+
+        在中括号中的内容可以是字符串也可以是变量,一般对象下使用[]，基本上[]中放入的是变量
+    */    
+
+    let obj = {
+        'name':'霍亚涛'
+    };
+
+    // let name = 'name';
+
+    // console.log(obj[name]); //这里的name，会认为是一个变量
+
+    // console.log(obj['name']);
+
+    const box = document.getElementById('box');
+
+    box['style']['width'] = '100px';
+</script>
+</body>
+</html>

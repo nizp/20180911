@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        + - * / %
+        > < == === 
+        >= <= !=
+        !
+        || 或者 
+        && 并且
+
+        +:
+            数字与数字相加是数字运算
+            字符串拼接，字符串除了symbol，别的数据类型相加都是字符串
+
+        - , *, /
+            都是正常的数学运算，如果运算不出来，NaN
+
+        % 取余（模）  
+         5 % 2   1  
+
+         a  > b  取余
+         a  < b  a
+         a  == b 0
+
+         4%2 == 0  偶数
+         6%2 == 0
+
+         字符串和数字比较 走数字
+
+         字符串和字符串比较 走unicode编码值
+            一位一位的比
+            '2' > '10'
+            先是'2'和'1'比  2大于1  true
+
+            '12' > '10'
+            先是'1'和'1'比，然后'2'和'0'比  true
+        
+        ==  相等
+            字符串和数字比较的时候，左右两边的值会进行隐式类型转换
+            会转成数字来比较
+
+        === 全等
+            不但要看值相不相等，还得看左右两边的数据类型相不相等
+
+        双=要转化就有消耗，没有全等性能高
+
+        !  否 可以把真的变成假的，
+           假的变成真的并且是个布尔值
+
+        !=  不等
+        !== 不全等
+
+
+
+    */
+    // console.log(1+'1');
+    // console.log(''+10);//隐式类型转换
+    // console.log(+'10');//数字10
+    // console.log(+'20'+50);
+
+    // console.log('10' - '5'); //数字,'10'-'5px' = NaN
+    // console.log('10' / 5);
+
+    // console.log(5 % 2);
+    // console.log(2 % 5); //2
+    // console.log(3 % 5); //3
+    // console.log(30 % 50); //30 
+
+    // if('2' > '11'){
+    //     alert(1);
+    // }
+
+    // console.log('2' == 2);
+    // console.log('2' === 2); //false
+
+    // console.log(!true);
+    // console.log(!1);
+    // console.log(!!0);
+    // console.log(Boolean([]));
+        // console.log(!![]);//双!可以巧妙的把一个数据类型转成对应的布尔值
+    
+
+    console.log(2 !== 2);
+
+    
+</script>
+</body>
+</html>

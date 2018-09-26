@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        indexOf：
+            找到字符串中指定字符首次出现的索引
+            2参数
+                1.找谁
+                2.它的位置
+
+            找不到返回-1
+
+        找出下面字符串中字符的个数及位置
+
+    */   
+    let str = 'zhuxxfexnxgpxexixunx321trt4x';
+    
+    /*
+        循环多少次，就说明有多少个
+    */
+    let i = 0;
+    let num = 0;
+
+    for(;str.indexOf('x',i) != -1;){
+        num ++;
+        alert('出现的位置'+str.indexOf('x',i));
+        i = str.indexOf('x',i) + 1;
+    }
+
+    // while(str.indexOf('x',i) != -1){ //只要有x就循环
+    //     num ++;
+    //     alert('出现的位置'+str.indexOf('x',i));
+    //     i = str.indexOf('x',i) + 1;
+    // }
+
+
+    // console.log(str.indexOf('x',100)); //找不到返回-1
+    console.log(num);
+
+
+</script>
+</body>
+</html>

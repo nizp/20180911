@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="txt"><button id="btn">查询</button>
+    <div id="box">
+        1321uidsahdiwqjdjj1jdjwdsdl
+    </div>
+<script>
+    /*
+        string
+            标准写法:new String
+            简写: '' | "" | ``
+
+        只要浏览器中写入了方法就支持
+
+        includes 包含  ES6的东西
+
+        返回布尔值: 
+            包含:true
+            不包含:false
+
+    */    
+    
+    // console.dir(new String()); //字符串方法查询
+
+    let str = 'zhufeng';
+    // console.log(str.includes('x'));
+
+
+    btn.onclick = function(){
+        let v = box.innerHTML;
+        if(v.includes(txt.value)){
+            alert('能找到');
+        }else{
+            alert('请正确输入');
+        }
+    }
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

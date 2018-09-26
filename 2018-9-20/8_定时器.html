@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">引爆器</button>
+<script>
+    /*
+        炸弹
+        闹钟
+
+        执行函数的方式:
+            fn()
+            事件调用
+            定时器调用
+        
+        定时器
+            到了某个时间点就执行函数体内的代码
+
+        setTimeout(fn,time,第一个函数的参数)
+            炸一次
+
+        setInterval(fn,time,第一个函数的参数)
+            连续炸
+
+        返回值为数字:
+            代表有多少个定时器
+
+        window.requestAnimationFrame
+    */ 
+
+    btn.onclick = function(){
+       let a = setTimeout(function(a){
+            alert(a);
+        },2000,'炸死了');
+
+       let b = setInterval(function(a){
+            alert(a);
+        },2000,'炸不死再炸');
+
+        let c = setInterval(function(a){
+            alert(a);
+        },3000,'炸不死再炸');
+
+        console.log(a,b,c);
+    }
+    
+   
+    
+   
+</script>
+</body>
+</html>

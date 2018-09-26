@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+#content{
+    width:400px;
+    height: 500px;
+    border:1px solid #000;
+}
+</style>
+</head>
+<body>
+    <div id="content">
+    </div>
+    <input type="text" id="txt"/>
+    <button id="btn">发送</button>
+<script>
+
+    /*
+        字符串:
+            "" 或者 '3213'
+    */
+
+    const content = document.getElementById('content');
+    const txt = document.getElementById('txt');
+    const btn = document.getElementById('btn');
+
+    btn.onclick = function(){
+        // content.innerHTML = '<p>'+ txt.value +'</p>';
+        // console.log(content.innerHTML);
+        /*
+            把之前的内容获取出来，再加上现在的,完了之后，一起赋值给content的内容。
+        */
+        // console.log(content.innerHTML + '<p>'+ txt.value +'</p>');
+        // content.innerHTML = content.innerHTML + '<p>'+ txt.value +'</p>';
+        content.innerHTML = content.innerHTML + `<p>${txt.value}</p>`
+        txt.value = '';
+        /*
+            <p>123</p>
+
+            ``模板字符串
+        */
+    }
+
+
+
+
+
+</script>
+</body>
+</html>

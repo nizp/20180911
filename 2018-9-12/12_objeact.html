@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        基本类型:
+            string、number、boolean、null、undefined
+        复杂类型:
+            对象
+                {}、[]...
+            
+            标准写法:new Object
+            简写: {}
+
+            {"key":"value","key":"value"}
+
+            对象:
+                双花括号、键值对的方式组成，key值为字符串
+                value可以任意的数据类型，一对数据类型和另一对数据类型用逗号分隔
+
+                创建对象过程
+                    1.申请一定的空间地址 16进制
+                    2.value值存入到堆中
+                    3.把指针指向变量
+
+            对象中是没有length的，所以基本不能for循环，除非手写length
+
+    */    
+   let obj = {
+       city:'北京',
+       num:100,
+       b:true,
+       o:{
+           n:null,
+           fn:function(){
+               alert(1);
+           }
+       }
+   }
+//    obj.o.fn();
+    // obj['o']['fn']();
+    // console.log( obj['o']['fn']() );
+    // console.log( obj['o']['fn2'] );  //undefined
+
+//    obj.city = null; //假删除
+   console.log(obj); //obj还有city属性
+
+   delete obj.city; //删除对象的属性，彻底删除
+   console.log(obj);
+
+   console.log('num1' in obj); //运算obj中有没有num1这个属性
+
+
+
+
+
+
+</script>
+</body>
+</html>

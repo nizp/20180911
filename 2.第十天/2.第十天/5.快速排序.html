@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let ary = [12,3,4,65,32,88,109,56,66];
+    // 取出中间项；如果当前是奇数项，那么取到中间一项；如果是偶数项。在中间两项中任取一项；
+    function quickSort(a) {
+        // 当数组的长度小于等于1时，不需要再次执行该逻辑；
+        if(a.length<=1){
+            return a;
+        }
+        // 取到当前最新数组的中间项，并且把原有的中间项进行了删除；
+        let middleIndex = Math.floor(a.length/2);
+        let  middle = a.splice(middleIndex,1)[0];
+        let  left = [];
+        let right = [];
+        for(let i=0;i<a.length;i++){
+            let cur = a[i];
+            if(cur<middle){
+                left.push(cur)
+            }else{
+                right.push(cur);
+            }
+        }
+        // right :
+        // 把每次得到最新的数组(left,right)当做实参传递给下一次的quickSort ;那么quickSort 会对新的left和right进行同样的操作和处理；如果当前的数组的长度小于等于1时，那么不需要再次执行quickSort了；
+        return quickSort(left).concat(middle,quickSort(right));
+    }
+    console.log(quickSort(ary));
+
+
+</script>
+</body>
+</html>

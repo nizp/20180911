@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        利用对象的特性来去重
+            
+    */
+    let arr = [1,'1',7,2,3,6,3,5,6,'1',7,7,7];
+    let arr2 = [];
+    let obj = {};
+
+    /*
+        {
+            number1:true,
+            string1:true,
+            number7:true,
+            number2:true,
+            number3:true,
+            number6:true
+        }
+        [1,7,2,3,6]
+    */
+    for(let i=0;i<arr.length;i++){
+        if(!obj[typeof arr[i] + arr[i]]){
+            arr2.push(arr[i]);
+            obj[typeof arr[i] + arr[i]] = true;
+        }
+    }
+
+    console.log(arr2);
+    
+
+
+
+    
+
+    
+
+</script>
+</body>
+</html>

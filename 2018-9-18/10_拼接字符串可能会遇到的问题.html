@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        字符串拼接的时候尽量不要换行，不然会报错
+        如果非要用
+        可以把上一个字符串和下一个字符串进行拼接
+
+        str += '<strong>' + （上一个字符串）
+        
+        （下一个字符串）
+        '<div style="with:100px;height:100px"></div></strong>'
+
+    */
+    let str = '';
+    str += '<strong>' +
+    '<div style="with:100px;height:100px"></div></strong>'
+
+    str += `<strong>
+                <div 
+                    style="with:100px;
+                    height:100px"
+                >
+                </div>
+            </strong>`;
+    console.log(str);
+</script>
+</body>
+</html>

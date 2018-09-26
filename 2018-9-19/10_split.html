@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+    /*
+        split:
+            以字符串分割,把字符串分割为数组
+
+        join('') 数组的方法
+          以字符为链接符，把数组的每项，链接起来变成字符串  
+    */
+    let str = 'zhu-feng-pei-xun';
+    let arr = ['zhu','feng','pei','xun'];
+    // console.log(arr.join('-'));
+    // console.log(str.split('-'));
+
+    function fn(str){
+        let arr = str.split('-'); //把字符串分割为不带-数组
+        //排除第一0位，从第1位开始循环，改变首字母
+        for(let i=1;i<arr.length;i++){
+            /*
+                ['zhu','feng']
+                arr[1] = 'Feng'
+                ['zhu','Feng']
+            */
+            arr[i] = arr[i][0].toUpperCase()+arr[i].substring(1)
+        }
+        return arr.join(''); //如果没有链接符就写空的字符串
+        // console.log(arr);
+    }
+    let s = fn(str);
+    console.log(s);
+
+    let str5 = 'z-f';
+    // console.log(str5.split('-')); //['z','f'];
+    console.log(str5.split('z-f')); //['','']; 
+    console.log(''.split('')); //[] 只有空字符串切空字符串才会切没
+    
+</script>
+</body>
+</html>

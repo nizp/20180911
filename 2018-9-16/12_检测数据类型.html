@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        typeof:
+            null - object
+            arr  - object
+            function
+        ECMAScript:
+            string,number,null,undefined,boolean,object,symbol
+
+        Array.isArray()  是不是数组，是数组true，否则false
+
+
+    */
+//    function fn(){}
+//    alert();    
+
+    /*
+        instanceof  二元运算符
+
+        左值是不是右值构造出来的  true||false
+    */
+    let arr = [1,2,3,4];
+    // console.log(typeof arr);
+    // console.log(Array.isArray(1))
+    // console.log(arr.constructor.name === 'Array');
+    // console.log(arr instanceof Array);
+    // console.log(Object instanceof Object);
+
+    console.log(Object.prototype.toString.call(arr) === '[object Array]');
+    
+
+
+
+</script>
+</body>
+</html>

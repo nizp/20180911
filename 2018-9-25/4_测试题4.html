@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+/*
+    获取[n~m](包含n和m)之间的随机整数：__1__        
+    获取一组数字中的最大值和最小值：__2__          
+    [] == false:___3__            ![]==false：__4__  
+    var val=“3px”+3 ? “ok”: “no”;  val存储的值是多少：__5__
+*/    
+    // 5,10  n,m
+    // console.log( Math.round(Math.random() * (10-5)) + 5);
+
+    let arr = [1,2,6,7,3,4];
+    // console.log(Math.max(1,2,3,4,5,6))
+    // let arr2 = [];
+    // arr2.push(Math.max(...arr));
+    // console.log(Math.max(...arr));
+    // console.log(Math.min(...arr));
+    // console.log(arr2);
+    
+    //Infinity正无穷大  -Infinity负无穷大
+    // let k = 7;//-Infinity;  //找最大值  需要最小值
+    // arr.forEach(function(el,i){
+    //     if(el > k){
+    //         k = el;
+    //     }
+    // });
+
+    let k = Infinity;  //找最小值
+    arr.forEach(function(el,i){
+        if(el < k){
+            k = el;
+        }
+    });
+    console.log(k);
+
+
+    /*
+        [] == false
+
+        空数组是真的，但是在比较的时候[]会转成数字0,而0是假的，所以最后的结果是true
+    */
+
+   /*
+        ![]==false
+
+        ![] = false
+   */
+    /*
+        var val=“3px”-3 ? “ok”: “no”;  val存储的值是多少：ok
+
+    */
+
+
+
+</script>
+</body>
+</html>

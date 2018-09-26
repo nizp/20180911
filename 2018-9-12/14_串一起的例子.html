@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">左</button>
+    <button id="btn2">右</button>
+    <img src="img/1.png" alt="" id="img">
+<script>
+    const btn = document.getElementById('btn');
+    const btn2 = document.getElementById('btn2');
+    const img = document.getElementById('img');
+    let num = 1;
+    btn.onclick = function(){
+        num = num+1;
+        img.src = 'img/'+ num +'.png';
+    }
+    btn2.onclick = function(){
+        num = num-1;
+        img.src = 'img/'+ num +'.png';
+    }
+</script>
+</body>
+</html>

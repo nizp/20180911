@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+#box{
+    width:100px;
+    height: 100px;
+    background: red;
+}
+.y{
+    background:yellow;
+}
+</style>
+</head>
+<body>
+    <div id="box" style="background:#000"></div>
+    <div></div>
+    <ul>
+        <li class="li1">1</li>
+        <li class="li1">
+            <div>
+                <p></p>
+                <span>我在这玩儿</span>
+            </div>
+        </li>
+        <li class="li1">
+            <span>这是第二个span</span>
+        </li>
+    </ul>
+    <input type="text"/>
+    <input type="radio"/>
+    <input type="button" value="按钮"/>
+    <input type="checkbox"/>
+
+
+<script>
+    /*
+
+        = 赋值
+            从右边赋值到左边
+
+        == 比较
+
+        通过ID的方式获取元素
+            document.getElementById(id名)
+            id名是字符串，'' ""都可以
+            .的
+            页面中只能有一个ID
+        通过标签名来获取元素
+            document.getElementsByTagName(标签名);
+            一个获取一组元素 （复合类数组）
+
+        通过class来获取元素 IE9以上浏览器才支持
+            document.getElementsByClassName(类名)
+            一个获取一组元素 （复合类数组）
+
+        通过各种属性来获取元素(万能选择器) IE9以上浏览器才支持
+
+            querySelector() 获取一个
+
+            querySelector('#box')
+            querySelector('.box')
+            querySelector('.box')
+
+            querySelectorAll('') 获取一堆元素
+
+
+
+
+
+
+
+
+
+    */    
+   
+   //#
+  //let name = 'box';
+    // console.log(document.getElementById('box').style.background)
+    // document.onclick = function(){
+    //     //个人建议，在切换class的时候，不要使用style了，不然优先级的问题容易出错。
+    //     document.getElementById("box").className = 'y';
+    // }
+    
+    // document.getElementById('box').style.background = 'skyblue';
+    
+    // console.log(box);//不标准的，但是所有浏览器都兼容，因为ID是唯一
+
+    // console.log(document.getElementsByTagName('*')); //*通配
+
+    //就算页面中只有一个，那么也必须加下标
+    // document.getElementsByTagName('div')[0].style.background = 'red';
+    
+    // console.log(document.getElementsByClassName('li2'))
+
+    // document.getElementsByClassName('li2')[0].style.background = 'red';
+
+    //缓存代码块
+    // console.log(document.getElementsByClassName('li1')[1].getElementsByTagName('span')[0].innerText)
+
+    // console.log(document.getElementsByClassName('li1')[2].getElementsByTagName('span')[0].innerText)
+
+    // console.log(document.querySelector('.li1')); //获取第一个li1
+
+    // console.log(document.querySelectorAll('#box')[0])
+
+    console.log( document.querySelector('input[type="button"]') )
+
+</script>
+</body>
+</html>

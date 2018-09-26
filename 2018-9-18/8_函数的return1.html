@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*  
+        函数名 + 括号 = return后面的值
+
+        函数() 干2件
+            1.执行函数体内的代码
+            2.执行返回值（默认是undefined）
+    */
+    function fn(a,b){
+        console.log(a+b);//10
+        return function(){
+            console.log(a,b);
+            console.log(b*a); //24
+        }
+    }   
+    let f = fn(4,6);//return 后面的函数
+    console.log( f() ); //undefined 既执行了函数内代码又使用了函数返回值
+    fn();//没有使用它的返回值，没使用不等于没有
+
+    // function fn2(){
+    //     alert(1000);
+    // }
+
+    // fn2();
+
+</script>
+</body>
+</html>

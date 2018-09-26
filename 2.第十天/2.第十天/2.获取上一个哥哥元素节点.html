@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div>
+    <div id="brother">brother</div>
+    <!--天凉快了-->
+    <!--天凉快了-->
+    <!--天凉快了-->
+    <!--天凉快了-->
+    <!--天凉快了-->
+    <!--天凉快了-->
+    <!--天凉快了-->
+    <!--天凉快了-->
+    <!--天凉快了-->
+    <!--天凉快了-->
+    <!--天凉快了-->
+    中午吃啥
+    <div id="last"></div>
+
+</div>
+<script>
+    let last = document.getElementById("last");
+    // 通过last这个元素获取哥哥元素节点；
+    //console.log(last.previousSibling.previousSibling.previousSibling.previousSibling);
+    // IE8 以下是不兼容的；
+    //console.log(last.previousElementSibling);
+    function getBro(curEle) {
+        // 如果当前节点是一个哥哥节点，并且是一个元素的话；说明该元素就是当前元素哥哥元素节点；
+        let pre = curEle.previousSibling;
+        while(pre){
+            if(pre.nodeType===1){
+                // 如果是哥哥节点；并且nodeType 是1；说明是一个哥哥元素节点；
+                return pre;
+            }
+            pre = pre.previousSibling;
+        }
+        // 如果当前不存在哥哥元素节点，那么返回null；
+        return null;
+    }
+    console.log(getBro(brother));
+    // console.log(brother.previousElementSibling);
+
+
+</script>
+</body>
+</html>

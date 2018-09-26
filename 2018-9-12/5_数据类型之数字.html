@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="t1"> +
+    <input type="text" id="t2">
+    <button id="btn">求值</button>
+<script>
+    /*
+        number：
+            正数、负数、0，浮点数都是数字类型
+
+        Number();  强制类型转换，可以把数据转成数字类型，在转换的过程当中，会尽量转可读的数字，如果转不出来，NaN
+
+        NaN: not a Number   类型是数字  自己不等于自己。
+            遇到了NaN说明进行了一次非法的数学运算
+
+    */
+    // let num = 10;
+    // console.log(num);
+
+    /*
+        别的数据类型被Number转换之后的反应
+           
+    */
+
+
+    console.log(Number('10'));
+    console.log(Number(true)); //1
+    console.log(Number(false));//0
+    console.log(Number({})); //NaN
+    console.log(Number([])); //空白数组 0，非空白数组NaN
+    console.log(Number(undefined)); //NaN
+    console.log(Number(null)); //0
+    console.log(Number(/\d/)); //NaN
+    console.log(Number(aaa)); //NaN
+
+    function aaa(){}
+
+    let a = 10;
+    let b = 'hehe';
+    let n = Number('10px');
+    console.log(n == n);
+
+
+
+    const t1 = document.getElementById('t1');
+    const t2 = document.getElementById('t2');
+    const btn = document.getElementById('btn');
+    //*** 什么时候获取值,容易掉坑。
+    // let tv1 = t1.value;
+    // let tv2 = t2.value;
+    btn.onclick = function(){
+        //html中的所有内容都是字符串，字符串+字符串自然就是字符串（字符串拼接）
+        let tv1 = t1.value;
+        let tv2 = t2.value;
+        // console.log(Number(tv1) + Number(tv2));
+         console.log(parseInt(tv1) + parseInt(tv2));
+    }
+
+
+
+</script>
+</body>
+</html>
