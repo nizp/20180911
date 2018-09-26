@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        b在这个script标签中是没有的，没有它还会向上找，上面依然没有
+        b，此时报错。
+    */
+
+    // let a = 20;
+    // alert(123);
+    console.log(b); 
+    let a = 20
+    alert(123);
+</script>
+<script>
+    /*
+        当前script标签中是没有a的，它还会向上找，正好14行上有a
+        就输出20;
+    */
+
+    /*
+        只要报错，就会终止当前script标签中报错之后的代码执行。
+        如果下面还有别的script标签，下面的标签正常运行。
+    */
+
+    let b = 30;
+    console.log(a); 
+    /*
+        很容易晕（90%左右的同学会晕）
+            作用域是js的难点，多专门的去练习
+        
+        1.作用域:
+            域:范围
+            js执行的范围
+        
+        script标签中就是执行js的范围
+
+       
+
+    */
+</script>
+</body>
+</html>

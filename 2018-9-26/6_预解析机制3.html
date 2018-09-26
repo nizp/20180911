@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        预解析:
+           
+            aa = function aa(){console.log(66);}
+
+
+    */
+
+    console.log(aa); //66函数
+    aa(); //66
+    console.log(aa); //66函数
+    function aa(){console.log(5);}
+    // var aa = 50;
+    console.log(aa); //66函数
+    aa();//66
+    console.log(aa);//66函数
+    var aa = function(){console.log(321);}
+    console.log(aa);//321函数
+    aa();//321
+    console.log(aa);//321函数
+    aa = function(){console.log(123);}
+    console.log(aa);//123函数
+    function aa(){console.log(66);}
+    console.log(aa);//123函数
+    aa();//123
+    console.log(aa);//123函数
+
+
+</script>
+</body>
+</html>

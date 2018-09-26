@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    
+    /*
+        1.预解析:
+            找var和函数声明
+
+            aa = function aa(){alert(66);}
+        
+        2.逐行解读代码:
+
+
+
+    */
+    
+    alert(aa); 
+    aa(); 
+    alert(aa); 
+    var aa = function(){alert(321);}
+    alert(aa);
+    aa();
+    aa = function(){alert(123);}
+    function aa(){alert(5);}
+    alert(aa); 
+    aa();
+    alert(aa); 
+    function aa(){alert(66);}
+    aa();
+    
+
+</script>
+</body>
+</html>

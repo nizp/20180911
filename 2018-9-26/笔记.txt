@@ -99,6 +99,24 @@ ls  || ll 查看下级目录有哪些
 
 看课件:
 	先找到github的人名和项目，然后fork，再通过git clone 地址(第一次)
+
+	要fork的项目每天都会变，他的项目变，你的fork的项目也得变，这样才
+	
+	能达到项目更新。
+
+	
+	每天回去更新课件：
+		1.先把fork过的项目删除
+				进入到项目中点击settings，拉到最下面
+				点击Delete this repository按钮
+
+		2.重新fork项目
+
+
+		3.跑到之前克隆过的项目中，打开Git,输入git pull搞定。
+    
+
+
 	
 
 		

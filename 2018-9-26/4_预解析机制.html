@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        1.先找var 和 函数
+            如果函数和变量的名字一样，那么只留下了函数
+
+            如果多个函数的名字一样，那么会留下最后一个
+
+        // var a = undefined
+        // var a = undefined
+
+        // a = function(){}
+
+        2.逐行解读代码
+            看等号，如果有赋值，这个变量就是被赋值的值
+            就算下面有函数声明也不会继续看了
+
+        a = function(){console.log(123)};
+        a = 10;
+        a = 20;
+
+    */
+    console.log(a);  //undefined  function(){console.log(123)};
+    var a = 10; //a = 10
+    console.log(a); //10
+    var a = 20; //a = 20;
+    console.log(a);//20
+    function a(){
+
+    }  
+    console.log(a);//20
+    function a(){
+        console.log(1231);
+    }   
+    var a = function(){}
+    console.log(a);
+   
+</script>
+</body>
+</html>
