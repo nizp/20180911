@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">添加</button>
+    <input type="text" id="txt">
+    <ul id="ul">
+
+    </ul>
+<script>
+    /*
+        创建:
+            document.createElement('标签名')
+        添加:
+            最后一位添加:
+                parent.appendChild(child);
+            往前添加:
+                parent.insertBefore(新插入的元素,老的元素);
+    */    
+   
+   btn.onclick = function(){
+        let li = document.createElement('li');
+        li.innerHTML = txt.value;
+        li.onclick = function(){
+            // this.remove();
+            ul.removeChild(this);
+        }
+        // if(ul.children[0]){
+        //         ul.insertBefore(li,ul.children[0]);
+        // }else{
+        //         ul.appendChild(li);
+        // }
+        ul.insertBefore(li,ul.children[0]);
+        txt.value = '';
+   }
+
+</script>
+</body>
+</html>

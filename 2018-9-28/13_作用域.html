@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        预解析:
+           
+            abc = function(){}
+        
+        逐行解读代码:
+
+
+    */
+    abc(); // 什么都没有
+    var abc = 20;
+    console.log(abc);//20
+    function abc(a){
+        var abc = 30;
+        return function(abc){
+            console.log(abc);
+        }
+    }  
+    console.log(abc);//20
+    abc()(); //报错
+    var abc = function(){
+        console.log(abc);
+    }
+    console.log(abc);
+    abc(abc);  
+</script>
+</body>
+</html>

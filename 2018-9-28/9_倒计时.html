@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        倒计时:
+            未来的时间 - 现在的时间 = 还剩下多少时间
+
+            如果使用字符串，那么月份按照0来计数
+
+            如果是使用数字，那么设置日期的时候比真实数字少1
+
+        *** 以后工作了，只要碰到关于时间的，一定要用服务器时间
+
+
+        设置时间:
+            1.使用set来设置的：
+                比如:
+                    setMonth、setFullYear....
+
+            2.Date(数字)
+                new Date(2018,8)  2018年9月  设置月份的时候减一
+
+            3.Date(字符串)
+                new Date('October 2019 5 13:00:00') 2019年10月5日13点
+
+                new Date('2019 9 5 13:00:00') 字符串的中9是打印的数字是8，但是是真的9月
+            
+    */    
+    // let n = new Date('October 2019 5 13:00:00');
+    // let n = new Date(2018,9,32);
+    // let n = new Date('2018 9 29 15:50');
+
+    // n.setMonth(13);
+    // console.log(n.getMonth() + 1); //11
+    // console.log(n.getDate());
+    // console.log(n.getDate());
+    // console.log(n.getMinutes());
+    // n.setFullYear(2019,9,29);
+    // console.log(n.getFullYear());
+    // console.log(n.getMonth()); //设置9就是9
+
+    /*
+        Date.now(); 获取时间戳
+        new Date().getTime()
+        +new Date
+    */
+
+    let date = new Date(2018,8,29,16,10); //设置的未来时间
+    let nowDate = new Date; //现在的时间
+    // console.log(date.getMinutes());
+
+    // console.log(date - nowDate);  //以毫秒计算出来的时间86083957
+    
+    let s = (date - nowDate)/1000; //毫秒转成秒
+
+    // console.log(Math.floor(s/86400));
+    // console.log(Math.floor(s%86400/3600))
+    // console.log(Math.floor(s%86400%3600/60))
+    // console.log(Math.floor(s%60))
+
+    // console.log(Math.floor(s/86400)+'天'+Math.floor(s%86400/3600)+'时'+Math.floor(s%86400%3600/60)+'分'+Math.floor(s%60)+'秒')
+
+    let d = Math.floor(s/86400);
+    s %= 86400;
+    let h = Math.floor(s/3600);
+    s %= 3600;
+    let m = Math.floor(s/60);
+    s %= 60;
+
+
+    console.log(d+'天'+h+'时'+m+'分'+Math.floor(s)+'秒');
+
+
+    /*
+        天：86400 = 60*60*24  : Math.floor(t/86400)
+			
+        小时：Math.floor(t%86400/3600)
+        
+        分钟：Math.floor(t%86400%3600/60)
+        
+        秒：Math.floor(t%60)
+
+
+        
+
+    */
+
+
+
+
+
+
+</script>
+</body>
+</html>

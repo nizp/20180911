@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="ul">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+<script>
+    //  let ul = document.getElementsByTagName('ul');
+    let l = document.createElement('li');
+    l.innerHTML = '10';
+     ul.appendChild(l);
+    /*
+        DOM的操作是剪切还是复制？是剪切
+        
+        a:12345  b:54321 c:24153 d:32451  e:13524  x:都不是
+    */
+   /*
+        12345
+
+        i=0  23451
+        i=1  24513
+        i=2  24135
+        i=3  24153
+        i=4  24153
+
+        getElementsByTagName
+        children
+        getByclassName
+        .... 都是动态的
+
+        querySelectorAll 静态的    12345
+
+
+   */
+//    let li = document.getElementsByTagName('li');
+    // let li = document.querySelectorAll('li');
+    // for(let i=0; i<li.length ;i++){
+    //     ul.appendChild(li[i]);
+    // }
+
+    // let li = document.getElementsByTagName('li');
+    // let li4 = li[4];
+    // for(let i=0; i<li.length ;i++){
+    //     ul.appendChild(li[i]);
+    //     i--;
+    //     alert(1);
+    //     if(ul.lastChild == li4){
+    //         break;
+    //     }
+    // }
+
+</script>
+</body>
+</html>

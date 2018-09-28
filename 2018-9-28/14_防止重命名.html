@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        封闭空间:
+            匿名函数自执行,函数内是一个独立的作用域，函数中的作用域是不会和父级的作用域打架，各是各的
+
+        命名空间:
+            把变量变成属性
+            
+    */
+    // (function (){
+    //     function fn(){
+    //         alert(1);
+    //     }
+    //     fn();
+    // })();
+
+    // !function (){
+    //     function fn(){
+    //         alert(1);
+    //     }
+    //     fn();
+    // }();
+
+    
+    function fn(){
+        alert(4);
+    }
+    fn();
+
+    let lxtobj = {
+        fn:function(){
+            alert(5);  
+        }
+    }
+    lxtobj.fn();
+
+    let obj2 = {
+        fn:function(){
+            alert(6);  
+        }
+    }
+
+    obj2.fn();
+
+
+
+
+
+
+    
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="获取验证码" id="btn">
+<script>
+    // let timer = setInterval(function(){alert(1)},1000);
+    // clearTimeout(timer); //它也能关setInterval
+
+    // let timer2 = setTimeout(function(){},1000);
+
+    // console.log(timer2);
+    let num = 10,
+    timer = null; //初始化定时器
+    
+    btn.onclick = function(){
+        btn.disabled = true;
+        timer = setInterval(function(){
+            /*
+                页面显示的num是后减，所以会慢一次
+            */
+            btn.value = '倒计时('+(num--)+')';
+            if(num < -1){
+                clearInterval(timer);
+                btn.value = '获取验证码';
+                btn.disabled = false;
+                num = 10;
+            }
+        },1000);
+    }
+
+
+</script>
+</body>
+</html>

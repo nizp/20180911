@@ -1,0 +1,39 @@
+/*
+		第一种公式：
+	
+			天：86400 = 60*60*24  : Math.floor(t/86400)
+			
+			小时：Math.floor(t%86400/3600)
+			
+			分钟：Math.floor(t%86400%3600/60)
+			
+			秒：Math.floor(t%60)
+	
+		第二种公式：
+			天	Math.floor(t/86400);
+				t%=86400;
+			小时	var h=Math.floor(t/3600);
+				t%=3600;
+			分钟	var m=Math.floor(t/60);
+			秒	t%=60;
+
+		December 12,2017 00:00:00
+
+		January、
+		February、
+		March、
+		April、
+		May、
+		June、
+		July、
+		August、
+		September、
+		October、
+		November、
+		December
+
+		常用的取整公式
+			x ~ y : Math.round(Math.random()*(y-x) + x)
+			0 ~ x : Math.round(Math.random()*x)
+			1 ~ x : Math.ceil(Math.random()*x)||1
+			0 ~ x-1 : Math.floor(Math.random()*x) 

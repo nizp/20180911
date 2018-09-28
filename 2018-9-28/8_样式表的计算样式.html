@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+#box{
+    width:100px;
+}
+</style>
+</head>
+<body>
+    <div id="box"></div>
+<script>
+    /*
+        style.xx  是获取行间的样式，行间没有就是''
+        样式表中的样式用style是获取不到的
+
+        getComputedStyle  获取计算之后的样式  **是带单位的
+
+        getComputedStyle(obj)[属性名]  
+
+    */
+    let box = document.getElementById('box');
+    // console.dir(box.style);
+    console.log(getComputedStyle(box).width);
+    console.log(box.style.width); //''
+</script>
+</body>
+</html>

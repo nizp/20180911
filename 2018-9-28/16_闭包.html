@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+   /*
+        函数就是一个闭包
+
+        函数内部的参数或者变量被外界访问，此时形成闭包环境
+
+        在js中，当函数套函数，子函数使用了父函数的参数或者变量
+        并且外部一直在使用这个函数的返回值，
+        此时父函数的参数和变量，是不会被浏览器垃圾回收机制立马
+        回收，这个时候父级形成闭包环境
+
+   */
+  
+    // function fn(){
+    //     var a = 20;
+    //     a++;
+    //     console.log(a);
+    // }
+    // fn();
+    // fn();
+    // console.dir(fn);
+
+    function fn(){
+        var a = 20; 
+        return function (){
+            a ++;
+            console.log(a);
+        }
+    }
+    console.dir( fn() );
+
+    // fn()(); //21
+    // fn()();//21
+
+
+    let f = fn();
+    // console.dir(fn);
+    f();//21
+    f();//22
+
+    // function fn(){
+    //     // window.a = 20;
+    //     return 20;
+    // }
+    // let a = fn();
+    // // console.log(a);
+    // console.dir(fn);
+
+    
+
+</script>
+</body>
+</html>

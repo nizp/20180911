@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        访问私有变量的时候，如果私有域中没有，会向上查找，直到window结束
+        如果window都没有就报错
+    
+    */
+    // var a = 20;
+    // function fn(){
+    //     alert(a);//20
+    //     a = 30;
+    //     alert(a);
+    // }
+    // fn();
+    // alert(a);
+
+
+    // var a = 20;
+    // function fn(){
+    //     alert(a);//undefind
+    //     a = 30;
+    //     var a = 50;
+    //     alert(a);//50
+    // }
+    // fn();
+    // alert(a); //20
+
+
+
+    // var a = 20;
+    // function fn(a){
+    //     /*
+    //         虽然这个域中有var a但是在43行为undefined,
+    //         那么a除了变量以外还有形参并且传入了一个有值数据的实参
+    //         这个时候有值比没值的比重更高，所以a就是实参20
+    //     */
+    //     alert(a);//20
+    //     a = 30;
+    //     var a = 50;
+    //     alert(a);//50
+    // }
+    // fn(a);
+    // alert(a); //20
+
+
+    /*
+        因为obj为复合类型，所以就算59行的o发生变化也会影响全局的obj
+    */
+    // var obj = {
+    //     name:'小明'
+    // }
+    // function fn(o){
+    //     o.name = '小王';
+    //     var o = {};
+    //     o.name = '小梅';
+    //     console.log(o.name);
+    // }
+    // fn(obj);
+    // console.log(obj.name);
+
+
+    /*
+        因为num为简单类型，所以就算71行的o发生变化也不会影响全局的num
+    */
+    // var num = 5;
+    // function fn(o){
+    //     console.log(o); //5
+    //     o = 10;
+    //     var o = 40;
+    //     o = 20;
+    //     console.log(o); //20
+    // }
+    // fn(num);
+    // console.log(num);//5
+
+
+    /*
+        let 是不能重名的，包括形参
+    */
+    var num = 5;
+    function fn(o1){
+        console.log(o);
+        let o1 = 40;
+        console.log(o1);
+    }
+    fn(num);
+    console.log(num);
+    
+
+</script>
+</body>
+</html>

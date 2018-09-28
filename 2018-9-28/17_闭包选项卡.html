@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button>1</button>
+    <button>2</button>
+    <div id="box">11</div>
+<script>
+    let arr = [11,22];
+    const btns = document.getElementsByTagName('button');
+    for(var i=0;i<btns.length;i++){
+        // btns[i].index = i;
+        (function(a){
+            btns[a].onclick = function(){
+                alert(a);
+                // box.innerHTML = arr[i];
+            }
+        })(i);
+    }
+
+</script>
+</body>
+</html>

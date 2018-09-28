@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">按钮</button>
+    <ul id="ul">
+        <li>111</li>
+    </ul>
+<script>
+    /*
+        动态数组和静态数组
+
+        getElementsByTagName 动态的 上面获取，只要元素发生变化就会更新
+    */
+
+    let btn = document.getElementById('btn');
+    let ul = document.getElementById('ul');
+
+
+    let li = ul.getElementsByTagName('li');
+    let num = 1;
+    console.log(li.length);
+
+    /*
+        下面的语句是让第一个li绑定事件函数
+        绑定完之后未来再也不会执行这句话了
+        就算li的length发生变化也不会执行
+    */
+    for(var i=0;i<li.length;i++){
+        li[i].onclick = function(){
+            console.dir(li[0]);
+            alert(this.innerHTML);
+        }
+    }
+    console.dir(li[0]);
+
+    btn.onclick = function(){
+        /*
+            在 += 的时候把之前的onclick覆盖了，可以查看44行和36行的区别
+            一个是循环之后，一个是添加内容之后
+        */
+        ul.innerHTML += '<li>'+ (++ num ) +'</li>';
+        console.log(li);
+        console.dir(li[0]);
+
+        for(var i=0;i<li.length;i++){
+            li[i].onclick = function(){
+                console.dir(li[0]);
+                alert(this.innerHTML);
+            }
+        }
+    }
+    
+
+
+
+
+</script>
+</body>
+</html>

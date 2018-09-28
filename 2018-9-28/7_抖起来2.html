@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+#box{
+    width:100px;
+    height: 100px;
+    background: red;
+    position: absolute;
+    left:0;
+    top:50px;
+    border-radius: 50% 50%;
+}
+</style>
+</head>
+<body>
+    <button id="btn">抖一抖</button>
+    <div id="box"></div>
+<script>
+   
+    btn.onclick = function(){
+        Dou(box,'top',function(){
+            // alert('抖完了');
+            box.style.transition = '1s';
+            box.style.left = '200px';
+            setTimeout(function(){
+                box.style.transition = 'none';
+                Dou(box,'left');
+            },1000); 
+        });
+    }
+    /*
+        obj:到底是谁抖
+        attr: 哪个方向
+        callback:抖完之后的回调函数
+        n:抖频率的总值
+        n1:抖频率的间隔值
+
+    */
+    function Dou(obj,attr,callback,n=10,n1=2){
+        let arr = [];
+        let timer = null;
+        let num = 0;
+        //拿到元素最初始的计算之后的样式
+        let init = parseInt(getComputedStyle(obj)[attr]);
+        console.log(init);
+        //生成数据[-4,4,-2,2];
+        for(let i=n;i>0;i-=n1){
+            arr.push(-i,i);
+        }
+        arr.push(0); //[-4,4,-2,2,0]
+        console.log(arr);
+        timer = setInterval(function(){
+            //加上init才不会闪去0的位置，是以当前位置为基准来抖
+            obj.style[attr] = init + arr[num] + 'px';
+            num ++;
+            //抖完之后，关闭定时器，重置num，让回调函数执行
+            if(num >= arr.length){
+                clearInterval(timer);
+                num = 0;
+                // if(callback){
+                //     callback()
+                // }
+                callback && callback();
+            }
+            console.log(1);
+        },16);
+    }
+
+</script>
+</body>
+</html>

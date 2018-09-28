@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+*{
+    margin: 0;
+    padding:0;
+    list-style:none;
+}
+li{
+    float: left;
+}
+</style>
+</head>
+<body>
+    <ul>
+        <li>
+            <img src="img/0.png" alt="">
+        </li>
+        <li>
+            <img src="img/0.png" alt="">
+        </li>
+        <li>
+                <img src="img/second1.png" alt="">
+        </li>
+        <li>
+                <img src="img/0.png" alt="">
+        </li>
+        <li>
+            <img src="img/0.png" alt="">
+        </li>
+        <li>
+                <img src="img/second1.png" alt="">
+        </li>
+        <li>
+                <img src="img/0.png" alt="">
+        </li>
+        <li>
+            <img src="img/0.png" alt="">
+        </li>
+    </ul>
+<script>
+    /*
+        当前离6点还剩多少时间
+    */
+    const imgs = document.querySelectorAll('img');
+    
+    /*
+        未来的时间
+    */
+    let newDate = new Date(2018,8,28,18);
+    
+
+    setInterval(fn,1000);
+    fn();
+    function fn(){
+        /*现在的时间*/
+        let nowDate = new Date;
+        let t = (newDate - nowDate)/1000;
+        let d = Math.floor(t/86400);
+        t%=86400;
+        let h = Math.floor(t/3600);
+        t%=3600;
+        let m = Math.floor(t/60);
+        t%=60;
+        
+        let str = toDou(h)+':'+toDou(m)+':'+toDou(Math.floor(t));
+
+        // console.log(str);
+        for(let i=0;i<str.length;i++){
+            if(i!=2 && i!=5){
+                imgs[i].src = 'img/'+ str[i] +'.png'
+            }
+        }
+    }
+
+    function toDou(n){
+        return n<10?'0'+n:''+n;
+    }
+
+
+
+
+
+</script>
+</body>
+</html>

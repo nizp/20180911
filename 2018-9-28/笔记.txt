@@ -1,0 +1,56 @@
+ECMAscript的数据类型:
+
+string（'',"",``）
+number(1,100)
+boolean(true)
+undefined(undefined)
+null(null)
+
+object({},[],el,function,Date)
+symbol(Symbol())
+
+typeof检测的数据类型
+
+string（'',"",``）
+number(1,100)
+boolean(true)
+undefined(undefined)
+object({},[],el,function,Date)
+function
+
+undefined:
+            某个对象下没有这个属性
+            变量没有赋值、函数没实参
+            函数默认范围值
+            预解析的时候var变量声明的时候，在赋值前为undefined
+
+
+return:
+
+函数的返回值，默认为undefined
+return后面写什么，返回值就是什么
+return下面的代码都不执行
+
+自定义属性:
+
+就是给一个对象加了一个自己能够识别的属性名
+
+setTimeout
+
+setInterval
+
+返回数字，有几个定时器数字就是几
+
+
+
+
+
+
+
+
+
+
+
+
+
+
