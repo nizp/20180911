@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        var:{
+            在一个域中名字是可以重复的 
+            是不作用于块的
+            会在window上挂一个属性
+        }
+
+        let:{
+            在一个域中名字是不可以重复的 
+            是作用于块的
+            不会在window上挂属性的
+            有暂存死区，在声明的上面访问这个变量会报错
+            在循环中*每次循环的值*都可以被块保存并使用
+        }
+
+        const:{
+            值是不能改变的
+            声明即赋值，不然会报错
+            在一个域中名字是不可以重复的 
+            是作用于块的
+            不会在window上挂属性的
+            有暂存死区，在声明的上面访问这个变量会报错
+        }
+    */    
+
+    // console.dir(window);
+    // console.log(a);
+    // let a = 10;
+    // var a = 20;
+    // let a;
+
+
+    {
+        const a = 0;
+        let b;
+        console.log(a);
+    }
+    
+   
+</script>
+</body>
+</html>

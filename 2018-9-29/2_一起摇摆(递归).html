@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+#box{
+    width:100px;
+    height: 100px;
+    background: red;
+    position: absolute;
+    left:0;
+    top:50px;
+    border-radius: 50% 50%;
+}
+</style>
+</head>
+<body>
+    <button id="btn">抖一抖</button>
+    <button id="btn2">抖一抖2</button>
+    <div id="box"></div>
+<script>
+    /*
+        某件事情（有可能是系统的事件，有可能是自定义的事件）发生时调用的函数就叫回调函数（钩子函数）
+
+    */
+   btn.onclick = function(){
+        Dou(box,'top',10,2,function(){
+            alert('6个亿');
+        });
+   }
+
+   btn2.onclick = function(){
+        function dtDou(){
+            Dou(box,'left',10,2,function(){
+                box.style.transition = '1s';
+                let l = parseInt(getComputedStyle(box).left);
+                l += 100;
+                box.style.left = l + 'px';
+                setTimeout(function(){
+                    box.style.transition = 'none';
+                    dtDou();
+                },1000);
+            });
+        }
+        dtDou();
+   }
+
+
+
+//a    b
+function Dou(obj,attr,n,pl,callback){
+    //创建抖的数据
+    let arr = [],timer = null,num = 0
+    ,init = parseInt( getComputedStyle(obj)[attr] );
+    for(let i=n; i>0 ;i-=pl){
+        arr.push(-i,i);
+    }
+    arr.push(0);
+
+    timer = setInterval(function(){
+        obj.style[attr] = init + arr[num] + 'px';
+        num ++;
+        if(num >= arr.length){
+            clearInterval(timer);
+           callback && callback();
+        //    alert('6个亿');
+        }
+    },16);
+    
+    console.log(arr);
+}
+
+// function Dou(f){
+// //    console.log(f);
+//     f && f();
+// }
+
+// fn(function(){
+//     alert(1);
+// });
+
+
+
+</script>
+</body>
+</html>

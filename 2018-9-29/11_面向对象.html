@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+  /*
+ * JS是一门编程语言(具备编程思想)
+ *   [面向对象]
+ *      JS\JAVA\PHP\C#\Ruby\Python\C++...
+ *      谁来写
+ *
+ *   [面向过程]
+ *      C
+ *      想到哪写到哪
+ *
+ * 面向对象编程，需要我们掌握：“对象、类、实例” 的概念
+ *   对象：万物皆对象
+ *   类：对象的具体细分（按照功能特点进行分类：大类、小类）
+ *   实例：类中具体的一个事物（拿出类别中的具体一个实例进行研究，那么当前类别下的其它实例也具备这些特点和特征）
+ *
+ * 整个JS就是基于面向对象设计和开发出来的语言，我们学习和实战的时候也要按照面向对象的思想去体会和理解
+ *
+ * 
+ * 面向对象：把相同的代码提取出来归为一类,把公共的方法挂在原型上的一种编程思想（开发模式）
+ * 
+ * 
+ * /    
+
+/*
+    对象:
+        象-> 像
+        抽象
+            -> 抽 -> 抽离、抽出
+            抽离出像的部分（把相当部分的代码提取出来）
+
+    
+    类（归类）:
+        人类
+            有头、有脚、有腿、有身体
+            直立行走、有学习能力、穿衣服
+            有思想
+            会学编程的
+*/
+    /*
+        new Date
+        new Object
+        new Array
+        new Boolean
+        ....
+
+        [1].push(1)
+        [].pop()
+        .....
+
+        类:
+            class
+
+        面向对象的三大特征:
+            封装、继承、多态
+
+            抽象、封装、继承
+
+        构造函数：
+            创建对象的函数
+    */
+
+//    function Cat(name,pz,jiao){ //构造函数
+//        let obj = {};
+//        obj.name = name;
+//        obj.pz = pz;
+//        obj.jiao = function(){
+//            alert(jiao);
+//        }
+//        return obj;
+//    }
+
+     function Cat(name,pz,jiao){ //构造函数
+    //    let obj = {};
+        this.name = name;
+        this.pz = pz;
+        this.jiao = function(){
+           alert(jiao);
+        }
+    //    return obj;
+   }
+
+   let jiafei = new Cat('菲菲','加菲','喵喵'); //实例化对象
+   let bosi = new Cat('波波','波斯猫','喵u'); //实例化对象
+
+   jiafei.jiao();
+   bosi.jiao();
+
+    console.log(jiafei)
+
+</script>
+</body>
+</html>

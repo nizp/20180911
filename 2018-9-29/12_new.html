@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        new 一元运算符
+            专门用来运算*函数*
+            +
+            :?
+
+            使用new之后不用加括号一样会执行函数。
+
+            new之后this变为实例化对象
+
+            默认返回值就不是undefined而是实例化对象
+
+            写了return，如果return后面是简单类型，返回结果依然是实例化对象
+            如果是return后面是复合类型，返回结果就是这个复合类型
+
+
+    */
+    function fn(a){
+        // console.log(this);
+        return true;
+    }
+    // new fn(1);
+    // fn();
+    console.log( new fn() );
+    // console.log( fn() );
+
+    
+</script>
+</body>
+</html>

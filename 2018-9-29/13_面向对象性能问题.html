@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+    /*
+        原型:
+            prototype就是一个函数中的属性，***值是对象***
+
+            原型好比css中的class是解决性能问题的
+
+            如果说实例化对象没有这个方法或者属性,
+            还会去构造函数的原型下去查找这个属性或者方法.
+
+            {} ——> new Object
+
+            obj.aa
+
+            一般写面向对象都是把属性挂在类下，把方法挂在构造函数的原型下
+    */
+    function Cat(name,pz,j){ //构造函数 ，类
+        this.name = name;
+        this.pz = pz;
+        this.j = j;
+        // this.jiao = function(){
+        //    alert(jiao);
+        // }
+   }
+
+    Cat.prototype.jiao = function(){
+        alert(this.j);
+    }
+
+   
+
+   let jiafei = new Cat('菲菲','加菲','喵喵'); //实例化对象
+   let bosi = new Cat('波波','波斯猫','喵u'); //实例化对象
+
+   jiafei.jiao();
+   bosi.jiao();
+
+    console.log(jiafei.jiao == bosi.jiao); //当把jiao提出来之后，2个就相等了
+
+    // Array.prototype.push = function(){
+    //     alert('哈哈,我把你改了');
+    // }
+
+    // let arr = [1,2];
+    // let arr2 = [3,5];
+    // arr.push(5);
+
+
+
+    // console.log(arr.push == arr2.push);
+
+    // console.dir(Cat.prototype);//值是一个对象
+
+    // console.log(jiafei);
+
+    // console.log(Array.prototype);
+
+
+
+
+
+</script>
+</body>
+</html>

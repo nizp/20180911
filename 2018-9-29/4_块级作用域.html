@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+    /*
+        {}除了是对象还是块级作用域
+
+        只要在块级作用域下声明变量（let），那么这个let变量是不会超出块这个范围的
+
+        如果声明一个函数，那么在块之外访问这个函数为undefined
+        在内部就是函数本身
+    */
+
+    // {
+    //     var a = 10;
+    //     console.log(a); //10
+    // }    
+
+    // {
+    //     var a = 10;
+    // }   
+    // console.log(a);
+
+    // console.log(a); //undefined
+    // {
+    //     var a = 10;
+    // }   
+
+     
+    // {
+    //     let a = 10;
+    // }  
+    // console.log(a); //报错
+    
+    // let a = 30;
+    // {
+    //     let a = 10;
+    //     console.log(a); //10
+    // }  
+
+    // let a = 30;
+    {
+        let a = 10;
+    }  
+    console.log(a); //10
+    
+
+</script>
+</body>
+</html>

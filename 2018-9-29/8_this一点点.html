@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        this -> 这个
+
+        全局的this是window
+
+        一个函数单纯直接调用，this是window
+
+        方法的this就是主（函数前有.this就是.前面的对象）
+
+        定时器中的this window
+
+        事件中的this   事件触发是谁就是谁
+
+
+    */    
+//    console.log(this); //window
+
+    function fn(){
+        console.log(this); //window
+    }
+    fn();
+
+    // let obj = {
+    //     // fn:function(){
+
+    //     // }
+    //     fn(){
+    //         console.log(this);
+    //     }
+    // }
+    // obj.fn();
+
+    let obj2 = {
+        aaa:{
+            ooo:{
+                kkk:function(){
+                    console.log(this);
+                    function fn(){
+                        console.log(this);
+                    }
+                    fn();
+                }
+            }
+        }
+    }
+    obj2.aaa.ooo.kkk();
+    
+    // console.log();
+
+    // setTimeout(function(){
+    //     console.log(this);//window
+    // },500);
+
+    function fn(){
+        console.log(this);//window
+    }
+    // setTimeout(fn,500);
+
+
+    document.onclick = function(){
+        console.log(this);
+    }
+
+</script>
+</body>
+</html>

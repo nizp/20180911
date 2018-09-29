@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        1.全局的this是window
+        2.一个函数单纯直接调用，this是window
+        3.方法的this就是主（函数前有.this就是.前面的对象）
+        4.定时器中的this window
+        5.事件中的this   事件触发是谁就是谁
+    */
+    
+    // document.onclick = fn;
+    // function fn(){
+    //     console.log(this);//document
+    // }
+
+    // document.onclick = fn(); //还没点就调用了
+    // function fn(){
+    //     console.log(this);//window
+    // }
+
+        // document.onclick = fn(); //还没点就调用了
+        // function fn(){
+        //     // console.log(this);//window
+        //     return function(){
+        //         console.log(this); //document
+        //     }
+        // }
+
+        // document.onclick = function(){
+        //     fn();
+        // }
+        // function fn(){
+        //     console.log(this);//window
+        // }
+
+        // document.onclick = function(){
+        //     setTimeout(function(){
+        //         console.log(this);
+        //     },1000);
+        // }
+        // function fn(){
+        //     console.log(this);
+        // }
+
+
+        let obj = {
+            name:'小明',
+            fn:function(){
+                console.log(this);//window
+                console.log(this.name); //window.name=''
+            }
+        }
+        // obj.fn();
+        // setTimeout(obj.fn,1000);
+        // setTimeout(obj.fn(),3000);
+        // setTimeout(undefined,1000); //最新的chrome是不会报错的
+
+
+
+</script>
+</body>
+</html>

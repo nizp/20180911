@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+       工厂模式（Factory Pattern）
+    *   1.把实现相同功能的代码进行“封装”，以此来实现“批量生产”（后期想要实现这个功能，我们只需要执行函数即可）
+    *
+    *   2.“高内聚低耦合”：减少页面中的冗余代码，提高代码的重复使用率
+    
+    */
+
+    
+    //抽象出来的
+    function fn(name,age){
+        let obj = {} //引进材料
+        
+        //生产
+        obj.name = name;
+        obj.age = age;
+        
+        //出厂
+        return obj;
+    }
+
+    let xm = fn('小明',18);
+
+    console.log(xm);  //实例化对象
+
+
+
+
+
+    //抽象
+    function 外星人(eyes,head,leg){
+        let obj = {}
+        
+        obj.eyes = eyes;
+        obj.head = head;
+        obj.leg = leg;
+
+        return obj;
+    }
+
+    //实例
+    let ET = 外星人('大眼睛','秃顶','大长腿');
+    let 德莱尼 = 外星人('蓝眼睛','长秀发有蓝角','羊蹄长腿');
+
+
+
+    
+</script>
+</body>
+</html>

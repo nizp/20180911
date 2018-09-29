@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        var a = undefined
+        fn = function(){}
+    */
+    // console.log(a); //undefined
+    // var a=12; 
+    // function fn(){
+    //     //var a = undefined
+    //     console.log(a);  //undefined
+    //     var a=13;   
+    // }
+    // fn();   
+    // console.log(a);  //12  
+
+/****************************************************/
+
+    /*
+        var a = undefined
+        fn = function(){} 
+
+        a = 12
+    */
+
+    // console.log(a); //undefined
+    // var a=12; 
+    // function fn(){
+    //     console.log(a); //12
+    //     a=13;
+    // }
+    // fn();
+    // console.log(a); //13
+
+/****************************************************/
+    /*
+        先看var和function 如果没有会去window上去
+        window都没有就报错.
+
+        如果没有使用var和function的时候，直接使用
+        a = 12(赋值)，window中有这个属性，但是打印不出来
+
+
+
+        fn = function(){}
+
+        
+    */
+    // console.dir(window); //window中居然有，但是打印不出来
+    // console.log(a); //报错
+    // a=12;
+    // //  console.log(a);
+    // function fn(){
+    //     console.log(a);
+    //     a=13;   
+    // }
+    // console.log(a);
+
+/****************************************************/
+    /*
+        for(var i=0){}
+        if(){
+            var a = 10;
+        }
+        变量都会提升
+        函数也会提升，但是如果函数是在一个块中
+        比如:
+        判断中，那么函数预解析的时候为undefined
+        
+
+
+    */
+
+    // var foo = 1; 
+    // function bar(){
+    //     //var foo = undefined
+    //     console.log(fn);
+    //     if(!foo){
+    //         var foo = 10; 
+    //     }else{
+    //         function fn(){}
+    //     }
+    //     console.log(foo); //10
+    // }
+    // bar();
+
+    // function fn(){
+    //     console.log(f);
+    //     var a = 10;
+    //     // if(true){
+    //     //     console.log(f);
+    //     //     function f(){}
+    //     // }
+    //     {
+    //         console.log(f);
+    //         function f(){}
+    //     }
+    
+    // }
+    // fn();   
+
+</script>
+</body>
+</html>

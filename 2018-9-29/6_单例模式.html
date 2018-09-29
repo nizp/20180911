@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        单例模式(单独的实例):
+            把描述同一个东西的不同属性归纳在一起，用对象管理的模式。
+
+            
+    */    
+    let name = '小明';
+    let age = 18;
+    let job = 'web前端';
+
+    let obj = {
+        name:'小明',
+        age:18,
+        job:'web前端',
+        fn:function(){
+            let a = 10;
+            return a+2;
+        }
+    }
+    console.log(obj.fn() + obj.age);
+
+
+    /*
+        高级单例模式:
+
+        1.在给命名空间赋值的时候，不是直接赋值一个对象，而是先执行匿名函数，形成一个私有作用域AA（不销毁的栈内存），在AA中创建一个堆内存，把堆内存地址赋值给命名空间
+        2.这种模式的好处：我们完全可以在AA中创造很多内容（变量OR函数），哪些需要供外面调取使用的，我们暴露到返回的对象中（模块化实现的一种思想）
+    
+
+        
+    */
+   /*
+ * 模块化开发
+ *   1.团队协作开发的时候，会把产品按照功能板块进行划分，每一个功能板块有专人负责开发
+ *   2.把各个版块之间公用的部门进行提取封装，后期在想实现这些功能，直接的调取引用即可（模块封装）
+ *  
+ *  高内聚、低耦合
+ * 
+ */
+   let oo = (function(){
+       function fn(){
+           return 10;
+       }
+       let a = 5;
+       return {
+           fn:fn,
+           a:a,
+           num:a+fn()
+       }
+   })();
+
+   let oo2 = (function(){
+       function fn(){
+           return 10;
+       }
+       let a = 20;
+       return {
+           fn:fn,
+           a:a,
+           num:a + oo.a() //在返回num的时候除了使用自己的a，也使用了oo下的a
+       }
+   })();
+
+
+
+   console.log(oo);
+
+    
+    
+
+
+</script>
+</body>
+</html>

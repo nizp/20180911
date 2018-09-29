@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        https://baike.baidu.com/item/%E8%BF%90%E7%AE%97%E7%AC%A6%E4%BC%98%E5%85%88%E7%BA%A7/4752611?fr=aladdin
+    */
+    let i = 1;
+    let fn = function (n) {
+        i *= 2;
+        return function (m) {
+            /*
+                2 + 3  5
+                i += 5  2+5=7
+            */
+            /*
+                14 += 5 = 19
+            */
+            /*
+                19  2+4
+                19 + 6  25
+            */
+            /*
+                25  2+5
+                25 + 7 = 32
+            */
+            i += n + m;
+            console.log(i);
+        }
+    };
+    let f = fn(2);//return之后的函数函数
+    f(3); //i=7
+    fn(2)(3);//19
+    f(4); //25
+    f(5);//32
+    // console.dir(f);    
+</script>
+</body>
+</html>
