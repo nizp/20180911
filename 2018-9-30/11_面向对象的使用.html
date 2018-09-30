@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    
+    /*
+        内置类的原型是不能赋值的，就算赋值也用不了，最后的结果是内置方法的结果
+
+
+        类中的this和构造函数原型下的this都指向实例化对象。
+
+
+
+    */
+    // Array.prototype = {
+    //     push(){
+    //         alert(1);
+    //     }
+    // }
+
+    
+    // function fn(){
+    //     var a = 10;
+    //     return a;
+    // }
+    // function fn2(){
+    //     var b = 11;
+    //     console.log(fn())
+    // }
+    // fn2();
+
+    
+    /*
+        只要在类里面设置属性，类，包括类下原型上的方法都能找到设置的属性。
+    */
+    // function Fn(){
+    //     //在类中设置属性，原型上都能找到。
+    //     this.a = 10;
+    //     this.b = 20;
+    // }
+
+    // Fn.prototype.fn2 = function(){
+    //     console.log(this.a);
+    // }
+
+    // Fn.prototype.fn3 = function(){
+    //     console.log(this.b);
+    // }
+    // new Fn().fn3();
+
+
+    
+
+
+
+
+
+
+
+
+    Array.prototype.推 = function(){
+        // console.log(this); //实例化对象
+        
+        // console.log(arguments);
+
+        for(let i=0;i<arguments.length;i++){
+            /*
+                [1,2,3][3] = 4
+                [1,2,3,4][4] = 5
+            */
+            this[this.length] = arguments[i];
+        }
+        return this.length;
+    }
+    let arr = [1,2,3];  //arr[3] = 4
+
+    console.log( arr.推(4,5,6,7) );
+
+    console.log(arr);
+
+
+    
+</script>
+</body>
+</html>

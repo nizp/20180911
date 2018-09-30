@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+    /*
+        constructor：
+            它是对象.__proto__下自带的属性，这个属性默认指向构造函数
+
+            有点鸡肋,不一定准确，只能参考
+
+            constructor很容易被修改
+
+            在xx.prototype = {}  原型模式下constructor会被指向Object
+            因为把一个对象赋址给了xx.prototype。
+
+            解决:
+                手动修正constructor指向
+
+                {
+                    constructor:构造函数
+                }
+
+    */
+
+    function Person(name,age){
+        this.name = name;
+        this.age = age;
+    }
+    // Person.prototype.coding = function(){
+    //     alert('敲码');
+    // }
+    // Person.prototype.study = function(){
+    //     alert('学前端');
+    // }
+
+        // let obj = {
+        //     coding:function(){
+        //         alert('敲码');
+        //     },
+        //     study:function(){
+        //         alert('学前端');
+        //     },
+        //     constructor:Person
+        // }
+
+        // console.log(obj instanceof Object)
+        
+        //原型模式
+        Person.prototype = {
+            coding:function(){
+                alert('敲码');
+            },
+            study:function(){
+                alert('学前端');
+            },
+            constructor:Person
+        };
+
+
+
+    // Person.prototype.constructor = Object;
+
+    /*
+        p.coding - >p.__proto__ -> constructor -> Person ->  Person.prototype
+    
+        p.__proto__.coding
+    */
+    
+    let p = new Person('小霍霍',18);
+
+    console.dir(p);
+
+    // p.coding();
+    // p.study();
+
+    console.dir(p.__proto__.constructor);
+    
+
+    
+</script>
+</body>
+</html>

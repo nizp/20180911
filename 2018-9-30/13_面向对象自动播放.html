@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<style>
+.active{
+    background: yellow;
+}
+div{
+    width:150px;
+    height: 80px;
+    border:1px solid #000;
+    display: none;
+}
+div.show{
+    display: block;
+}
+</style>
+</head>
+<body>
+    <button class="active">按钮一</button>
+    <button>按钮二</button>
+    <button>按钮三</button>
+    <div class="show">111</div>
+    <div>222</div>
+    <div>333</div>
+<script>
+    /*
+        选项卡的共同特征:
+            有按钮选择
+            选择之后对应的东西
+    */
+    function Tab(){
+        this.btns = document.getElementsByTagName('button');
+        this.divs = document.getElementsByTagName('div');
+        this.timer = null;
+        this.num = 0;
+    }
+
+    Tab.prototype.init = function(event){
+        this.Events(event);
+    }
+
+    //给每个按钮加事件
+    Tab.prototype.Events = function(event){
+        let that = this; //事件外的this指向Tab
+        for(let i=0;i<this.btns.length;i++){
+            this.btns[i][event] = function(){
+                //this  -> 事件内的this 点谁是谁
+                //而按钮是没有绑定change方法的，所以我要在事件外存一个Tab的this
+                that.change(i);
+            }
+        }
+    }
+
+    //切换
+    Tab.prototype.change = function(j){
+        for(let i=0;i<this.btns.length;i++){
+            this.btns[i].className = '';
+            this.divs[i].className = '';
+        }
+        this.btns[j].className = 'active';
+        this.divs[j].className = 'show';
+    }
+
+    Tab.prototype.play = function(){
+        let that = this;
+        this.timer = setInterval(function(){
+            that.num ++;
+            that.change(that.num %= 3);
+        },1000);
+    }
+
+
+    let t = new Tab();
+    t.init('onclick');
+    t.play();
+
+
+
+
+
+</script>
+</body>
+</html>

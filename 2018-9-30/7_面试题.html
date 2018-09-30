@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+    /*
+        Number、Object、String、Function、Boolean、Array、Undefined、Null、Math
+
+        Date  RegExp....
+        
+        nei zhi lei 内置类
+
+        在数据类型里面，除了Undefined、Null是不允许查看以外，别的内置类都能查看得到。
+
+    */
+    
+    console.log(Null);
+
+
+
+    function Fn(){}
+    Fn.prototype.say = function(){
+        alert('Fn的原型下的say');
+    }
+    Function.say = function(){
+        alert('大Fn的say')
+    }
+    Function.prototype.say = function(){
+        alert('Function的原型下的say');
+    }
+    // Object.say = function(){
+    //     alert('Object的say')
+    // }
+    Object.prototype.say = function(){
+        alert('Object的原型下的say')
+    }
+    Fn.say = function(){
+        alert('Fn的say');
+    }   
+    // Object.say();//Object.__proto__ -> Function.prototype
+
+    // Function.say();
+
+    // Fn.say();
+    
+
+</script>
+</body>
+</html>

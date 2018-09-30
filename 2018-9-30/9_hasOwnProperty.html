@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        hasOwnProperty
+            是不是自身的属性
+
+        obj.hasOwnProperty(属性)  //布尔值 
+        是自身的属性就为true
+        不是自身的属性就为false
+    */    
+
+//    let obj = {
+//        name:'子燕'
+//    }
+//    console.log(obj.hasOwnProperty('name'));
+
+    function Person(name,age){
+        this.name = name;
+        this.age = age;
+    }
+    Person.prototype.coding = function(){
+        alert('敲码');
+    }
+
+    Object.prototype.xx = 'xxx';
+
+
+    /*
+        枚举会是遍历原型链，直到Object.prototype.
+    */
+    let p = new Person('小霍童鞋',16); //Person{name:'小霍童鞋',age:16}
+
+    p.coding();
+
+    // console.log(p.hasOwnProperty('coding'));
+
+    // console.log( 'coding' in p ); //true
+
+     console.log( 'xx' in p ); 
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

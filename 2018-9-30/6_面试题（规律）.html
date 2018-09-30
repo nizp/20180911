@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        函数三种角色:
+            第一种:
+                普通函数（声明，调用）
+
+            第二种:
+                类（this是实例化对象）
+                    类.prototype
+
+            第三种:
+                对象
+                    它是Function的实例化对象，__proto__
+
+
+    */
+    // function Fn(){}
+    // Fn.prototype.num = 0;
+    // console.log(new Fn().num)
+
+    // console.log(Fn.num);//Fn.__proto__ -> Function.prototype
+    
+    // Function.prototype.num = 50;
+
+    // Function.num;//Function.__proto__ -> Function.prototype
+
+    // console.log(Fn.num); //Fn.__proto__ -> Function.prototype
+    // console.log(new Function().num); //50
+
+
+    function Fn(){}
+    // Fn.prototype.say = function(){
+    //     alert('Fn的原型下的say');
+    // }
+    // Function.say = function(){
+    //     alert('大Fn的say')
+    // }
+    // Function.prototype.say = function(){
+    //     alert('Function的原型下的say');
+    // }
+    // Object.say = function(){
+    //     alert('Object的say')
+    // }
+    Object.prototype.say = function(){
+        alert('Object的原型下的say')
+    }
+    // Fn.say = function(){
+    //     alert('Fn的say');
+    // }
+
+    // console.log(new Fn().say);//Fn的原型下的say
+
+    //new Fn().say -> Fn.prototype.say -> Object.prototype.say
+
+    //Fn.prototype.say - >Fn.prototype.say.__proto__ -> Object.prototype.say
+
+    // console.log(Fn.prototype.say)//Fn的原型下的say
+
+       // Fn.prototype.say -> Fn.prototype.say.__proto__ -> Object.prototype.say
+
+
+    // Function.say();  //Function.say  -> Function.prototype.say -> Object.prototype.say
+
+    // Fn.say();//Fn.say -> Function.prototype.say -> Object.prototype.say
+
+    // new Function().say(); //Function.prototype.say - >Object.prototype.say
+     
+
+
+
+</script>
+</body>
+</html>
