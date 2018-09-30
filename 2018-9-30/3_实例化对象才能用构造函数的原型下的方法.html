@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //***** 构造函数的原型下的属性或者方法只给，它的实例化对象用。
+    function D(){}   
+    D.num = 0;
+    D.prototype.num = 10;
+    // let str = '';
+    // str.num = 0;
+    // console.log(D.num);
+    // console.log(str.num);
+    let d = new D(); //d.num
+    console.log(d.num); //10
+    console.log(D.num);//0
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        单例模式
+            obj = {name:'',age:111}
+
+        高级单例
+            obj = (function(){
+                ...
+                ....
+                return {}
+            })();
+        
+        工厂模式:
+            function fn(name){
+                let obj = {}
+                obj.name = name
+                return obj
+            }
+        面向对象:
+            function Fn(name){
+                this.name = name
+            }
+            new Fn('呵呵哒');
+
+        面向对象:
+            把相同的代码归为一类（归类），把他们公用的属性或者方法挂在原型上的一种开发思想
+        
+        原型:
+            prototype
+            函数（一般函数，构造函数）下都有这个属性，这个的**值为对象**
+        
+            实例化对象上没有某个属性和方法的时候，还会去构造函数的原型下去找这个属性或者方法
+            
+            ***** 构造函数的原型的属性或者方法只给，它的实例化对象用。
+        new Array
+
+        function Array(){
+
+        }
+    
+    */  
+    
+    //类  构造函数
+    function Dog(jiao,color){
+        this.jiao = jiao;
+        this.bz = '灵敏';
+        this.zc = '高度忠诚';
+    }
+
+    Dog.prototype.liu = function(){
+        alert(this.jiao + '溜人');
+    }
+
+    let 旺财 = new Dog('旺旺','黄色的'); //实例化对象
+    let 萨摩 = new Dog('啊呜','白色的');//实例化对象
+
+    // 旺财.liu();
+    // 萨摩.liu();
+
+    // console.log(typeof Dog)
+
+    // console.dir(Dog);
+
+    let arr = [1,2,3]; //Array
+
+    let arr2 = [4,5,6] //Array
+
+    // arr.push = function(){
+    //     alert('我是假的push');
+    // }
+    arr.push(5); //走自身的
+    console.log(arr);
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        原型:
+            prototype
+            函数下才有prototype
+            但是函数是个特殊的对象
+                它是new Function的实例化对象
+                    new Function() -> function
+
+                既有原型也有原型链的。
+
+
+        原型链:
+            __proto__
+            实例化对象身上才有__proto__
+
+        关系:
+            构造函数的原型 === 实例化对象的原型链
+    */    
+
+    // let fn = new Function('a','return a');
+    // console.log(fn);
+
+
+    // let obj = {}; //new Object
+    // let arr = [];
+    // function fn(){}
+    // console.dir(fn);
+    Object.prototype.say = function(){
+        alert('object');
+    }
+
+    function Fn(){}
+    // Fn.prototype.say = function(){
+    //     alert(123);
+    // }
+    Fn.say = function(){
+        alert(321);
+    }
+    let f = new Fn;
+    f.say();
+    // Fn.say()
+    console.dir(f);
+    console.log(f.__proto__ === Fn.prototype);//true
+
+
+</script>
+</body>
+</html>

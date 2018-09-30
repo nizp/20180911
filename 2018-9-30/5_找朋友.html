@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+    // function Fn(){
+    //     //this是实例化对象，实例化对象上有，就不会去找构造函数的原型了
+    //     this.num = 20;
+    // }
+    // Fn.prototype.num = 30;
+
+    // let f = new Fn;
+    // console.log(f.num);
+
+
+    // function Fn(){
+    //     this.num = 20;
+    // }
+    // Fn.prototype.num = 30;
+    // let f = new Fn; //Fn{num:20}
+    // console.log(f);
+    // f.num = 40; //Fn{num:40}
+    // console.log(f.num);//40
+
+
+    // function Fn(){
+    //     this.num = 20;
+    // }
+    // Fn.prototype.num = 30;
+    // Fn.num = 90;
+    // Fn.prototype.num = 100;
+    // let f = new Fn;
+    // console.log(Fn.num); //90
+    // console.log(f.num);//20
+    // f.num = 40; 
+    // console.log(f.num);//40
+
+
+
+    // function Fn(){
+    //     this.num = 20;
+    // }
+    // Fn.prototype.num = 30;
+    // Fn.num = 70;
+    // Function.prototype.num = 100;
+    // let f = new Fn;
+    // console.log(Fn.num);//70
+    // f.num = 40;  
+    // console.log(f.num);//40
+
+    // /*
+    //     Function.num -> 
+
+    //     Function.__proto__ -> 
+
+    //     Function.prototype.num
+    // */
+    // console.dir(Function)
+    // console.log(Function.num);//100
+
+
+    // function fn(){}
+    // fn.prototype.num = 20;
+    // Function.prototype.num = 10;
+    // Object.prototype.num = 30;
+
+    /*
+        function 是由Function构造出来的Function.prototype
+        Function.prototype.__proto__ === Object.prototype
+        
+
+        fn.num
+            fn.prototype.num = 10
+
+
+        Function.num
+            Function.prototype.num = 10
+
+
+
+        Function.num -> Function.prototype
+        ->Function.prototype.__proto__ -> Object.prototype
+        
+
+    */
+    // console.dir(Function);
+    // console.log(fn.num);
+
+    /*
+        fn.num -> fn.__proto__ -> Function.prototype
+
+        Function.prototype.__proto__ -> Object.prototype
+
+    */
+
+    // Function.prototype.num = 10;
+
+    // console.log(new Function().num);
+    // console.dir( new Function );
+
+    /*
+        先找原型链 -> 构造函数的原型 -> 构造函数的原型的原型链 -> Object.prototype
+        
+        new Function().__proto__ ->
+
+        Function.prototype
+    */
+    // console.dir(Function) //Function.prototype
+
+
+
+   /*
+       Function.num -> Function.__proto__
+
+       Function.prototype
+
+       function Fn(){}
+       Fn.prototype.num = 20;
+       Fn.num
+       Fn.__proto__ -> Function.prototype
+
+        Function.prototype.__proto__ ===  Object.prototype
+
+   */
+//    console.log(Function.num);
+
+
+    function fn(){}
+    // fn.prototype.num = 20;
+    Function.prototype.num = 30;
+
+    // console.dir(fn);
+    /*
+        fn.num -> fn.__proto__ -> Function.prototype
+        Function.prototype.__proto__ -> Object.prototype 
+        undefined
+    */
+
+    console.log(new fn().num);
+
+    /*
+        new fn().__proto__ ->  fn.prototype -> 20
+    */
+    
+ 
+
+
+</script>
+</body>
+</html>

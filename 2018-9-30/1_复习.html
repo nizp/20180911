@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        题
+        块级作用域
+            {}对象
+            {}块
+                如果在块中声明函数，此时函数在块的外部
+                会预解析并且值为undefined,当在块中访问这个
+                函数的时候，这个函数都可以使用。
+
+        作用域链:
+            全局作用域是在最顶层，函数为里层，函数内如果找不到某个变量
+            那么会去函数的参数中查找，如果还没有会去父级找，直到全局
+            如果全局还找不到，那么就报错，这种关系就叫作用域链
+
+            注意:
+                查找会从里往外找，而不会从外往里找。
+
+
+        如果实参传入的是一个简单类型，那么在函数内修改这个形参，那么外界是
+        不会受到任何干扰的，如果传入的是复合类型，那么修改形参的值会影响外界的
+        复合类型。
+            注意:
+                如果参数传入的是复合类型，函数内又赋值了一个复合类型
+                此时是不会对外界干扰。
+
+
+
+
+
+
+
+
+    */
+    // let a = 20;
+    // var b = 10;
+    // function fn(b){
+    //     alert(b);
+    //     var b = 20;
+    //     alert(b);
+    // }
+    // fn(b);
+    // console.log(b);
+
+    var b = {name:'小强'};
+    var c = 20;
+    // function fn(b){
+    //     console.log(b);
+    //     // var b = {};
+    //     b = 30;
+    //     // b.name = '小渣渣';
+    //     console.log(b);
+    // }
+    // fn(c);
+    // console.log(c);
+
+    // function fn(b){
+    //     console.log(b);//小强
+    //     b = {}
+    //     b.name = '小渣渣';
+    //     console.log(b);//小渣渣
+    // }
+    // fn(b);
+    // console.log(b);//小强
+
+
+    // function fn(b){
+    //     console.log(b);//
+    //     b = new Object();
+    //     b.name = '小渣渣';
+    // }
+    // fn(b);
+    // console.log(b);
+    // console.dir(window);
+    // console.log(fn);//undefined
+    // {
+    //     let a = 10;
+    //     console.log(fn); //函数
+    //     function fn(){}
+    // }
+
+    /*
+        如果key值和value值名字一样，那么可以只写一个
+        
+        如果对象中有键值对的函数
+            fn:function(){}
+                可以写成下面这种
+            fn(){}
+
+    */
+    let name = '小咔咔';
+    let age = 20;
+    let o = {
+        name,
+        age,
+        // fn:function(){
+
+        // },
+        fn(){
+                
+        }
+    }
+    // console.log( o.fn() );
+
+
+   
+      
+   
+
+</script>
+</body>
+</html>

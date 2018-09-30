@@ -1,0 +1,16 @@
+1.复习原型
+
+2.原型与原型链
+
+3.instanceof 
+
+4.hasOwnProperty
+
+5.constructor
+
+6.实现数组一些方法
+
+7.函数的三种角色
+
+8.call，apply，bind
+
