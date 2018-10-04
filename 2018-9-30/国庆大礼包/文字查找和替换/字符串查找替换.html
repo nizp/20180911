@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字符串查找替换</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        section{
+            width: 800px;
+            height: 630px;
+            margin: 50px auto;
+            padding-top: 40px;
+            background-color: rgb(171, 221, 231);
+            background: url("images/background.png") no-repeat;
+            overflow: hidden;
+
+        }
+        #logo{
+            width: 200px;
+            height: 48px;
+            margin: 0px auto;
+        }
+        #top{
+            width: 520px;
+            height: 274px;
+            border-radius: 10px;
+            margin: 20px auto ;
+            background-color: white;
+            padding: 27px;
+            box-shadow: 0px 0 7px RGB(152, 210, 221) ;
+            z-index: 99;
+        }
+        #top .top_container{
+            width: 360px;
+            height: 230px;
+            padding: 20px;
+            float: left;
+            overflow: hidden;
+        }
+        .bg{
+            background-color: rgb(238,248,250);
+            border: 1px solid rgb(171,221,231);
+            border-radius: 2px;
+            color: #004654;
+            font-family: 'Lantinghei SC ';
+        }
+        #top .top_container p{
+            line-height: 30px;
+            font-size: 14px;
+            height: 30px;
+            color: #004654;
+            width: 360px;
+            height: 240px;
+            border-width: 0;
+            background-color: rgba(0,0,0,0);
+
+            overflow: auto;
+        }
+        #top .top_container p span{
+            line-height: 30px;
+            background-color: green;
+            color: white;
+            height: 30px;
+            display: inline-block;
+
+        }
+
+        #top .top_func{
+            float: left;
+
+            width: 100px;
+            height: 270px;
+            margin-left: 17px;
+        }
+        #top .top_func ul{
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        #top .top_func ul li{
+            width: 100px;
+            height: 65px;
+            list-style: none;
+            border-radius: 3px;
+            position: absolute;
+            padding-top: 15px;
+            cursor: pointer;
+
+        }
+        #top .top_func ul li img{
+            display: block;
+            margin: 0px auto;
+            width: 27px;
+            height: 27px;
+            padding-top: 0px;
+        }
+        #top .top_func ul li p{
+            font-size: 16px;
+            font-family: 'Lantinghei SC ';
+            color: white;
+            display: block;
+            height: 40px;
+            width: 100px;
+            text-align: center;
+            line-height: 40px;
+        }
+        #top .top_func ul .func_open{
+            background-color: rgb(144,226,242);
+
+        }
+        #top .top_func ul .func_find{
+            background-color: rgb(168,166,245);
+            _display: none;
+            top:95px;
+
+        }
+        #top .top_func ul .func_replace{
+            background-color: rgb(159,231,169);
+            _display: none;
+            top:190px;
+
+        }
+
+
+        #bottom{
+
+            width: 526px;
+            height: 158px;
+            position: relative;
+            top: 12px;
+            margin: 0 auto;
+            border-radius: 10px;
+            background-color: white;
+            color: white;
+            padding: 0px 22px;
+            box-shadow: 0px 0 7px rgb(147,208,221) ;
+            _display: none;
+        }
+        #bottom div{
+            height: 40px;
+            padding-top: 25px;
+        }
+        #bottom div a{
+            display: block;
+            font-size: 16px;
+            width: 100px;
+            height: 40px;
+            border-radius: 3px;
+            float: left;
+            line-height: 40px;
+            text-align: center;
+            cursor: pointer;
+        }
+        #bottom div .find{
+            background-color: rgb(168,166,245);
+            margin-left: 5px;
+        }
+        #bottom div .replace{
+            background-color: rgb(159,231,169);
+            margin-left: 20px;
+        }
+        #bottom div .close{
+            color: #222222;
+            width: 14px;
+            height: 14px;
+            float: right;
+            background: url("images/close.png");
+        }
+        #bottom input{
+            float: left;
+        }
+        #bottom #text1{
+            margin: 14px 0 0 5px;
+            width: 400px;
+            height: 48px;
+            padding-left:10px;
+            font-size: 16px;
+            /*display: none;*/
+        }
+        #text2{
+               margin: 14px 0 0 5px;
+               width: 190px;
+               height: 48px;
+               padding-left:10px;
+               font-size: 16px;
+               display: none;
+           }
+        #text3{
+            margin: 14px 0 0 8px;
+            width: 190px;
+            height: 48px;
+            padding-left:10px;
+            font-size: 16px;
+            display: none;
+        }
+        #bottom #btn1{
+            width: 60px;
+            height: 40px;
+            background-color: rgb(168,166,245);
+            margin: 14px 0 0 10px;
+            float: right;
+            border-radius: 2px;
+            padding: 10px 0 0 36px;
+            cursor: pointer;
+        }
+        #prompt{
+            height: 30px;
+            margin-top: 10px;
+            color: red;
+            font-size: 12px;
+            text-align: center;
+            line-height: 30px;
+        }
+
+    </style>
+
+    <script>
+       
+    </script>
+</head>
+<body>
+
+<section>
+    <div id="container">
+
+        <div id="logo">
+        </div>
+
+        <div id="top">
+            <div class="top_container bg">
+
+                <p>
+                        教育理念：
+                        认识到每个人的优势和价值，进行不同的指导和引导、推荐到更适合的平台。我们不仅仅是努力，不仅仅是传授技术，更重要的是：我们是发现你的伯乐！
+                        传奇就业：
+                        超过50%的学员工资翻倍或进入百度、新浪、腾讯等知名公司！
+                        
+                        强悍课程：
+                        原生javaScript、算法及编程思想、设计模式、Ajax后台技术,HTML5+CSS3移动端客户端开发，Node.js、jQuery、Vue、React框架讲解
+                </p>
+            </div>
+            <div class="top_func">
+                <ul>
+
+
+                    <li class="func_replace">
+                        <img src="images/images/replace_11.png">
+                        <p>替换</p>
+                    </li>
+                    <li class="func_find">
+                        <img src="images/images/li_bg_12.png">
+                        <p>查找</p>
+                    </li>
+                    <li class="func_open">
+                        <img src="images/images/open_10.png">
+                        <p>展开</p>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div id="bottom">
+
+            <div>
+                <a class="find">查找</a>
+                <a class="replace">替换</a>
+                <a class="close"></a>
+
+            </div>
+            <input id="text1" class="bg" type="text" value="输入要查找的内容">
+            <input id="text2" class="bg" type="text" value="输入要查找的内容">
+            <input id="text3" class="bg" type="text" value="输入要替换的内容">
+            <div id="btn1">
+                <img src="images/images/li_bg_12.png">
+            </div>
+            <div id="prompt"></div>
+
+        </div>
+
+    </div>
+</section>
+
+</body>
+</html>
