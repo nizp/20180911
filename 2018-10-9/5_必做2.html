@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        ary = ...
+        fn = function(){}
+        var res = ...
+
+
+        ary=[1,2,3,4]
+        res = 函数中的ary
+
+        [0,2,3,4] 
+
+        ary = [0];
+        [100]
+
+        只要函数内的参数赋址了，在赋址之前是能和外界建立联系的，
+        但是在赋值之后，等号之后的代码就和外面切断联系了。
+    */
+
+    // var ary=[1,2,3,4];
+    // function fn(ary){
+    //     ary[0]=0;    
+    //     ary = [0];    
+    //     ary[0]=100;    
+    //     return ary; 
+    // }
+    // var res = fn(ary);   //[100]  
+    // console.log(ary);  //[0,2,3,4]   
+    // console.log(res);    //[100]
+
+
+    /************第二题*****************/
+
+    
+    /*
+        i = 10
+
+        注意:
+            n + (i++)虽然i++被括号包着，但是运算结果不会优先计算i++
+
+            而是直接运算i本身
+    */
+
+    // function fn(i) {
+    //     return function (n) {
+    //         console.log(n + (i++));
+    //     }
+    // }
+    // var f = fn(10);
+    // f(20); //20 + 10  30   i=11
+    // fn(20)(40);  //60
+    // fn(30)(50); //80
+    // f(30); //30 + 11 = 41
+
+
+    /*******************第三题*************************/
+
+    // var i = 10;
+    // function fn() {
+    //     return function (n) {
+    //         console.log(n + (++i));
+    //     }
+    // }
+    // var f = fn();
+    // f(20); //n=20  + i = 11    31
+    // fn()(20);//n=20  20 + i=12  32
+    // fn()(30); //n=30  i=13 = 43
+    // f(30);//n=30  i=14  44
+
+
+    /*******************第四题*************************/
+
+    /*
+        
+        obj.fn = function (n) {
+            //闭包
+            this.num += n;
+            num++; 
+            console.log(num);
+        }
+        this.num = 20 * 3; 
+        window.num = 60
+        
+        num++;
+        20 ++ -> 21
+
+        var fn = obj.fn; 
+        
+
+        fn(5);
+            window.num += n;   -> window.num = 65
+            21 ++
+            num = 22
+
+
+        obj.fn(10);
+
+            this.num = 20
+
+            obj.num += n; -> 20+10  30
+
+            22++
+            num = 23
+
+        console.log(num=65,obj.num=30);
+    */
+    
+    // var num = 10;
+    // var obj = {num: 20};
+    // obj.fn = (function (num) {
+    //     this.num = num * 3; 
+    //     num++;
+    //     return function (n) {
+    //         this.num += n;
+    //         num++; 
+    //         console.log(num);
+    //     }
+    // })(obj.num);
+
+    // var fn = obj.fn; 
+    // fn(5);
+    // obj.fn(10);
+    // console.log(num, obj.num); 
+
+
+    function Fn() {
+        this.x = 100;
+        this.y = 200;
+        this.getX = function () {
+            console.log(this.x);
+        }
+    }
+    Fn.prototype.getX = function () {
+        console.log(this.x);
+    };
+    Fn.prototype.getY = function () {
+        console.log(this);
+        console.log(this.y);
+    };
+   
+
+    var f1 = new Fn;
+    var f2 = new Fn;
+
+    console.log(f1.getX === f2.getX); //false
+
+    console.log(f1.getY === f2.getY); //true
+
+    console.log(f1.__proto__.getY === Fn.prototype.getY); //true
+    
+    console.log(f1.__proto__.getX === f2.getX); //false
+
+    console.log(f1.getX === Fn.prototype.getX);//false
+
+    console.log(f1.constructor); //Fn
+
+    console.log(Fn.prototype.__proto__.constructor);//Object
+
+    f1.getX(); //100
+
+    f1.__proto__.getX();//undefined
+
+    f2.getY(); //200
+
+    Fn.prototype.getY();//undefined  Fn.prototype.getY的this指向Fn.prototype
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

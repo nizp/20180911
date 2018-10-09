@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+    /*
+        var a = undefined
+
+        fn = function fn(){}
+        a = 12
+
+    */
+
+    // console.log(a);  //undefined
+    // var a = 12; 
+    // function fn(){
+    //     //var a = undefined
+    //     console.log(a);  //undefined
+    //     var a=13;   
+    // }
+    // fn();   
+    // console.log(a);  //12  
+
+
+
+    /******************第二题********************/
+
+    /*
+        var a = undefined
+        fn = function(){}
+
+
+        a = 12
+    */
+
+    // console.log(a); //undefined
+    // var a=12;
+    // function fn(){
+
+    //     console.log(a);//12
+    //     a=13;
+    // }
+    // fn();
+    // console.log(a);//13
+
+
+    /**************第三题**************/
+
+    /*
+        fn = function(){}
+        
+
+        a = 12
+    */
+
+    /*
+        如果没有var 在赋值之前访问变量那么会报错，但是在赋值前访问window
+        它身上是有这个属性的,并且这个属性还是运算之后的。
+    */
+
+    // console.log(a); //报错
+    // a = 12; //window.a = 12
+    // console.log(a);  //12
+    // function fn(){
+    //     console.log(a); //12
+    //     a=13;   
+    // }
+    // fn();
+    // console.log(a);//13
+    // console.log(window.a);
+
+
+
+    /****************第4题***************************/
+
+    /*
+        var foo = undefined
+        bar = function (){}
+
+        foo = 1
+
+    */
+
+    // var foo=1; 
+    // function bar(){
+    //     //var foo = undefined
+    //     if(!foo){
+    //         var foo=10; //foo = 10
+    //     }
+    //     console.log(foo); //10
+    // }
+    // bar();
+
+
+    /*******************第五题********************/
+
+    /*
+        var n = undefined
+        a = function(){}
+        var c = undefined
+
+
+        全局 n = 0
+
+
+        全局 c = b
+
+
+        局部 n = 11
+        
+
+    */
+    // var n=0; 
+    // function a(){
+    //     var n=10; 
+    //     function b(){
+    //         n++; 
+    //         console.log(n); //11
+    //     }
+    //     b();
+    //     return b; 
+    // }
+    // var c = a();
+    // c();//12
+    // console.log(n);//0
+
+    //n = 12
+
+    // var n=0; 
+    // function a(){
+    //     n=10; 
+    //     function b(){
+    //         n++; 
+    //         console.log(n); //11
+    //     }
+    //     b();
+    //     return b; 
+    // }
+    // var c = a();
+    // c();//12
+    // console.log(n);//12
+
+    
+    /**********************第6题*******************************/
+
+    /*
+        a = undefined
+        b = undefined
+        c = undefined
+        test = function(){}
+        
+
+        a = 10
+        b = 11
+        c = 12
+        
+        
+
+    */
+
+    // var a=10,b=11,c=12;
+    // function test(a){
+    //     /*
+    //         var b = undefined
+    //     */
+    //     a=1;
+    //     var b=2; //b = 2;
+    //     c=3;  //全局c = 3
+    // }
+    // test(10);
+    // console.log(a);  //10
+    // console.log(b);  //11 
+    // console.log(c);  //3
+
+
+/******************第7题***************************************/
+    /*
+        var a = undefined
+
+        当var之后，window身上会挂一个属性，并且这个属性是可以被枚举到的
+    */
+
+    // if(!("a" in window)){
+    //     var a = 1;
+    // }
+    // console.log(a); //undefined 
+
+
+/*************第八题***************/
+
+    /*
+        var a = undefined
+        b = function(){}
+
+        a = 4
+
+    */
+
+    // var a = 4;
+    // function b(x,y,a) {    
+    //     console.log(a); //3
+    //     arguments[2]=10;  //a = 10     
+    //     console.log(a); //10
+    // }
+    // a = b(1,2,3);   
+    // console.log(a); // undefined
+
+
+/*************第九题***************/
+
+/*
+   var foo = ...
+
+   foo = hello
+
+
+
+*/
+
+// var foo='hello'; 
+// (function(foo){
+//     /*
+//         var foo = ...
+//         foo = 'hello'
+//     */
+//    console.log(foo); //'hello'
+//    var foo = foo || 'world';
+//    console.log(foo);//'hello'
+
+// })(foo);
+// console.log(foo);
+
+
+/**************第十题**********************/
+
+    /*
+        var a = ...
+        fn = function(){}
+        var f = ...
+
+
+        a = 9
+
+        a = 0
+
+        a = 1
+
+        a = 0
+
+        a = 1
+
+        a = 2
+
+    */
+
+    // var a=9; 
+    // function fn(){ 
+    //     a=0;       
+    //     return function(b){ 
+    //         return b + a ++; 
+    //     }    
+    // }
+    // var f=fn();
+    // console.log( f(5) ); //5
+    // console.log( fn()(5) ); //5
+    // console.log(f(5)); //6
+    // console.log(a);//2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        1.字符串数组的方法
+
+
+        数组:
+            查询类:
+                indexOf
+                includes
+
+            截取类:
+                slice
+            操作:
+                push
+                pop
+                unshift
+                shift
+                splice
+
+            链接:
+                join
+                concat
+
+            循环:
+                forEach
+                map
+                some
+                every
+                filter
+            
+            翻转:
+                reverse
+
+            排序:
+                sort
+
+        
+
+
+        字符串:
+            查询类:
+                indexOf
+                lastIndexOf
+                includes
+            
+            截取类:
+                slice
+                substring
+                substr
+                charAt
+
+            切割:
+                split
+
+            拼接:
+                concat
+
+            首尾空格:
+                trim
+
+            大小写:
+                toLowerCase
+                toUpperCase
+
+            
+        2.数据类型中什么是真什么是假？
+
+            string,number,boolean,null,undefined,object,symbol
+
+            真:非空字符串，非0，true，object，symbol，function
+
+            假:空字符串，0，false，null，undefined，NaN
+
+
+
+        3.检测数据类型的方式？
+
+            typeof
+            instanceof
+            Object.prototype.toString
+            constructor
+
+        4.倒计时原理和时间转化公式
+
+            未来的时间 - 现在的时间 = 还剩下多少时间
+
+            let t = Math.floor((newDate - new Date)/1000)
+
+            let d = t/86400
+            t%=86400
+
+            let h = t/3600
+            t%=3600
+
+            let m = t/60
+            t%=60
+
+            t
+
+        5.数组去重
+
+            [...new Set([1,2,3,4])]
+
+
+        
+
+        
+
+        
+
+    */
+    
+    let newDate = new Date(2018,9,10);
+
+    let t = Math.floor((newDate - new Date)/1000)
+
+    // console.log(newDate - new Date);
+
+    let d = Math.floor(t/86400);
+    t%=86400;
+
+    let h = Math.floor(t/3600);
+    t%=3600;
+
+    let m = Math.floor(t/60);
+    t%=60;
+
+    console.log(d+'天'+h+'时'+ m+'分'+Math.floor(t));
+
+
+
+    /*
+        {
+            number1:true,
+            number2:true,
+            number3:true,
+            number4:true
+        } 
+    */
+
+    // let arr = [1,2,3,4,4,4,4,2,5,5,'5'];
+    // let obj = {};
+    // let arr2 = [];
+    // for(let i=0;i<arr.length;i++){
+    //     if(!obj[typeof arr[i] + arr[i]]){
+    //         arr2.push(arr[i]);
+    //         obj[typeof arr[i]+arr[i]] = true;
+    //     }
+    // }
+    // console.log(arr2)
+    // //0.087158203125ms,0.1689453125ms,0.112060546875ms
+    // console.time('计时器');
+    // for(let i=0;i<arr.length;i++){
+    //     let cur = arr[i];
+    //     if(obj[typeof cur + cur] == cur){
+    //         arr[i] = arr[arr.length-1];
+    //         arr.length --;
+    //         i--;
+    //         continue;
+    //     }
+    //     obj[typeof cur + cur] = arr[i];
+    // }
+    // console.timeEnd('计时器');
+    // console.log(arr);
+
+    //0.27001953125ms 0.091064453125ms 0.23291015625ms
+
+    /*
+        6.var和let的区别
+
+        var会变量提升，会在全局作用域下挂一个属性，不受限与块，可以重复命名
+
+        let不会变量提升，有暂存死区，受限于块，不可以重复命名
+
+        7.闭包
+            函数套函数，子函数要访问父函数的参数或者变量（作用域链），并且父函数得在外部使用
+            此时父函数形成闭包环境。
+
+            局部的参数或者变量不被外界所干扰
+            让父级的参数或者变量不被浏览器垃圾回收机制回收
+
+        
+        8.你对面向对象是如何理解的？
+            把相同（功能）的代码抽象出来归为一类，把公共的属性或者方法挂在这个类的原型下的一种思想（编程方式）
+
+        9.什么是原型，什么是原型链
+
+        原型(prototype):一个函数自带的属性   函数的实例化对象找不到某个属性或者方法，一定会去构造函数的原型下去找。
+        
+        原型链(__proto__):实例化对象身上自带一个属性
+
+        原型关系链：函数的实例化对象找不到某个属性或者方法，一定会去构造函数的原型下去找，如果还没有会去原型下的原型链查找，直到找到Object.prototype为止。
+
+        10.原型和原型链的关系？
+            实例化对象的原型链 === 构造函数的原型
+
+
+    */
+
+//    function fn(){
+//        let a = 10;
+//        return function(){
+//            a++;
+//            console.log(a);
+//        }
+//    }
+
+//    let f = fn();
+//    console.dir(f);
+
+
+
+    // {
+    //     var a = 10;
+    // }
+//    console.log(a);
+
+    // console.log(a);
+    // let a = 10;
+
+    
+
+
+</script>
+</body>
+</html>

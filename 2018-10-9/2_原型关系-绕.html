@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    function Fn(){}
+    // Fn.prototype.say = function(){
+    //     alert('Fn的原型下的say');
+    // }
+    Function.say = function(){
+        alert('大Fn的say')
+    }
+    // Function.prototype.say = function(){
+    //     alert('Function的原型下的say');
+    // }
+    Object.say = function(){
+        alert('Object的say')
+    }
+    Object.prototype.say = function(){
+        alert('Object的原型下的say')
+    }
+    Fn.say = function(){
+        alert('Fn的say');
+    }   
+    // Function.say(); //Function.say; prototype  __proto__-> Function.prototype -> Function.prototype.__proto__ -> Object.prototype
+    // Fn.say(); //Fn.__proto__ ->  Function.prototype
+    // let f = new Fn;//Fn{}
+    // f.say();//f.say -> f.__proto__ -> Fn.prototype -> Fn.prototype.__proto__ -> Object.prototype
+    // console.dir(f);
+
+    let ff = new Function;
+    
+    ff.say();//ff.say -> ff.__proto__ -> Function.prototype -> Function.prototype.__proto__ -> Object.prototype
+
+    console.dir(ff);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+1.听写（讲解）
+
+2.try{}catch(){}throw new Error()
+
+3.DOM映射
+
+4.JSON的转换
+
+5.createDocumentFragment
+
+6.正则

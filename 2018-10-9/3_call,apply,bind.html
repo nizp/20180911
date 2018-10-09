@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        一个函数在创建出来的时候，就自带一些属性或者方法
+
+        其中就有call,bind,apply,改变指针方向（this）
+
+        call:无数个参数
+            第一个参数:
+                改变this指向
+
+            第二个参数之后:
+                就是实参
+
+        apply:只有2个参数
+            第一个参数:
+                改变this指向
+            第二个参数:
+                是个数组(数组中放实参)
+
+            相同点:
+                都可以改变this指向，2个方法调用的时候会*自动执行函数*
+
+            不同点:
+                call参数可以是无数个，apply只有2个参数，第二个参数是数组
+
+        bind:
+            有无数个参数
+
+            第一个参数:
+                改变this指向
+
+            第二个参数之后:
+                就是实参
+
+            返回值为一个函数，并且调用bind方法之后，是不会执行函数体的，得手动执行
+
+
+        注意:
+            如果第一个参数为null或者undefined，this指向window
+
+
+    */    
+    function fn(a,b,c){
+        console.log(this,a+b+c); //window
+    }
+
+    // fn.apply(document,[1,2,3]);
+    // fn.call(document,1,2,3);
+
+    // let f = fn.bind('小霍',1,2,3);
+    // f();
+
+    // fn.bind('小霍',1,2,3)();
+    // console.log(f);
+
+//    console.dir(fn);
+
+    
+    // console.log(1+''); //'1'
+
+    // console.log({}+''); // [object Object]
+    // console.log({}.toString())
+    // console.log(true + '') ; //"true"
+
+
+    /*
+        所有的数据类型都有toString方法，只有Object的toString可以查看数据的构造函数
+        此时通过call来改变Object.prototype.toString的this指向，使传入的数据能够被
+        Object.prototype.toString方法处理。
+    */
+
+    function Arr(){}
+    Arr.prototype.toString = function(){
+        alert(1);
+    }
+    function Str(){}
+    Str.prototype.toString = function(){
+        alert(2);
+    }
+    function Obj(){}
+    Obj.prototype.toString = function(){
+        // console.log(this.valueOf());
+        console.log(typeof this.valueOf());
+    }
+
+    // console.log(Object.prototype.toString.call([]))
+
+    let a = new Arr;
+    let b = new Str;
+    let c = new Obj;
+    // a.toString();//1
+    // b.toString();//2
+    // c.toString();//3
+
+    // Obj.prototype.toString.call(true);
+
+    
+    let arr = [6,9,1,20,80,66];
+
+    // Math.max(1,2,3,4)
+    // Math.max = function(){
+    //     console.log(arguments)
+    // }
+
+    // console.log(Math.max.apply(null,arr));
+
+    console.log(Math.max(...arr)); //1,2,3
+
+
+    // function fnn(){
+    //     console.log(this); //window
+    // }
+    // fnn.call(null);
+
+    
+</script>
+</body>
+</html>
