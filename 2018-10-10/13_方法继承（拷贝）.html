@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+    /*
+        继承:
+            1.属性继承
+                类式继承(call继承):
+                    调用父类通过call，改变this指向
+
+            2.方法继承
+                拷贝继承
+                for(let attr in 父类.prototype)
+
+    */
+
+    Object.prototype.ooxx = 20;
+
+        
+    function Person(say,name,age){
+        this.say = say;
+        this.name = name;
+        this.age = age;
+        console.log(this);
+    }
+    Person.prototype.runing = function(){
+        alert(this.name+'会跑');
+    }
+    Person.prototype.ygj = function(){
+        alert('用工具的');
+    }
+    Person.prototype.singer = function(){
+        alert('唱讲真的');
+    }
+
+    function Coder(say,name,age){
+        Person.call(this,say,name,age);
+    }
+
+    /*
+        那么写是对象赋址了，改变一个就会影响另一个
+    */
+    // Coder.prototype = Person.prototype;
+
+    //Person.prototype.hasOwnProperty
+
+    /*
+        for in会枚举整个原型链，能把非父级身上的属性拷贝下来
+    */
+
+    for(let attr in Person.prototype){
+        //必须保证赋值的数据是父级自身的属性
+        if(Person.prototype.hasOwnProperty(attr)){
+            Coder.prototype[attr] = Person.prototype[attr];
+        }
+    }
+
+    console.log(Coder.prototype);
+
+    Coder.prototype.runing = function(){
+        alert(this.name+'脚踏七彩云');
+    }
+
+
+    let p1 = new Person('大渣好','渣渣辉',40);
+
+    let c1 = new Coder('我是程序猿','abc',12);
+    c1.runing();
+    p1.runing();
+
+    c1.singer();
+    
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

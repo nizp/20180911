@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        继承:
+            子类继承父类的特征，并且子类有自己的特征
+
+            拷贝继承
+            原型继承
+            类式继承
+            
+            对象继承
+            寄生组合式
+            ES6继承
+
+
+
+
+        人类
+        警察:
+            穿制服、有证件、为人民服务、站军姿、有警棍，带手枪
+    */    
+
+    /*
+            人类
+    */
+    /*
+        人类
+        穿制服、有证件、为
+    */
+
+    function Person(say,name,age){
+        this.say = say;
+        this.name = name;
+        this.age = age;
+    }
+    Person.prototype.runing = function(){
+        alert(this.name+'会跑');
+    }
+    Person.prototype.ygj = function(){
+        alert('用工具的');
+    }
+    Person.prototype.singer = function(){
+        alert('唱讲真的');
+    }
+
+
+
+
+    function Coder(say,name,age){
+        this.say = say;
+        this.name = name;
+        this.age = age;
+    }
+
+    Coder.prototype.runing = function(){
+        alert(this.name+'会跑');
+    }
+    Coder.prototype.ygj = function(){
+        alert('用工具的');
+    }
+    Coder.prototype.singer = function(){
+        alert('唱讲真的');
+    }
+    Coder.prototype.coding = function(){
+        alert(this.name+'我会敲代码');
+    }
+    
+
+
+
+    let p1 = new Person('大渣好','渣渣辉',40);
+    p1.runing();
+    let c1 = new Coder('我是程序猿','abc',12);
+    c1.coding();
+    // console.log(p1);
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

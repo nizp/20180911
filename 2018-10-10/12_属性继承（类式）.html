@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+    /*
+        继承:
+            1.属性继承
+                类式继承(call继承):
+                    调用父类通过call，改变this指向
+
+            2.方法继承
+
+        {
+            say:'123',
+            name:'abc',
+            age:18
+        }
+
+    */
+        
+    function Person(say,name,age){
+        this.say = say;
+        this.name = name;
+        this.age = age;
+        console.log(this);
+    }
+    Person.prototype.runing = function(){
+        alert(this.name+'会跑');
+    }
+
+    function Coder(say,name,age){
+        Person.call(this,say,name,age);
+    }
+
+    let p1 = new Person('大渣好','渣渣辉',40);
+
+    let c1 = new Coder('我是程序猿','abc',12);
+    
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
