@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="ul"></ul>
+<script>
+    /*
+        XML：
+            <Person>
+                <name>小董</name>    
+                <age>2000</age>
+            </Person>
+            
+        
+        json是一种数据格式，它本质是字符串，长的像js中的对象
+
+        一般json数据都是后端给的
+
+            '{"name":"诗进","age":18}'
+            '[]'
+
+            JSON.parse()   高版本浏览器才能使用，低版本用json2.js
+                可以把JSON格式的数据转成js中的对象
+
+            注意:
+                使用JSON.parse的时候必须保证json是标准格式的
+
+                key值必须有双引号，value值为字符串的也要为双引号
+
+
+                key值为单引号会报错。
+
+            
+    */    
+
+//    let str =  "{'name':'诗进','age':18}";×
+//     let str =  '{"name":"诗进","age":18}'; //√ 
+
+//     let str2 = '[1,2,3]';
+
+//    str = JSON.parse(str2);
+//    console.log(str);
+
+        
+    let json = '[{"name":"小明","age":18},{"name":"小花","age":16}]';
+    
+    json = JSON.parse(json);
+    let html = '';
+    json.forEach(function(e){
+        console.log(e);
+        html += `<li>我的名字叫:${e.name},我的年龄是:${e.age}岁</li>`;
+    });
+    ul.innerHTML = html;
+    console.log(json);
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="ul"></ul>
+<script>    
+    /*
+        DOM映射:
+            js元素和DOM中的元素是一一对应的，操作元素的时候不是重新创建一个元素操作，
+            而是把对应的元素拿来操作
+
+        DOM回流:
+            当页面的元素发生几何变化的时候（宽、高、位置、创建元素），都会导致整个页面重排
+            浏览器会重新计算结构位置，重新渲染页面，这就叫DOM回流，
+            DOM操作是非常消耗性能，所以尽量减少DOM的操作
+            
+
+        DOM重绘:
+            就是改变了背景颜色、边框、字体的颜色,浏览器重新绘制颜色的过程。
+
+
+        createDocumentFragment：文档碎片
+            在盒子里面可以放入若干元素，最后打包一次性塞到页面中
+
+            如果要添加内容通过appendChild添加
+
+
+       
+        177.8203125ms
+
+       
+        62.237060546875ms
+
+       
+        170.885009765625ms
+        
+       
+    */
+
+    //每循环一次，就操作一次DOM
+    // console.time('计时器')
+    // for(let i=0;i<10000;i++){
+    //     let li = document.createElement('li');
+    //     li.innerHTML = '123';
+    //     ul.appendChild(li);
+    // }
+    // console.timeEnd('计时器')
+
+    // let html = '';
+    // console.time('计时器')
+    // for(let i=0;i<10000;i++){
+    //     html += '<li>123245</li>';
+    // }
+    // ul.innerHTML = html;
+    // console.timeEnd('计时器')
+
+    let Fragment = document.createDocumentFragment();
+    console.time('计时器')
+    for(let i=0;i<10000;i++){
+        let li = document.createElement('li');
+        li.innerHTML = '123';
+        Fragment.appendChild(li);
+    }
+    ul.appendChild(Fragment);
+    console.timeEnd('计时器')
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        window
+            1.单纯的函数名 + 括号
+            2.定时器直接调用*此函数*
+
+        属性的情况
+            this就是.前面的主
+        实例化对象的情况
+            this就是实例
+        事件触发谁的情况
+            事件触发谁就是谁
+        undefined
+            "use strict"
+            严格模式
+
+        遇到函数this就可能发生变化
+    */    
+
+    // function fn(){
+    //     // console.log(this);
+    //     obj.fn();
+    // }
+    // // fn();
+
+    // let obj = {
+    //     fn:function(){
+    //         console.log(this);
+    //     }
+    // }
+
+    // setTimeout(obj.fn,1000);
+
+
+    // function fn(){
+    //     "use strict" //严格模式下是必须用变量声明var,let ..不然会报错
+    //     a = 20
+    //     console.log(a);
+    // }
+    // fn();
+    
+</script>
+</body>
+</html>

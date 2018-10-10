@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+#box{
+   
+    width:260px;
+}
+.active{
+    background: yellow;
+}
+#box div,#box2 div{
+    width:150px;
+    height: 100px;
+    display: none;
+    border: 1px solid #000;
+}
+#box div.show,#box2 div.show{
+    display: block;
+}
+</style>
+</head>
+<body>
+    <div id="box">
+        <button class="active">按钮一</button>
+        <button>按钮二</button>
+        <button>按钮三</button>
+        <div class="show">1111</div>
+        <div>22222</div>
+        <div>3333333</div>
+    </div>
+
+    <div id="box2">
+            <button class="active">按钮一</button>
+            <button>按钮二</button>
+            <button>按钮三</button>
+            <div class="show">1111</div>
+            <div>22222</div>
+            <div>3333333</div>
+        </div>
+
+        <input type="button" value="第一停" id="btn1"/>
+        <input type="button" value="第二个开始动" id="btn2"/>
+        <input type="button" value="反向动" id="btn3"/>
+<script>
+
+    /*
+        1.页面中不管有几个box都能运行tab切换
+
+        2.自动播放
+
+        3.点击一个按钮，让第一个停下来
+
+        4.一上来的时候，第一个动，第二个不动
+
+        5.点击让第二个开始动
+    */
+
+    function tab(id,onOff){
+        const box = document.getElementById(id);
+        const btns = box.getElementsByTagName('button');
+        const divs = box.getElementsByTagName('div');
+        box.timer = null;
+        let num = 0;
+
+        for(let i=0;i<btns.length;i++){
+            btns[i].onclick = function(){
+                for(let j=0;j<btns.length;j++){
+                    btns[j].className = divs[j].className = '';
+                }
+                this.className = 'active';
+                divs[i].className = 'show';
+            }
+        }
+        
+        if(onOff){
+            box.timer = setInterval(function(){
+                num ++;
+                for(let j=0;j<btns.length;j++){
+                    btns[j].className = divs[j].className = '';
+                }
+                btns[num%=btns.length].className = 'active';
+                divs[num%=btns.length].className = 'show';
+            },1000);
+        }
+       
+        btn1.onclick = function(){
+            let box = document.getElementById('box');
+            clearInterval(box.timer);
+        }
+        btn2.onclick = function(){
+            tab('box2',true);
+        }
+    }
+    tab('box',true);
+    tab('box2');
+
+    
+
+</script>
+</body>
+</html>

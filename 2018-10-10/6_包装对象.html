@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        
+        简单类型下是不可以直接加属性或者方法的，就算添加也是undefined
+
+        使用内置类构造的简单类型下的属性是只能读不能写的。
+        
+        包装对象:
+            当去使用简单类型的属性或者方法的时候，简单类型会自动转成对象类型
+            调用此数据的属性或者方法，之后自动销毁。
+
+    */    
+    // let arr = [];
+
+    // arr.num = 10;
+
+    // arr.num ++;
+
+    // alert(arr.num);
+
+    // let str = '';
+
+    // str.num = 10;
+
+    // str.num ++
+
+    // console.log(str.num);
+
+    let str = '132131';
+    let str2 = new String('12345');
+    str2.length = 1; //修改不了属性
+    console.log(typeof str2); 
+
+
+
+
+</script>
+</body>
+</html>

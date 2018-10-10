@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+#box{
+   
+    width:260px;
+}
+.active{
+    background: yellow;
+}
+#box div,#box2 div{
+    width:150px;
+    height: 100px;
+    display: none;
+    border: 1px solid #000;
+}
+#box div.show,#box2 div.show{
+    display: block;
+}
+</style>
+</head>
+<body>
+    <div id="box">
+        <button class="active">按钮一</button>
+        <button>按钮二</button>
+        <button>按钮三</button>
+        <div class="show">1111</div>
+        <div>22222</div>
+        <div>3333333</div>
+    </div>
+
+    <div id="box2">
+            <button class="active">按钮一</button>
+            <button>按钮二</button>
+            <button>按钮三</button>
+            <div class="show">1111</div>
+            <div>22222</div>
+            <div>3333333</div>
+        </div>
+
+        <input type="button" value="第一停" id="btn1"/>
+        <input type="button" value="反向动" id="btn3"/>
+<script>
+
+    /*
+        1.页面中不管有几个box都能运行tab切换
+
+        2.自动播放
+
+        3.点击一个按钮，让第一个停下来
+
+        4.一上来的时候，第一个动，第二个不动
+
+        5.反向动
+    */
+
+    function Tab(id){
+        this.box = document.getElementById(id);
+        this.btns = this.box.getElementsByTagName('button');
+        this.divs = this.box.getElementsByTagName('div');
+        this.timer = null;
+        this.num = 0;
+    }
+
+    Tab.prototype.Events = function(){
+        console.log(this);
+        let _this = this; //Tab{}
+        for(let i=0;i<this.btns.length;i++){
+            this.btns[i].onclick = function(){
+                //this  点谁是谁
+                _this.change(i);
+            }
+        }
+    }
+
+    Tab.prototype.change = function(index){
+        for(let i=0;i<this.btns.length;i++){
+            this.btns[i].className = this.divs[i].className = '';
+        }
+        this.btns[index].className = 'active';
+        this.divs[index].className = 'show';
+    }
+
+    Tab.prototype.play = function(){
+        let that = this;
+        this.timer = setInterval(function(){
+            that.num++;
+            that.num %= that.btns.length;
+            that.change(that.num);
+        },1000);
+    }
+
+    Tab.prototype.stop = function(){
+        clearInterval(this.timer);
+        this.timer = null;
+    }
+
+    Tab.prototype.isAutoPlay = function(){
+        return !!this.timer;
+    }
+
+
+
+
+    let t = new Tab('box');
+    t.Events();
+    t.play();
+
+    let t2 = new Tab('box2');
+    t2.Events();
+    t2.play();
+
+    btn1.onclick = function(){
+        t.stop();
+    }
+
+    btn3.onclick = function(){
+        if(t.isAutoPlay()){
+            t.stop();
+        }else{
+            t.play();
+        }
+        if(t2.isAutoPlay()){
+            t2.stop();
+        }else{
+            t2.play();
+        }
+    }
+
+
+
+    
+    
+
+</script>
+</body>
+</html>

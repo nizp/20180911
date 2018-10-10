@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<!-- <script>
+    (function(){
+        console.log(a);
+    })()    
+</script> -->
+<script>
+    // (function(){
+    //     console.log(1);
+    // })()
+
+    /*
+        try,catch能够捕获js的异常
+        
+        try中放入可能会报错的js语句，不报错永远不进catch
+
+        catch(error)如果报错了走哪句
+
+        error就是报错的细节
+
+        常用在第一套方案出错，用第二套方案解决
+
+        输出报错信息:
+            throw new Error(可以填入报错的信息)
+
+        num = 0
+        
+        num + 5 = ''
+
+    */
+
+    
+
+    // try {
+    //     console.log(a);
+    // } catch (e) {
+    //     // alert('对不起，你已经非法操作');
+    //     // throw new Error(e);
+    //     a = 10; 
+    // }
+
+    //throw new Error('错误');
+
+    //console.log(a);
+
+    
+    /*
+        当实参不是数字的时候抛出错误
+    */
+    function fn(num){
+        if(typeof num === 'number'){
+            return num + 5
+        }else{
+            throw new Error('num必须为数字');
+        }
+    }
+    console.log(fn('1'));
+    console.log(12321321);
+
+
+</script>
+</body>
+</html>

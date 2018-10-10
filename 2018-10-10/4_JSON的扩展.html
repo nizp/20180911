@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="txt">
+    <button id="btn">点击</button>
+<script>
+   /*
+        eval()
+            能够把字符串尽量转成js能够运行的代码
+
+        小技巧:
+            在使用eval传化json的时候，json用字符串括号包一下
+                eval('('+json+')')
+
+            注意:
+                eval是有可能被注入病毒的
+
+            new Function('','return'+json)(); 也能解决这个问题
+   */
+    
+    function fn(){
+        alert(1);
+    }
+    // setTimeout('fn()',1000); //内部就是用eval转了一道，性能差
+    // new Function('a,b','alert(a+b)')(1,2)
+
+
+    let json = "{'name':'小明','age':18}"; 
+
+    // (function fnn(){
+    //     alert(123)
+    // })()
+
+    // console.log(eval('('+json+')')); //"({'name':'小明','age':18})"
+
+
+    let obj = new Function('','return'+json)();
+
+    console.log(obj);
+
+    // console.log(JSON.parse(json));
+
+
+    btn.onclick = function(){
+        console.log(eval(txt.value))
+    }
+
+
+    
+    
+
+
+
+
+
+</script>
+</body>
+</html>
