@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        寄生组合继承
+            子类私有继承父类私有，子类公有继承父类公有
+
+        Object.create=》吧参数当做公有属性和方法给当前这个函数的返回值
+        
+        总结：
+            属性继承：通过call继承的方法，将父类中的私有属性赋值一份到子类的私有属性中
+            方法继承：我们可以通过Object.create这个方法，将父类的原型当做参数传入，返回值是一个空对象，将其赋值给子类的原型，这样子类的原型就可以通过__proto__原型链找到父类的原型
+        
+        
+        注意:
+            但是这样做导致子类的原型constructor丢失，而且之前添加的公共方法也会被清空，为了构造函数的完整，我们需要手动添加constructor，在继承之后给子类得原型扩展
+
+    */
+    // let obj = {name:'小明'};
+    // let obj2 = Object.create(obj);
+    // console.log(obj2 == obj)
+
+    function Person(name,age){
+        this.name = name;
+        this.age = age;
+    }
+    Person.prototype.say = function(){
+        alert('呵呵');
+    }
+
+    Person.say = function(){
+        //静态方法
+        // Person.say()
+    }
+
+    function Coder(name,age){
+        Person.call(this,name,age);
+    }
+
+    // Coder.prototype = new Person;
+
+    Coder.prototype = Object.create(Person.prototype);
+
+    // Coder.prototype = Object.defineProperties(Person.prototype,{
+    //     say:{
+    //         value:Person.prototype.say
+    //     }
+    // });
+    
+    //Object.create(Person.prototype);
+
+    // Coder.prototype.say = function(){
+    //     alert(this.name);
+    // }
+
+    let c = new Coder('小明',29);
+    let p = new Person('小花',18);
+
+    console.log(c.say);
+    // p.say();
+
+
+
+
+
+</script>
+</body>
+</html>

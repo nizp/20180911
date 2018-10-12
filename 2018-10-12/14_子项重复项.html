@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        (a)(b)\1\2 ....
+        abab
+
+        重复子项:
+            \num  1就代表重复第一个子项（只重复一次）
+    */    
+
+//    let str = 'jfgfeababbinvfe';
+//    console.log(str.match(/(a)(b)\1\2{2}/));
+
+    /*
+        找到下列字符中谁出现的次数多，它重复了几次
+    */
+    let str = 'djsi9jdsa9djj91jjj1xejjmmi1xke1jdxmowqxnz';
+
+    // let obj = {};
+    // for(let i=0;i<str.length;i++){
+    //     if(obj[str[i]]){
+    //         obj[str[i]] ++;
+    //     }else{
+    //         obj[str[i]] = 1;
+    //     }
+    // }
+    let n = -Infinity;
+    let nn = '';
+    // for(let attr in obj){
+    //     if(n < obj[attr]){
+    //         n = obj[attr];
+    //         nn = attr;
+    //     }
+    // }
+
+    /*
+        先把字符串切割为数组，然后用sort排序
+        可以排列成重复的，再用join把数组转成
+        字符串
+
+        1111999addddeeiijjjjjjjjjjkmmmnoqsswxxxxz
+
+        找到一个数字或者一个字母，把它当做子项 
+        \1+就是 重复前面的数字或者字母
+        
+        11111
+
+        999
+
+        str.replace(/([0-9a-z])\1+/g,function($0,$1){
+            $0就是每次匹配到的连续重名的字符串
+        })
+
+
+    */
+    str = str.split('').sort().join('');
+
+    str.replace(/([0-9a-z])\1+/g,function($0,$1){
+        console.log($1);
+        if(n < $0.length){
+            n = $0.length;  //n = 10
+            nn = $1;    //j
+        }
+    });
+
+    console.log(str);
+    console.log(nn,n);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+   /*
+        [^] -> 排除
+        /^$/
+   */
+    let str = 'aacabcaccadcacccca123cafffc'; //aac abc acc adc
+    // console.log(str.match(/a[^cd]c/g));
+
+    //  console.log(str.match(/a([^7]{3})c/g));
+
+    // console.log(str.match(/a[a-z]{1}c/g));
+
+    // console.log(str.match(/a([^c]{3})c/g));
+
+    //  console.log(str.match(/(a[^c]c)|a([^c]{3})c/g));
+
+
+    let str1 = str.substring(0,str.indexOf('acccc'));
+    let str2 = str.substring(str.indexOf('acccc')+5);
+    let str3 = str1+str2;
+
+    console.log(str3.match(/(a[a-z]c)|(a\w{3}c)/g));
+
+
+    
+
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        正则下的方法:
+            //.test(字符串)  
+                返回值:
+                     true  false
+            //.exec(字符串) 捕获
+                方法用于检索字符串中的正则表达式的匹配。
+                返回一个数组，其中存放匹配的结果。如果未找到匹配，则返回值为 null。
+
+
+        字符串中:
+            string.match(//)
+                找到正则中匹配的字符，并范湖数组
+            返回值 
+                匹配成功 -> 数组(放着匹配成功的字符)
+                匹配失败 -> null
+
+        修饰符:
+            g - global  全局匹配（找整个字符串）
+
+        量词:
+            +  至少一个最多不限
+
+
+        正则的特征:
+            懒惰:
+                比如让找一个数字，它只会找一次，绝对不会找多次
+            贪婪:
+                有多少找多少（尽可能的去检索）
+
+            
+    */
+    let str = 'ab3212321232123212321232123212cadj8321321s4a5kd1ab123232cadj8s4a5kd13321ab2cadj8s4a5kd1';
+    // console.log(/\d/.test(str));
+    // console.log(/\d/.exec(str));
+    console.log(str.match(/\d+/g));
+    // console.log(str.match(/x/));//null
+    // console.dir(/a/);
+</script>
+</body>
+</html>

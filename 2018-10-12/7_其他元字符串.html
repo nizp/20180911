@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        正则中常用的特殊元字符
+    * \d : 匹配0-9之间的任意一个数字
+    * \D ： 除了0-9之间的任意字符
+    * \w ： 匹配数字、字母、下划线，中的任意一个字符，[0-9a-zA-Z_]
+    * \W : 除了数字，字母，下划线以外的任意字符
+    * \s : 匹配一个空白字符 / /
+    * \S ：除了空白字符以外的其他字符
+    * \b ： 匹配一个边界 'box tag'
+    * \B : 除了边界以外的其他字符
+    * \n ： 匹配一个换行符
+    
+           class="box"
+           class="box tag"
+           class="box"
+
+           '|box| tag'   '|box|'
+           aEle[i].className == \b + 'box' + \b
+
+
+    
+    */    
+
+    let str = 's dns ak_ 1  ';
+    // console.log(str.match(/\w/g));//sdnsak_1
+    // console.log(str.match(/\W/g));//|
+
+    // console.log(str.match(/\S/g))
+
+    
+
+    console.log( str.replace(/\b/g,'|') );
+    
+</script>
+</body>
+</html>

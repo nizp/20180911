@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        6~18个字符，可使用字母、数字、下划线，需以字母开头
+        
+        /^[A-Za-z]\w{5,17}@163\.com$/
+
+
+        /^[A-Za-z]\w{5,17}@163\.com$/
+
+        qq
+        163
+        sina
+        126
+        google
+        yahoo
+        outlook
+        
+        [0-9A-Za-z]{2,10}
+
+        /^[A-Za-z]\w{5,17}@[0-9A-Za-z]{2,10}\.com$/
+
+
+    */    
+
+    let str = 'dsh13_1321jda@outlook.com';
+
+    // console.log(/^[A-Za-z]\w{5,17}@163\.com$/.test(str));
+
+    console.log( /^[A-Za-z]\w{5,17}@[0-9A-Za-z]{2,10}\.com$/.test(str));
+
+</script>
+</body>
+</html>

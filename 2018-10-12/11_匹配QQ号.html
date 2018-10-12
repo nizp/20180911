@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="txt">
+    <button id="btn">查看QQ号</button>
+<script>
+    /*
+        1.全是数字
+        2.首数字不能为0
+        3.最少5位最多11位
+
+        /^[1-9]\d{4,10}$/
+
+        |e1321321321||r34343312321|
+    */
+    btn.onclick = function(){
+        let re = /^[1-9]\d{4,10}$/;
+        if(re.test(txt.value)){
+            alert('是QQ')
+        }else{
+            alert('别骗我');
+        }
+        // console.log();
+    }
+</script>
+</body>
+</html>

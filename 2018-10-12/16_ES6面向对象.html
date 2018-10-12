@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        class 类
+
+            Object.create
+            String.formCharAt()
+
+        es6中的继承
+            就是es5我们说的寄生组合继承，
+            通过extends继承父类私有属性和公有属性，
+            如果有添加constructor函数的话，
+            我们必须添加super，不然会报错，
+            super就属于call继承，可以通过super给父类传参。
+            除此之外都是公有属性。
+            super上面有死区，在super上面输出this，也会报错
+
+            子类的公有属性通过原型链__proto__可以找到父类的公有属性
+            【constructor没有丢失】
+
+    */  
+
+    class Person {
+        constructor(name,age){
+            this.name = name;
+            this.age = age;
+        }
+        //静态方法
+        static say(){
+            console.log(this.name);
+        }
+        //动态方法
+        say(){
+            console.log(this.name);
+        }
+    }
+    let p = new Person('小明',19);
+    // p.say(); //调动态
+    // Person.say();  //调用静态
+
+    // console.dir(p);
+
+    class Coder extends Person {
+        constructor(job){
+            /*
+                继承的时候必须加super才能使用this
+                不写super并且使用this就报错
+
+                super上面有死区，在super上面输出this，也会报错
+            */
+            // console.log(this); //gg
+            super(); 
+            console.log(this);
+            this.name = name;
+            this.age = age;
+            this.job = job;
+        }
+        coding(){
+            alert('我会敲代码');
+        }
+        // say(){
+        //     alert('这是Coder的say');
+        // }
+    }
+
+    let c = new Coder('小码',18,'job');
+    c.say();
+    p.say();
+    
+</script>
+</body>
+</html>

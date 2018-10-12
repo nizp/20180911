@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        []  数组
+        [][0] 下标
+        [变量]
+        [] 范围 范围，任意取其一
+
+        A-Za-z 字母
+        0-9数字
+
+        范围是遵循ascll码走的。
+    */    
+//    let str = 'a1ca2ca3ca9ca0c';
+    // let str = 'aacabcaccadcaecaFca_c';
+//    console.log(str.match(/a(1|2|3)c/g));
+// console.log(str.match(/a[123]c/g));
+    // console.log(str.match(/a[0-9]c/g)); //ascll码
+    // console.log(str.match(/a[a-z]c/g))
+    //  console.log(str.match(/a[A-z]c/g))
+    // console.log(str.match(/a[A-Za-z]c/g));
+
+    /*
+        '55'
+                18-110
+
+        18 19  1[8-9] 
+        20 - 99  [2-9][0-9]
+        100-109  10[0-9]
+        110  110
+
+        加了^ $ 
+            去检查整个字符串是否符合正则的规则,只有整个字符串都符合规则才会返回
+        不加 ^ $
+            去检查字符串中是否有符合正则的规则字符，只有字符串中有就直接返回
+
+    */
+
+    let str = '180'; //可以  18-110 
+    
+    console.log(/^1[8-9]$|^[2-9][0-9]$|^10[0-9]$|^110$/.test(str)); //0-9
+
+
+
+
+</script>
+</body>
+</html>

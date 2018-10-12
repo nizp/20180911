@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        i  -  ignoreCase=>忽略大小写
+
+        m ： multiline=> 多行匹配  一般是配合\n来使用的
+
+            当\n的时候，字符串会变成2行或多行，
+            此时结尾只有一个（按照整个字符串来计算的）
+            如果匹配XX+结尾，那么只能找到一个（结尾的那个）
+            但是如果使用了 m，那么会查看每一行的结尾。
+
+        $:
+            结尾
+
+        ^:  开头
+            
+
+    */
+    // let str = 'dsadXjsnn\nxaonn';
+    // console.log(/x/i.test(str));
+    // console.log(str.match(/x/im));
+    // console.log(str);
+    // console.log(str.match(/nn$/gm));  //每一行的结尾都有一个nn会被匹配
+
+    // let str = 'ds'+
+    // 'adXjsnnxaonn';
+
+    let str = `dsa
+    21212dsdsadsa
+    21ewqewqmasksa`;
+
+    console.log(str.match(/sa$/gm));
+
+</script>
+</body>
+</html>

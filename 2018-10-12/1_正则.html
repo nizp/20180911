@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        /^d|s(h)ua$\./g
+
+        正则(正则表达式):
+            专门来操作（检：检查，索：搜索）（模糊范围的）字符串的一种规则。
+
+
+            难点：
+                1.找规律
+                2.写完之后，自己都不认识了
+
+    */
+
+    //找到下列字符串中的数字，并且存到一个数组中
+
+    // let str = '32njkdhsad7y71d13hd 72h9dfh39h89ecipqw';
+    // let arr = [];  //'3'-> 3  isNaN(parseInt(''))
+    // for(let i=0;i<str.length;i++){
+    //     if(!isNaN(parseInt(str[i]))){ //是数字
+    //         arr.push(str[i]);
+    //     }
+    // }
+    // console.log(arr);
+
+    //找到下列字符串中的数字(包括连续的数字)，并且存到一个数组中
+    let str = '32njkdhsad7y71d13hd 72h9dfh39h89ecipqw6';
+
+    let temp = '';   //temp += 3  -> temp=3  temp+=2  32
+    let arr = [];
+    for(let i=0;i<str.length;i++){
+        if(!isNaN(parseInt(str[i]))){
+            temp += str[i];
+        }else{
+            if(temp){ //非空字符串
+                arr.push(temp);
+                temp = '';
+            }
+        }
+    }
+    if(temp){ //非空字符串
+        arr.push(temp);
+        temp = '';
+    }
+
+    // console.log(arr);
+
+    console.log(str.match(/\d+/g));
+
+
+</script>
+</body>
+</html>

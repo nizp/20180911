@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        replace:  替换
+
+            string.replace(''||//,''||callback);
+
+            callback:（$0,$1,$2）  默认
+                第一个参数：
+                    本次匹配的结果
+
+                第二个参数:
+                    本次匹配字符在整个字符串中的位置（索引）
+
+                第三个参数:
+                    整个字符串
+
+                第四个参数:
+                    undefined
+
+            
+            有分组的callback
+                第一个参数:
+                    本次匹配的结果
+                第二个参数之后
+                    如果有子项，就是子项
+
+                子项完了，又是索引、整个字符串、undefined
+
+
+
+                
+
+            
+            注意:
+                只要写了回调函数，那么必须要有return，不写默认走undefined
+
+
+
+            返回值:
+                替换后的结果
+        
+    */
+
+    // let str = 'dsm1ak';
+    // console.log(str.replace('m','M'));
+    // console.log(str.replace(/\d/,'M'));
+
+    /*
+        过滤敏感词:
+
+        | -> ||
+
+        思考题:过滤敏感词
+            用数组去存储敏感词，并且过滤成^&%$#@*
+            ['艹','靠','妹']   
+    */
+
+    let str = '此数组的第0个元素是与正则表达式相匹配的文本，第1个元素是与';
+    //正则表达式 | 数组
+    // console.log(str.replace(/正则表达式|数组|匹配/g,'***'));
+
+    let s = str.replace(/正则表达式|数组|匹配/g,function($0,$1,$2,$3,$4){
+        // console.log($0.length);
+        let temp = '';
+        for(let i=0;i<$0.length;i++){
+            temp += '*';
+        }
+        console.log($4);
+        return temp;
+    });
+    console.log(s);
+
+
+
+
+
+    
+
+
+</script>
+</body>
+</html>
