@@ -95,7 +95,217 @@
     // String.call.call(fn,'找你妹',5); //第二个参数，改变第一个参数的this,第三个参数之后就是实参
 
 
-     /***************************************/
+    /**************3.原型和原型链的关系*************************/
+
+    /*
+        实例化对象的原型链 === 构造函数的原型
+
+        构造函数的原型只给它的实例化对象使用
+
+        构造函数的原型.__proto__ -> Object.prototype
+        
+        对象上只有原型链 __proto__
+
+        函数身上既有原型 prototype
+               也有原型链  __proto__
+
+
+        Fn.prototype.xxx
+        Fn.xxx
+        
+    */
+
+    function Fn(){}
+    Fn.prototype.xx = 10;
+    // Fn.xx = 20;
+    // Function.prototype.xx = 30;
+
+    // console.log(Fn.prototype.xx);
+    //console.log(new Fn().xx)
+    // console.dir(Fn);
+    // console.log(Fn.xx);
+
+    /**************4.面向对象继承的方式有哪些*************************/
+
+    /*
+        类式（call）继承 ->  属性
+            调用父类改变this指向
+        拷贝继承 -> for in  要注意的点，继承的是否为自身的属性
+
+        原型继承
+
+        寄生组合式继承
+            Object.create(Person.prototype)
+
+
+
+
+    */
+
+    // function Person(name,age){
+    //     this.name = name;
+    //     this.age = age;
+    // }
+    // Person.prototype.say = function(){
+    //     console.log(this.name);
+    // }
+
+    // function Coder(name,age,job){
+    //     Person.call(this,name,age);
+    //     this.job = job;
+    // }
+    // for(let attr in Person.prototype){
+    //     if(Person.prototype.hasOwnProperty(attr)){
+    //         Coder.prototype[attr] = Person.prototype[attr];
+    //     }
+    // }
+    // // Coder.prototype.constructor = Person;
+
+
+    // Coder.prototype.say = function(){
+    //     alert(this.name+'是'+this.job);
+    // }
+
+    // let c = new Coder('紫燕',16,'web稀有级别前端科学家');
+    // let p = new Person('真胖',90);
+    // // c.say();
+    // // p.say();
+
+    // console.dir( c instanceof Person );
+
+    /**********原型继承************/
+
+    // function Person(name,age){
+    //     this.name = name;
+    //     this.age = age;
+    //     this.x = 10;
+    //     // console.log(1111);
+    // }
+    // Person.prototype.say = function(){
+    //     console.log(this.name);
+    // }
+
+    // Person.prototype.constructor = Array;
+
+    
+
+    // function Coder(name,age,job){
+    //     Person.call(this,name,age);
+    //     this.job = job;
+    //     this.y = 20;
+    // }
+    
+    // function ph(){}
+    // ph.prototype = Person.prototype;
+    // Coder.prototype = new ph;
+    // Coder.prototype.constructor = Person;
+
+
+    // // Coder.prototype.say = function(){
+    // //     alert(this.name+'是'+this.job);
+    // // }
+
+    // let c = new Coder('紫燕',16,'web稀有级别前端科学家');
+    // let p = new Person('真胖',90);
+    // c.say();
+    // p.say();
+
+    // console.dir( c.constructor ); //Person
+
+    /*******************寄生式继承**************************/
+
+    // function Person(name,age){
+    //     this.name = name;
+    //     this.age = age;
+    // }
+    // Person.prototype.say = function(){
+    //     console.log(this.name);
+    // }
+
+    // function Coder(name,age,job){
+    //     // Person.call(this,name,age);
+    //     this.job = job;
+    // }
+
+    // Coder.prototype = Object.create(Person.prototype);
+
+    // let obj = {}; //对象继承
+    // obj.__proto__ = Person.prototype
+
+    // console.log(obj == Person.prototype);
+
+    // Object.createFn = function(proto){
+    //     let o = new Object;
+    //     o.__proto__ = proto;
+    //     return o;
+    // } 
+    // function ph(){}
+    // Coder.prototype = new Person;
+
+    // Coder.prototype = Object.assign({},Person.prototype);
+
+
+    // Coder.prototype.say = function(){
+    //     alert('3218371289');
+    // }
+
+    // // Coder.prototype = Object.createFn(Person.prototype);
+
+    // let c = new Coder('呵呵呵');
+    // c.say();
+
+
+    /*******************ES6继承**************************/
+
+    class Person {
+        constructor(name){
+            this.name = name;
+        }
+        static say(){
+
+        }
+        say(){
+            alert(this.name);
+        }
+    }
+
+    class Coder extends Person{
+        constructor(){
+            super();
+        }
+    }
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
 
 
 </script>
