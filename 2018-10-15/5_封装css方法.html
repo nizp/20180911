@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+*{
+    padding: 0;
+    margin: 0;
+}
+#box{
+    width:20%;
+    height: 200px;
+    background: #000;
+    opacity:.6;
+}
+</style>
+</head>
+<body>
+    <div id="box"></div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+<!-- <script src="mytools2.js"></script> -->
+<script src="mytools3.js"></script>
+<script>
+    /*
+        $('#box').css('width')  获取box的宽度
+        $('#box').css('width',200)  设置宽度为200
+        $('#box').css({
+            width:200,
+            height:200,
+            background:'red'
+        });  批量设置
+    */    
+
+    // console.log(mytools.css('#box','width'));
+    // mytools.css('#box',{width:'20%',height:'200px',background:'red',opacity:.5});
+        
+    // mytools.setCss('li','width','500');
+
+    // mytools.css('li','width','500');
+    
+    mytools.setCssFromObj('li',{width:'20%',height:'200px'});
+
+
+</script>
+</body>
+</html>

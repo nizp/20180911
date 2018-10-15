@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        类数组:
+            类似于数组，有length，能添加属性和方法，可以通过下标找到值
+            但是使用不了数组的方法。
+
+        Array.from()  ES6提供的新方法，类数组转成数组
+
+        Array.prototype.slice.call(aEle)
+    */    
+    
+    var aEle = document.getElementsByTagName('*');
+
+    // console.log(aEle);
+
+    // aEle = Array.from(aEle);
+
+    //  aEle.push(5);
+
+    // console.log(aEle);
+
+    // aEle = Array.prototype.slice.call(aEle);
+    // aEle.push(5);
+
+    // console.log(aEle);
+
+
+    // let arr = [1,2,3];
+
+    // console.log(arr.slice() == arr);
+
+    // let obj = {
+    //     toArray:function(collection){
+
+    //     }
+    // }
+
+    var mytools = (function(){
+        function toArray(collection){
+            //如果浏览器支持from，那么就走Array自带from方法
+            if(Array.from){
+                return Array.from(collection);
+            }
+            try{
+                //目前测试，IE9-到IE11有slice方法，并且能改变this
+                //注意的是，IE9以下浏览器是不能改变slice的this的，会报错,走catch
+                return Array.prototype.slice.call(collection);
+            }catch(err){
+                var arr = [];
+                for(var i=0;i<collection.length;i++){
+                    arr.push(collection[i]);
+                }
+                return arr;
+            }   
+        }
+        return {
+            toArray:toArray
+        }
+    })();
+    
+    console.log(mytools.toArray(aEle));
+
+    // console.log(Array.from);
+
+    // console.log('from' in Array);
+    // console.log(Array.prototype.slice);
+
+
+
+
+</script>
+</body>
+</html>

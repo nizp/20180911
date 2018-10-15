@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        1.什么情况下会出现this？
+
+        1)单纯的函数名 + 括号   window
+        2)方法，this就是方法名.前面的对象
+        3)定时器调用的函数内  window  
+        4)事件触发谁，this就是谁
+        5)构造函数中的this  实例化对象
+        6)use strict   undefined
+        7)call，_this..
+        8)箭头函数的this指向父级
+    */    
+
+
+
+    // function fn(a){
+    //     "use strict"
+    //     /*
+    //         arguments是没有映射机制的
+    //     */
+    //    arguments[0] = 10;
+    //    console.log(a,arguments[0]);
+    //     // console.log(this);
+    // }
+    // fn(5);
+
+    // let obj = {
+    //     name:'obj',
+    //     pro:{
+    //         name:'pro',
+    //         fn:function(){
+    //             console.log(this);
+    //         }
+    //     }
+    // }
+
+    // setTimeout(function(){
+    //     obj.pro.fn(); //obj.pro
+    // },1000)
+    // setTimeout(obj.pro.fn,1000);//window    ''
+
+    // obj.pro.fn();
+    // console.log( obj.pro )
+
+
+    // function P(){
+    //     // let obj = {}  this = {}
+    //     // obj.name = 12;
+    //     this.name = 12;
+    //     // return obj;  return this
+    // }
+
+    // let p = new P();
+
+
+    /*************改变this的方法有哪些，他们的区别是什么？**************************/
+
+    /*
+        call   
+            有多个参数：
+                第一个参数改变this，
+                第二个之后就是实参
+        apply  
+            2个参数：
+                第一个参数改变this，
+                第二个之后就是数组
+        bind   
+            返回值为函数，不会直接执行函数，要手动执行，和call一样的参数
+
+    */
+
+    // function fn(a){
+    //     console.log(3);
+    //     console.log(a);
+    //     console.log(this);
+    //     // this();
+    // }
+    // function fn2(){
+    //     console.log(2);
+    // }
+    // fn.call(fn2); //3
+
+    // console.dir( fn.call )
+
+    // fn.call.call(fn2); //call.call就是执行this的，this必须传函数
+
+    // String.call.call(fn,'找你妹',5); //第二个参数，改变第一个参数的this,第三个参数之后就是实参
+
+
+     /***************************************/
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    font-size:12px;
+    line-height:1;
+}
+#box{
+    width:200px;
+    height:200px;
+    background: red;
+     padding-top: 50px;
+    padding-bottom: 50px;
+    /* border: 10px solid #000; */
+    /* overflow: hidden; */
+}
+</style>
+</head>
+<body>
+    <!-- <div id="box" style="width:100px"></div> -->
+    <div id="box">
+            321312
+            <br>
+            321312
+            <br>
+            321312
+            <br>
+            321312
+            <br> 321312
+            321312
+            <br>
+            321312
+            321312
+            <br>
+            321312
+            <br>
+            321312
+            <br>
+            321312
+            <br> 321312
+            321312
+            <br>
+            321312
+            321312
+            <br>
+            321312
+            <br>
+            321312
+            <br>
+            321312
+            <br> 321312
+            321312
+            <br>
+            321312
+            321312
+            <br>
+            321312
+            <br>
+            321312
+            <br>
+            321312
+            <br> 321312
+            321312
+            <br>
+            321312
+    </div>
+<script>
+    /*
+        盒子模型的尺寸:
+
+            style.width/style.height   行间的样式
+
+            getComputedStyle(obj).height  计算后的样式
+
+            obj.currentStyle.height 计算后的样式  IE低版本
+
+            获取容器可视的宽高(不带单位的，数字)：
+                clientWidth/clientHeight
+                    支持padding，不支持border
+
+
+            offsetWidth/offsetHeight
+                在client的基础上，支持border
+
+                在没有设置固定高度的时候，值为被内容撑开的高度
+
+            
+            被*内容*撑开的尺寸(不管加不加固定高都会获取出来):
+
+                scrollHeight/scrollWidth   不带边框
+
+            
+                没有溢出:
+                    跟设置的宽高走
+
+                溢出:
+                    content + paddingTop
+                    content + paddingLeft
+
+                    434
+
+            正常用他们必须做到以下几点:
+                1.清除默认的样式
+                2.设置默认的字体大小
+                3.触发haslayout（width/height/定位/zoom）
+
+
+            
+        
+
+    */    
+    
+    var box = document.getElementById('box');
+    // console.log(box.style.height); //''
+    // console.log(getComputedStyle(box).height);
+    // console.log(box.currentStyle.height);
+
+    // console.log(box.clientWidth);
+    // console.log(box.offsetHeight);
+    console.log(box.scrollHeight);
+
+</script>
+</body>
+</html>

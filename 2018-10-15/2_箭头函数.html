@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        箭头函数:ES6增加的函数表达式
+
+
+    */  
+    // let fn = (a) => {
+    //     alert(a);
+    // }
+    // fn(10)
+
+    //如果只有一个参数,可以不写(),如果一个参数都没有或者有多个参数那么必须写()
+
+    // let fn = a => {    //只有一个参数
+    //     alert(a);
+    // }
+    // fn(10) 
+    
+    // let fn = (a,b) => {  //有多个参数
+    //     alert(a+b);
+    // }
+    // fn(10,5);
+
+    //如果说return的内容比较简单(比如运算只有一行)那么可以不加{}直接 => 返回值，就等同于return 运算结果
+
+    // let fn = (a) => a;  //return a
+
+    // let fn = (a) => {
+    //     return a;
+    // };  
+
+    // let fn = (a) => a*5;
+
+    // let fn = (a) => {
+    //     let b = a*5; 
+    //     a = b*a;
+    //     return a;
+    // };
+
+    // console.log( fn(10) );
+
+
+    //this只找父级
+
+    // console.log(this);
+    // document.onclick = () => {
+    //     console.log(this); //window
+    // }
+
+    
+    // document.onclick = function(){
+    //     console.log(this); //document
+
+    //     let f = () => {
+    //         console.log(this); //document
+    //     };
+    //     f();  //因为用了箭头函数，this就不是window了
+    // }
+
+    
+    /*
+        箭头函数不能new，不然会报错
+    */
+    let Person = (name,age) => {
+        this.name = name;
+        this.age = age;
+    }
+
+    let p = new Person('如花',18);  //报错
+
+
+
+
+
+
+
+
+    
+    
+</script>
+</body>
+</html>
