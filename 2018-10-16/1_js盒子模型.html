@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+#box{
+    width:100px;
+    height: 100px;
+    background: #000;
+    /* padding-bottom: 50px; */
+    /* padding-top: 50px; */
+    border:10px solid red;
+    position: relative;
+    /* overflow: hidden; */
+}
+#box2{
+    width: 50px;
+    height: 50px;
+    background: red;
+    border: 5px solid green;
+    position: relative;
+}
+#box3{
+    width:10px;
+    height: 10px;
+    background:yellow;
+    /* border: 10px solid #000; */
+    /* margin-left:10px; */
+    position: absolute;
+    /* left:20px; */
+      /*top:0; */
+    
+}
+#boxx{
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    left:50px;
+}
+/* body{
+    border: 10px solid #000;
+}
+html{
+    border: 20px solid #000;
+} */
+</style>
+</head>
+<body>
+    <div id="box">
+        <div id="boxx">
+            <div id="box2">
+                <div id="box3"></div>
+            </div>
+        </div>
+        
+    </div>
+<script>
+    // console.log(box.style.width);
+    /*
+        记忆
+        理解
+
+        offset系列:这些属性只能读不能写
+            offsetTop/offsetLeft/offsetWidth/offsetHeight/offsetParent
+
+        client系列:
+            clientWidth/clientHeight/clientLeft(左边框)/clientTop(上边框)
+
+
+        offsetTop/offsetLeft/
+
+        offsetParent:定位父级
+            在没有任何定位的情况下它走的是body（在chrome中实测是走html）
+
+            使用:
+                祖先级节点有相对定位，自己有绝对定位,并且要有初始值。
+
+        offsetLeft -> 当前元素的左外边框到定位父级左内边框的距离
+
+            使用:
+                祖先级节点有相对定位，自己有绝对定位，并且要有初始值。
+
+            注意：
+                如果没有定位父级或者祖先级，那么就应该跟html走
+
+
+
+
+    */
+    // console.log(getComputedStyle(box.width));
+    // console.log(box.clientWidth);  //支持padding
+    // console.log(box.offsetWidth)
+    // console.log(box.scrollHeight); //paddingTop + 内容高度
+
+    // console.log(box3.offsetLeft);
+    // console.log(box3.offsetParent);
+    // console.log(box3.clientLeft);
+    alert(box3.offsetLeft)
+</script>
+</body>
+</html>

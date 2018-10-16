@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+#box{
+    width:100px;
+    height: 100px;
+    background: #000;
+    border:10px solid red;
+    position: relative;
+}
+#box2{
+    width: 50px;
+    height: 50px;
+    background: red;
+    border: 5px solid green;
+    position: relative;
+    margin-left:30px;
+}
+#box3{
+    width:10px;
+    height: 10px;
+    background:yellow;
+    border: 5px solid #000;
+    margin-left:10px;
+    position: absolute;
+    left:20px;
+    top:0;
+}
+#box4{
+    width:10px;
+    height: 10px;
+    background:yellow;
+    border: 5px solid #000;
+    position: absolute;
+    left:83px;
+    top:0;
+}
+/* body{
+    border: 10px solid #000;
+} */
+/* html{
+    border: 20px solid #000;
+} */
+
+</style>
+</head>
+<body id="body">
+    <div id="box">
+        <div id="box2">
+            <div id="box3"></div>
+        </div>
+    </div>
+
+    <div id="box4"></div>
+<script>
+//    console.log(box.offsetLeft)
+
+    /*
+        循环条件看看有没有定位父级，有，就加上定位父级的左边距 + 边框
+
+        直到没有定位父级止。
+    */
+
+    // let obj = box3; //存一开始的元素
+    // let boxL = 0;//累计绝对位置的值
+    // let boxCL = box3.clientLeft; 
+    // /*
+    //     存第一次的左边框，是因为第一次多加了一次边框，所以最后要减去
+    // */
+    // while(obj){
+    //     //如果有元素，就元素的左边距 + 自身左边框
+    //     alert('当前这次的'+obj.id);
+    //     boxL += (obj.offsetLeft + obj.clientLeft);
+    //     obj =  obj.offsetParent;  //再把obj变成定位父级，直到null为止
+    //     alert('下一次的'+obj)
+    // }
+    // console.log(boxL - boxCL);
+
+    var box3 = document.getElementById('box3');
+
+    /*
+        getBoundingClientRect() -> 返回的是一个对象
+
+        对象下有绝对的位置和宽高
+            left,top,right,bottom
+            width,height (只有高版本才有)
+            x轴和y轴(只有高版本才有)
+
+    */
+
+    console.log(box3.getBoundingClientRect());
+
+
+
+
+
+
+</script>
+</body>
+</html>

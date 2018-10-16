@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/reset.min.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<div class="content">
+    <div class="header">
+        <span>排序</span>
+        <a href="javascript:;" kk="time">上架时间
+            <i class="up"></i>
+            <i class="down"></i>
+        </a>
+        <a href="javascript:;" kk="hot">热度
+            <i class="up"></i>
+            <i class="down"></i>
+        </a>
+        <a href="javascript:;" kk="price">价格
+            <i class="up"></i>
+            <i class="down"></i>
+        </a>
+    </div>
+    <ul id="list">
+        <!-- <li>
+            <img src="img/1.jpg" alt="">
+            <span>华为畅享7（香槟金）</span>
+            <span>2018-01-01</span>
+            <span>1</span>
+            <span>992</span>
+        </li> -->
+    </ul>
+</div>
+<script src="json/product.js"></script>
+<script>
+    /*
+        前期我们操作数据，主要以引入js文件的方式，主要是为了锻炼如何操作数据
+
+        未来我们会通过前后端数据交互技术来请求数据，来操作数据
+
+        不管是前期还是后期，核心点是如何操作数据
+
+        点一下升序，再点一下降序
+    */
+
+    // console.log(data);
+    
+    function render(data){
+        let html = '';
+        data.forEach((e,i) => {
+            html += `
+                <li>
+                    <img src="${e.img}" alt="">
+                    <span>${e.title}</span>
+                    <span>${e.time}</span>
+                    <span>${e.hot}</span>
+                    <span>${e.price}</span>
+                </li>
+            `;
+        });
+        list.innerHTML = html;
+    }
+    render(data);
+
+    /*
+        添加一个自定义属性，为了标记到底是升序还是降序 ,true-升序
+    */
+    let btns = document.getElementsByClassName('header')[0].querySelectorAll('a');
+    btns = Array.from(btns);
+    let obj = btns[0]; //上一次的点击和这一次的点击是不是一个
+    btns.forEach((ele,i)=>{
+        ele.onoff = true; 
+        ele.onclick = function(){
+            let ii = this.getElementsByTagName('i');
+            if(obj != this){ //如果不是一个，那么当前的排列顺序就是升序
+                this.onoff = true;
+            }
+            if(this.onoff){
+                ii[0].style.borderBottomColor = 'red';
+                ii[1].style.borderTopColor = '#666';
+            }else{
+                ii[0].style.borderBottomColor = '#666';
+                ii[1].style.borderTopColor = 'red';
+            }
+            spsort(this.onoff,this.getAttribute('kk')); //把自定义属性中的值给获取出来，传到spsort，获取出来的值就是排序的依据
+            this.onoff = !this.onoff;
+            obj = this; //每次点击完之后，都要把this给obj，做为下一次的上一次来进行判断
+        }
+    });
+
+
+    function spsort(onoff,st){
+        if(onoff){
+            data.sort((a,b)=>{
+                a = (st=='time')?a[st].replace(/-/g,''):a[st];
+                b = (st=='time')?b[st].replace(/-/g,''):b[st];
+                return a - b;
+            });
+        }else{
+            data.sort((a,b)=>{
+                a = (st=='time')?a[st].replace(/-/g,''):a[st];
+                b = (st=='time')?b[st].replace(/-/g,''):b[st];
+                return b - a;
+            });
+        }
+        render(data);
+    }
+
+    console.log(data);
+
+
+
+
+
+</script>
+</body>
+</html>

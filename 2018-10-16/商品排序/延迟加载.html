@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/reset.min.css">
+    <link rel="stylesheet" href="css/index.css">
+<style>
+#list img{
+    opacity: 0;
+    transition: 1s;
+}
+</style>
+</head>
+<body>
+<div class="content">
+    <div class="header">
+        <span>排序</span>
+        <a href="javascript:;" kk="time">上架时间
+            <i class="up"></i>
+            <i class="down"></i>
+        </a>
+        <a href="javascript:;" kk="hot">热度
+            <i class="up"></i>
+            <i class="down"></i>
+        </a>
+        <a href="javascript:;" kk="price">价格
+            <i class="up"></i>
+            <i class="down"></i>
+        </a>
+    </div>
+    <ul id="list">
+        <!-- <li>
+            <img src="img/1.jpg" alt="">
+            <span>华为畅享7（香槟金）</span>
+            <span>2018-01-01</span>
+            <span>1</span>
+            <span>992</span>
+        </li> -->
+    </ul>
+</div>
+<script src="json/product.js"></script>
+<script src="../mytools.js"></script>
+<script>
+    data.push(...data);
+    function render(data){
+        let html = '';
+        data.forEach((e,i) => {
+            html += `
+                <li>
+                    <img width="205" height="205" _src="${e.img}" alt="">
+                    <span>${e.title}</span>
+                    <span>${e.time}</span>
+                    <span>${e.hot}</span>
+                    <span>${e.price}</span>
+                </li>
+            `;
+        });
+        list.innerHTML = html;
+    }
+    render(data);
+
+    // console.log(mytools.offset(list).top)
+
+    /*
+        1.可视区的大小   document.documentElement.clientHeight
+        2.每一张的绝对位置  绝对位置   mytools.offset(img[i]).top
+        3.滚动条的距离  window.pageYOffset
+
+        可视区的大小 + 滚动条的距离  >=  每一张的绝对位置
+        显示
+    */
+
+    let h = mytools.win('clientHeight');
+    // console.log(h,document.documentElement.getBoundingClientRect().bottom);
+    let lis = Array.from(list.querySelectorAll('li'));
+    ljzimg();
+    onscroll = ljzimg;
+    function ljzimg(){
+        lis.forEach(e=>{
+            // if(h +window.pageYOffset >= mytools.offset(e).top){
+            
+            if(h >= e.getBoundingClientRect().top){
+                // console.log(h >= lis[7].getBoundingClientRect().top);
+                let img = e.getElementsByTagName('img')[0];
+                // console.log(img.getAttribute('_src'))
+                if(img.getAttribute('_src')){ //有自定属性的情况下才有赋值操作
+                    /*
+                        创建一个img对象，目的是为了知道这个图片是否加载成功
+                        如果加载成功，就赋值
+                    */
+                    let img1 = new Image; //document.createElement('img');
+                    img1.src = img.getAttribute('_src');
+
+                    //如果这张图片加载成功，会进onload
+                    img1.onload = function(){
+                        img.src = img.getAttribute('_src');
+                        //每次赋值之后都删除_src，以便下次就不去匹配了
+                        //加定时器的目的就是为了先赋值后删除
+                        setTimeout(function(){
+                            img.removeAttribute('_src');
+                        },50);
+                        img.style.opacity = 1;
+                    }
+                    //如果这张图片加载失败，会进onerror
+                    img1.onerror = function(){
+                        img.src = 'img/timg.jpg'; //给张默认图片
+                        setTimeout(function(){
+                            img.removeAttribute('_src');
+                        },50);
+                        img.style.opacity = 1;
+                    }
+                }
+            }
+            // console.log(mytools.offset(e).top);
+        });
+    }
+    
+
+
+
+</script>
+</body>
+</html>

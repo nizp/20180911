@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/reset.min.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<div class="content">
+    <div class="header">
+        <span>排序</span>
+        <a href="javascript:;">上架时间
+            <i class="up"></i>
+            <i class="down"></i>
+        </a>
+        <a href="javascript:;">热度
+            <i class="up"></i>
+            <i class="down"></i>
+        </a>
+        <a href="javascript:;">价格
+            <i class="up"></i>
+            <i class="down"></i>
+        </a>
+    </div>
+    <ul id="list">
+        <!-- <li>
+            <img src="img/1.jpg" alt="">
+            <span>华为畅享7（香槟金）</span>
+            <span>2018-01-01</span>
+            <span>1</span>
+            <span>992</span>
+        </li> -->
+    </ul>
+</div>
+<script src="json/product.js"></script>
+<script>
+    /*
+        前期我们操作数据，主要以引入js文件的方式，主要是为了锻炼如何操作数据
+
+        未来我们会通过前后端数据交互技术来请求数据，来操作数据
+
+        不管是前期还是后期，核心点是如何操作数据
+
+        点一下升序，再点一下降序
+
+    */
+
+    // console.log(data);
+    
+    function render(data){
+        let html = '';
+        data.forEach((e,i) => {
+            html += `
+                <li>
+                    <img src="${e.img}" alt="">
+                    <span>${e.title}</span>
+                    <span>${e.time}</span>
+                    <span>${e.hot}</span>
+                    <span>${e.price}</span>
+                </li>
+            `;
+        });
+        list.innerHTML = html;
+    }
+    render(data);
+
+    /*
+        添加一个自定义属性，为了标记到底是升序还是降序 ,true-升序
+    */
+    let btns = document.getElementsByClassName('header')[0].querySelectorAll('a');
+    btns = Array.from(btns);
+    btns.forEach((ele,i)=>{
+        ele.onoff = true; 
+        ele.onclick = function(){
+            if(i === 0){ //上架时间
+                spsort(this.onoff,'time');
+            }
+            if(i === 1){//热度
+                spsort(this.onoff,'hot');
+            }
+            if(i === 2){ //价格
+                spsort(this.onoff,'price');
+            }
+            this.onoff = !this.onoff;
+        }
+    });
+
+
+    function spsort(onoff,st){
+        if(onoff){
+            data.sort((a,b)=>{
+                a = (st=='time')?a[st].replace(/-/g,''):a[st];
+                b = (st=='time')?b[st].replace(/-/g,''):b[st];
+                return a - b;
+            });
+        }else{
+            data.sort((a,b)=>{
+                a = (st=='time')?a[st].replace(/-/g,''):a[st];
+                b = (st=='time')?b[st].replace(/-/g,''):b[st];
+                return b - a;
+            });
+        }
+        render(data);
+    }
+
+    console.log(data);
+
+
+
+
+
+</script>
+</body>
+</html>

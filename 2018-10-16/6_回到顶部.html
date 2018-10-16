@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+#box{
+    width:100px;
+    height: 40px;
+    background:green;
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+    cursor: pointer;
+    position: fixed;
+    right:0;
+    bottom:0;
+    opacity: 0;
+    transition: 1s;
+    /* display: none; */
+    visibility: hidden;
+}
+body{
+    height: 3000px;
+    /* overflow: hidden; */
+}
+</style>
+</head>
+<body>
+    <div id="box">回到顶部</div>
+<script>
+
+    /*
+        可视区的高度
+        滚动条的距离
+    */
+
+    let clientH = document.documentElement.clientHeight; 
+    let timer = null;
+    let h = 0;
+    let speed = 100;
+    onscroll = ()=> {
+        if(pageYOffset > clientH){
+            box.style.visibility = 'visible';
+            box.style.opacity = '1';
+        }else{
+            box.style.opacity = '0';
+            box.style.visibility = 'hidden';
+        }
+        console.log(pageYOffset,clientH);
+    }
+
+    box.onclick = function(){
+        timer = setInterval(function(){
+            // h = pageYOffset;
+            // h -= speed;
+            // window.scrollTo(0,h);
+            document.documentElement.scrollTop -= speed;
+            if(pageYOffset <= 0){
+                clearInterval(timer);
+            }
+            console.log(1);
+        },16);   
+    }
+
+</script>
+</body>
+</html>

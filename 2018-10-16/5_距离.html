@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+*{
+    margin: 0;
+    padding:0;
+    font-size:12px;
+    line-height: 1;
+}
+</style>
+</head>
+<body style="height:3000px;width:3000px">
+    
+<script>
+    /*
+        容器尺寸:
+            clientWidth/clientHeight
+            offsetWidth/offsetHeight
+            scrollHeight/scrollWidth
+
+            边框:
+                clientLeft/clientTop
+
+        浏览器的尺寸:
+            document.documentElement.clientWidth/document.documentElement.clientHeight IE
+            document.body.clientWidth/document.body.clientHeight  chrome中
+
+            window.innerWidth/window.innerHeight 高版本用
+                注意:如果有了滚动条，也会把滚动条计算在内
+
+            document.documentElement.clientWidth
+                如果有滚动条，是不会计算滚动条的距离的
+
+                document.documentElement == HTML
+            window.innerWidth || document.documentElement.clientWidth
+
+        滚动的距离:
+            document.documentElement.scrollTop     即可读又可写
+            window.pageYoffset/window.pageXoffset  只可读不可写
+
+            window.scrollTo(x,y) 写滚动距离
+
+            window.pageYoffset || document.documentElement.scrollTop
+
+
+    */  
+//    console.log(document.documentElement.tagName); 
+    //   console.log(window.innerWidth)
+
+    onclick = function(){
+        // console.log(document.documentElement.scrollTop);
+        // console.log(window.pageYOffset);
+        // document.documentElement.scrollTop = 0;
+    }
+   
+</script>
+</body>
+</html>
