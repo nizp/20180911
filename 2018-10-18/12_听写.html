@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        5.什么是JSON，对象转JSON和JSON转对象的方法是什么？
+
+        JSON是一种数据格式 '{}' || '[]'   常用是'{}' 本质字符串
+
+        JSON.parse('{"name":13}'); -> {name:13}
+        JSON.stringify({name:13}) -> '{"name":13}'
+            undefined和函数转不出来
+
+
+    */   
+   
+//    console.log(JSON.parse('[1,2,3]')); //[1,2,3];
+
+    // console.log(JSON.stringify({name:13,n:undefined,fn:function(){}}))
+
+    /*
+        6.什么是正则，常用的方法有哪些？
+
+        专门检索模糊范围字符串的规则
+
+        //.test  //boolean
+        //.exec  //null []
+        str.match  //null []
+        str.replace(''|//,''|callback)  替换之后的字符串
+
+    */
+
+   /*
+        7.正则中元字符、量词、修饰符都有啥？
+
+        \d \D \s \S \b \B \w \W \n  \number
+
+        +
+        ?
+        *
+        {n} {n,m}
+
+        i   g   m
+
+        
+   */
+
+//   let str = 'djsasa1aaaaaaaaa1s6djj';
+//   str.replace(/([a-z])([0-9])\1+\2/g,function($0,$1,$2){
+//       console.log($0)
+//       console.log($1,$2);
+//   });
+
+    /*
+        8.[](){}代表什么意思
+
+        []一个范围
+        [^] 排除
+        () ,优先级、分组
+        {n,m} 最小和最大的次数
+
+    */
+
+   /*
+        9.16-120范围
+            16-19     1[6-9]
+            20-99     [2-9][0-9]
+            100-119   1[0,1][0-9]
+            120       120
+   */
+
+//   console.log( /^(1[6-9]|[2-9][0-9]|1[0,1][0-9]|120)$/.test('999') )
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

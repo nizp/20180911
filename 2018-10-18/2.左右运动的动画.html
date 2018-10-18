@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            position: absolute;
+            left:100px;
+            width:100px;
+            height:100px;
+            background: red;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        input{
+            position: absolute;
+            top:300px;
+            width:200px;
+            height:40px;
+            display: inline-block;
+            background: lightgreen;
+
+            border:none;
+        }
+        #left{
+            left:100px;
+        }
+        #right{
+            left:500px;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<input type="button" id="left" value="向左走">
+<input type="button" id="right" value="向右走">
+
+<script>
+    var box = document.getElementById("box");
+    var left =document.getElementById("left");
+    var right =document.getElementById("right");
+    let timer = null;
+    
+    left.onclick = function(){
+        clearInterval(timer); //点击这次的时候把上次清了
+        timer = setInterval(function(){
+            let v = box.offsetLeft - 10;
+            if(v <= 0){
+                v = 0;
+                clearInterval(timer);
+            }
+            box.style.left = v + 'px';
+            
+        },16.7);
+    };
+    right.onclick = function(){
+        let iW = document.documentElement.clientWidth;
+        let boxW = box.clientWidth;
+        let w = iW - boxW;
+        clearInterval(timer);
+        timer = setInterval(function(){
+            let v = box.offsetLeft + 10;
+            if(v >= w){
+                v = w;
+                clearInterval(timer);
+            }
+            box.style.left = v + 'px';
+        },16.7);
+    };
+
+
+  
+</script>
+</body>
+</html>

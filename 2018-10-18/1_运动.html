@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+#box{
+    width:100px;
+    height:100px;
+    background: #000;
+    position: absolute;
+    top:50px;
+    left:0;
+}
+</style>
+</head>
+<body>
+    <button id="btn">动</button>
+    <div id="box"></div>
+<script src="jquery-3.1.1.js"></script>
+<script>
+    /*
+        运动的方式很多:
+            改变left或者top|margin|transform:translateX|Y..
+
+        浏览器渲染1帧的时间基本是16ms
+
+        渲染帧是指浏览器一次完整绘制过程，
+        帧之间的时间间隔是DOM视图更新的最小间隔。 
+        由于主流的屏幕刷新率都在60hz，
+        因此渲染一帧的事件就必须控制在16.7ms内才能保证不掉帧。
+        也就是说每一次渲染都要在 16.7ms 内页面才够流畅不会有卡顿感。 
+
+
+        事实上定时器的时间并不精确，是会受到cpu的影响
+
+        0
+        16
+        32
+        48
+        ...
+    */
+   let timer = null;
+   btn.onclick = function(){
+    //    let date = new Date; //点下去的时间
+    //    timer = setInterval(function(){
+    //         let newdate = new Date; //每隔16.7毫秒的时间
+    //         console.log(newdate - date)
+    //    },16.7); //30..
+
+    //    timer = setInterval(function(){
+    //         let v = box.offsetLeft + 7 ;
+            
+    //         if(v >= 500){
+    //             clearInterval(timer);
+    //             v = 500;
+    //         }
+    //         box.style.left = v + 'px';
+
+    //    },16.7);
+        $(box).animate({
+            left:500
+        });
+   }
+
+</script>
+</body>
+</html>

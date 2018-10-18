@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //默认的,2个key值一样的情况下，下面的会把上面的覆盖
+    let obj = {
+        name:'王诗进',
+        age:22,
+        // name:'老王'
+    }    
+
+    //配置的
+    let opt = {
+        name:'老王'
+    }
+
+    // for(let attr in opt){
+    //     obj[attr] = opt[attr];
+    // }
+
+    Object.assign(obj,opt); //把右边的值赋值给左边
+
+    console.log(obj);
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

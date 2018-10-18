@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body,
+			ul,
+			li {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="price.css" />
+	</head>
+
+	<body onselectstart="return false;">
+		<div class="wrap">
+			<div class="box">
+				<ul class="list">
+					<!-- <li>
+						<i></i>
+						<em>0</em>
+						<i></i>
+						<span>
+							单价：<strong>12.5元 </strong> 小计：<strong>0元</strong>
+						</span>
+					</li> -->
+					<li>
+							<i></i>
+							<em></em>
+							<i></i>
+							<span>
+								单价：<strong></strong> 小计：<strong>0元</strong>
+							</span>
+						</li>
+					<li>
+						<i></i>
+						<em>0</em>
+						<i></i>
+						<span>
+							单价：<strong>10.5元 </strong> 小计：<strong>0元</strong>
+						</span>
+					</li>
+					<li>
+						<i></i>
+						<em>0</em>
+						<i></i>
+						<span>
+							单价：<strong>8.5元 </strong> 小计：<strong>0元</strong>
+						</span>
+					</li>
+					<li>
+						<i></i>
+						<em>0</em>
+						<i></i>
+						<span>
+							单价：<strong>8元 </strong> 小计：<strong>0元</strong>
+						</span>
+					</li>
+					<li>
+						<i></i>
+						<em>0</em>
+						<i></i>
+						<span>
+							单价：<strong>14.5元 </strong> 小计：<strong>0元</strong>
+						</span>
+					</li>
+				</ul>
+				<div class="info" id="info">
+					<span>商品公合计：<em>0</em>件</span>
+					<span>共花费了：<em>0</em>元</span>
+					<br />
+					<br />
+					<span>其中最贵的商品单价是：<em>0</em>元</span>
+				</div>
+			</div>
+		</div>
+<script>
+	function Calculator(ele,num=0,price,index){
+		this.ele = ele;
+		this.i = this.ele.getElementsByTagName('i');
+		this.em = this.ele.getElementsByTagName('em')[0];
+		this.strong = this.ele.getElementsByTagName('strong');
+		this.s1 = this.strong[0];
+		this.s2 = this.strong[1];
+		this.num = num;  //多少次
+		this.price = price; //价格
+		this.sum = 0; //小计
+		this.index = index;
+		this.info = document.getElementById('info').getElementsByTagName('em');
+
+	}
+
+	Calculator.fn = {
+		
+		sumall(arr){
+			let num = 0;
+			// console.log(arr);
+			arr.forEach(e=>{
+				num += e;
+			});
+			return num;
+		},
+		max(arr){
+			return Math.max(...arr);
+		}
+
+	}
+
+	Calculator.prototype = {
+		constructor:Calculator,
+		add(){
+			this.num ++;
+		},
+		remove(){
+			this.num --;
+			if(this.num < 0) this.num = 0;
+			if(this.num == 0)zuigui[this.index] = 0;
+		},
+		render(){
+			this.em.innerHTML = this.num;
+			this.s1.innerHTML = this.price + '元';
+			this.s2.innerHTML = this.sum + '元';
+			// console.log(Calculator.fn.sumall(heji))
+			this.info[0].innerHTML = Calculator.fn.sumall(heji);
+			this.info[1].innerHTML = Calculator.fn.sumall(sumall);
+			this.info[2].innerHTML = Calculator.fn.max(zuigui);
+			
+		},
+		sumPrice(){
+			this.sum = this.num * this.price;
+		},
+		init(){
+			this.render();
+			let _this = this;
+			this.i[0].onclick = function(){
+				_this.remove();
+				_this.sumPrice();
+				_this.heji();
+				_this.render();
+			}
+			this.i[1].onclick = function(){
+				_this.add();
+				_this.sumPrice();
+				_this.heji();
+				_this.render();
+			}
+		},
+		heji(){
+			heji[this.index] = this.num;
+			sumall[this.index] = this.sum;
+			if(this.num){
+				zuigui[this.index] = this.price;
+			}
+			// console.log(this.sum);
+		}
+	}
+
+	const list = document.getElementsByTagName('li');
+	let arr = [12.5,10.5,8.5,8,14.5];
+	//公共的数组
+	let heji = [];
+	let sumall = [];
+	let zuigui = [];
+
+	arr.forEach((e,i)=>{
+		let c = new Calculator(list[i],0,e,i);
+		c.init();
+		heji[i] = sumall[i] = zuigui[i] = 0;
+	});
+
+
+	/*
+		[{price:12.5,sum:25,num:2}]
+	*/
+
+
+	
+</script>
+</body>
+
+</html>

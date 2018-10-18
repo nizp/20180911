@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+#box{
+    width:100px;
+    height:100px;
+    background: red;
+    position: absolute;
+    top:50px;
+    left:100px;
+}
+</style>
+</head>
+<body>
+    <button id="btn">动</button>
+    <div id="box"></div>
+<script src="tween.js"></script>
+<script>
+    /*
+        1.目标点
+        2.总时间
+        3.当前的用了多少时间
+
+        count = 500
+        duration = 10
+        time = 当前的用了多少时间
+
+        匀速运动:
+            c * (t/d)
+    */
+    btn.onclick = function(){
+        move(box,'left',300,1000,'elasticOut');
+    }
+    function move(ele,attr,c,d,fx){
+        let b = parseFloat(getComputedStyle(ele)[attr]);
+        c = c - b;
+        let bDate = new Date;
+        (function animate(){
+            ele.timer = requestAnimationFrame(animate);
+            let t = new Date - bDate;
+            if(t >= d)t=d;
+            // let v = b + c * (t/d);
+            let v = Tween[fx](t, b, c, d);
+            ele.style[attr] = v + 'px';
+            if(t === d){
+                cancelAnimationFrame(ele.timer);
+            }
+        })();
+    }
+
+
+</script>
+</body>
+</html>

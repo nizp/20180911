@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+#box{
+    width:100px;
+    height:100px;
+    background: red;
+    position: absolute;
+    top:50px;
+    left:100px;
+}
+</style>
+</head>
+<body>
+    <button id="btn">动</button>
+    <div id="box"></div>
+<script src="tween.js"></script>
+<script>
+    /*
+        1.目标点
+        2.总时间
+        3.当前的用了多少时间
+
+        count = 500
+        duration = 10
+        time = 当前的用了多少时间
+
+        匀速运动:
+            c * (t/d)
+    */
+    btn.onclick = function(){
+        move(box,'top',1000,300);
+    }
+
+
+    function move(ele,attr,d,c){
+        let oldTime = new Date; //点击的时间
+        let b = parseFloat(getComputedStyle(ele)[attr]); //起始的位置
+        c = c - b; //真正应该运动的距离（终点的距离 - 开始的距离）
+        (function animate(){
+            ele.timer = requestAnimationFrame(animate);
+            let nowTime = new Date; //现在的时间
+            let t = nowTime - oldTime; //过了多少时间
+            //当已过时间大于或者等于总时间就直接等于总时间
+            if(t >= d){
+                t = d;
+            }
+            let v = b + c * (t/d);
+
+            // let v = Tween.linear(t, 0, c, d);
+            // let v = Tween.bounceOut(t, 0, c, d);
+            // let v = Tween.elasticOut(t, 0, c, d);
+            //bounceIn: function(t, b, c, d)
+            ele.style[attr] = v + 'px';
+            //当已过时间和总时间相等，关闭定时器
+            if(t == d){
+                cancelAnimationFrame(ele.timer); 
+            }
+        })();
+    }
+</script>
+</body>
+</html>

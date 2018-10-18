@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+#box{
+    width:100px;
+    height:100px;
+    background: red;
+    position: absolute;
+    top:50px;
+    left:100px;
+}
+</style>
+</head>
+<body>
+    <button id="btn">动</button>
+    <div id="box">13213213231</div>
+<script src="tween.js"></script>
+<script>
+    /*
+        1.目标点
+        2.总时间
+        3.当前的用了多少时间
+
+        count = 500
+        duration = 10
+        time = 当前的用了多少时间
+
+        匀速运动:
+            c * (t/d)
+
+            {
+                width:200,
+                height:200
+            }
+    */
+    btn.onclick = function(){
+        
+        move(box,{
+            width:300,
+            height:300,
+            fontSize:50
+        },1000,'elasticBoth',function(){
+            move(box,{
+                left:500
+            },1000,'backOut');
+        });
+    }
+
+    /*
+        move(ele,attrs,d,fx,callback)
+        ele:元素
+        attrs:{
+            attr(改变什么样式):c:终点,
+            width:200
+        }
+        d:总时间
+        fx:运动的方式
+        callback:运动结束之后的钩子函数
+
+        j = {
+            width:{
+                b:100,
+                c:300 - 100
+            },
+            height:{
+                b:200,
+                c:300-200
+            }
+            ....
+        }
+    */
+    function move(ele,obj,d,fx,callback){
+        let j = {};
+        let b;
+        for(let attr in obj){
+            b = parseFloat(getComputedStyle(ele)[attr])
+            j[attr] = {
+                //获取起始值
+                b:b,
+                c:obj[attr] - b
+            }
+            /*
+                obj = {
+                    width:300,
+                    height:300
+                }
+
+                obj[width] -> 300
+
+                j = {
+                    width:{
+                        b:100
+                    },
+                    height:{
+                        b:200
+                    }
+                }
+                
+                j[attr] -> j['width'].b -> { b:100 }
+
+            */
+            // j[attr].c = obj[attr] - j[attr].b;  //计算实际距离
+        }    
+        // console.log(j);        
+        let bDate = new Date; //运动开始的时间
+       
+        (function animate(){
+            //调用帧动画
+            ele.timer = requestAnimationFrame(animate);
+            //t:用了多少时间
+            let t = new Date - bDate;
+            //如果用的时间等于或者大于总时间，让用的时间等于总时间
+            if(t >= d)t=d; 
+            // let v = b + c * (t/d);
+            //使用运动方式
+            for(let attr in j){
+                let v = Tween[fx](t, j[attr].b, j[attr].c, d);
+                if(attr === 'opacity'){
+                    ele.style[attr] = v;
+                }else{
+                    ele.style[attr] = v + 'px';
+                }
+            }
+            //当使用的时间等于总时间就说明运动完成，关闭定时器，执行钩子函数
+            if(t === d){
+                cancelAnimationFrame(ele.timer);
+                /*
+                    当本次运动的生命周期结束之后，如果传了(结束钩子函数)callback，那么就调用
+                */
+                callback && callback();
+                // if(callback){
+                //    callback(); 
+                // }
+            }
+        })();
+    }
+
+
+</script>
+</body>
+</html>

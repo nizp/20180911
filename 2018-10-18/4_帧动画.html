@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+    #box{
+        width:100px;
+        height:100px;
+        background: #000;
+        position: absolute;
+        top:50px;
+        left:0;
+    }
+</style>
+</head>
+<body>
+        <button id="btn">动</button>
+        <div id="box"></div>
+<script>
+    /*
+        requestAnimationFrame(调用功能)  动画帧
+
+        cancelAnimationFrame(动画的ID) 关闭帧动画
+
+        requestAnimationFrame是什么？
+            在浏览器动画程序中，我们通常使用一个定时器来循环每隔几毫秒移动目标物体一次，
+            来让它动起来。如今有一个好消息，浏览器开发商们决定：“嗨，为什么我们不在浏览器里提供这样一个API呢，这样一来我们可以为用户优化他们的动画。”所以，这个requestAnimationFrame()函数就是针对动画效果的API，你可以把它用在DOM上的风格变化或画布动画或WebGL中。
+
+        使用requestAnimationFrame有什么好处？
+            浏览器可以优化并行的动画动作，更合理的重新排列动作序列，
+            并把能够合并的动作放在一个渲染周期内完成，
+            从而呈现出更流畅的动画效果。
+            比如，通过requestAnimationFrame()，
+            JS动画能够和CSS动画/变换或SVG SMIL动画同步发生。
+            另外，如果在一个浏览器标签页里运行一个动画，
+            当这个标签页不可见时，浏览器会暂停它，这会减少CPU，内存的压力，
+            节省电池电量。
+
+        
+
+    */    
+
+    //兼容方式
+    // window.requestAnimFrame = (function(){
+    //     return  window.requestAnimationFrame       ||
+    //             window.webkitRequestAnimationFrame ||
+    //             window.mozRequestAnimationFrame    ||
+    //             function( callback ){
+    //                 window.setTimeout(callback, 1000 / 60);
+    //             };
+    // })();
+
+    //调用
+    let timer = null;
+    let num = 0;
+    (function animate(){
+        timer = window.requestAnimationFrame(animate);
+        console.log(++num);
+        box.style.left = box.offsetLeft + 5 + 'px';
+    })();
+
+    btn.onclick = function(){ //关闭
+        cancelAnimationFrame(timer);
+    }
+    // console.log(requestAnimFrame)
+
+
+
+</script>
+</body>
+</html>

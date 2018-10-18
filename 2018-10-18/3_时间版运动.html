@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+#box{
+    width:100px;
+    height:100px;
+    background: #000;
+    position: absolute;
+    top:50px;
+    left:0;
+}
+</style>
+</head>
+<body>
+    <button id="btn">动</button>
+    <div id="box"></div>
+<script>
+    /*
+        1.目标点
+        2.总时间
+        3.当前的用了多少时间
+
+        count = 500
+        duration = 10
+        time = 当前的用了多少时间
+
+
+        11:00
+        11:01
+        11:02
+        11:03
+
+        11:03 - 11:00 = 用了3秒
+    */
+    let timer = null;
+    btn.onclick = function(){
+        let oldTime = new Date; //点击的时间
+        timer = setInterval(function(){
+            let nowTime = new Date; //现在的时间
+            let t = nowTime - oldTime; //过了多少时间
+            
+            // console.log(t);
+            //当已过时间大于或者等于总时间就直接等于总时间
+            if(t >= 1000){
+                t = 1000;
+            }
+
+            let v = 500 * (t/1000);
+            box.style.left = v + 'px';
+            //当已过时间和总时间相等，关闭定时器
+            if(t == 1000){
+                clearInterval(timer); 
+            }
+        },16.7);
+    }
+</script>
+</body>
+</html>

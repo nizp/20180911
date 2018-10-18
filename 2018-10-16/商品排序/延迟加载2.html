@@ -60,16 +60,6 @@
     }
     render(data);
 
-    // console.log(mytools.offset(list).top)
-
-    /*
-        1.可视区的大小   document.documentElement.clientHeight
-        2.每一张的绝对位置  绝对位置   mytools.offset(img[i]).top
-        3.滚动条的距离  window.pageYOffset
-
-        可视区的大小 + 滚动条的距离  >=  每一张的绝对位置
-        显示
-    */
 
     let h = mytools.win('clientHeight');
     let lis = Array.from(list.querySelectorAll('li'));
