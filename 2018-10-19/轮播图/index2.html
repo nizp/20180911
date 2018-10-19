@@ -60,9 +60,9 @@
     <div id="swiper">
         <div><img src="img/banner1.jpg" alt=""></div>
         <div><img src="img/banner2.jpg" alt=""></div>
-        <div><img src="img/banner3.jpg" alt=""></div>
-        <div><img src="img/banner4.jpg" alt=""></div>
-    </divdiv>
+        <!-- <div><img src="img/banner3.jpg" alt=""></div>
+        <div><img src="img/banner4.jpg" alt=""></div> -->
+    </div>
     <ul id="focus">
         <li class="select"></li>
         <li></li>
@@ -72,19 +72,58 @@
 </div>
 <script src="./js/tween.js"></script>
 <script>
-    let num = 0;
-    next.onclick = function(){
+    /*
+        1.先复制一份出来
+            设置ul宽度
+        2.当在最后一张的时候，再点，拉到第一组的最后一张上
+            num 变为第二组的第一张的数字，len/2
+            left: -1000 * num
+    */
+
+   swiper.innerHTML += swiper.innerHTML;
+
+   let len = swiper.children.length; //4
+   let w = outer.offsetWidth;
+   let num = 0;
+   swiper.style.width = len * w + 'px';
+   
+   next.onclick = function(){
         num ++;
-        // swiper.style.left = - 1000 * num + 'px'
-        num %= 4;
+        if(num == len){
+            console.log('进')
+            swiper.style.left = (len/2-1) * -w + 'px';
+            num = len/2;
+        }
         move({
-           ele:swiper,
-           attrs:{
-               left:-1000 * num
-           },
-           time:500 
-        });
-    }
+            ele:swiper,
+            attrs:{
+                left:num * - w
+            },
+            time:500,
+            fx:'elasticOut'
+        }) 
+   };
+
+   prev.onclick = function(){
+        num--;
+        if(num < 0){
+            swiper.style.left = (len/2) * -w + 'px';
+            num = len/2 - 1;
+            // return;
+        }
+        move({
+            ele:swiper,
+            attrs:{
+                left:num * - w
+            },
+            time:500,
+            fx:'elasticOut'
+        }) 
+   }
+
+
+
+    
 </script>
 </body>
 </html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/index.css">
+<style>
+#mask{
+    width:1000px;
+    height: 300px;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: 999;
+    font-size:0;
+}
+#prev,#next{
+    width:50%;
+    height:300px;
+    display: inline-block;
+}
+
+#prev::after{
+    content: "";
+    width:28px;
+    height: 45px;
+    background:url('./img/pre.png') 0 0 no-repeat;
+    position:absolute;
+    left:0;
+    top:128px;
+    opacity: 0;
+    transition: 1s;
+    cursor: pointer;
+}
+#next::after{
+    content: "";
+    width:28px;
+    height: 45px;
+    background:url('./img/pre.png') -50px 0 no-repeat;
+    position:absolute;
+    right:0;
+    top:128px;
+    opacity: 0;
+    transition: 1s;
+    cursor: pointer;
+}
+#prev:hover::after,#next:hover::after{
+    opacity: 1;
+}
+
+
+</style>
+</head>
+<body>
+<div id="outer">
+    <div id="mask">
+        <div id="prev"></div>
+        <div id="next"></div>
+    </div>
+    <div id="swiper">
+        <div><img src="img/banner1.jpg" alt=""></div>
+        <div><img src="img/banner2.jpg" alt=""></div>
+        <div><img src="img/banner3.jpg" alt=""></div>
+        <div><img src="img/banner4.jpg" alt=""></div>
+    </div>
+    <ul id="focus">
+        <li class="select"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+<script src="./js/jquery-3.1.1.js"></script>
+<script src="js/tween.js"></script>
+<script>
+    /*
+          prev 
+    */
+    
+    let divs = $('#swiper div'); //获取#swiper下的div
+
+    /*
+        所有元素都叠在一起，让第一张显示。
+
+    */
+    // divs.each((i,e)=>{
+    //     $(e).css({
+    //         position:'absolute',
+    //         top:0,
+    //         left:0,
+    //         display:'none'
+    //     });
+    //     if(i == 0){
+    //         $(e).show();
+    //     }
+    // });
+
+    for(let i=0;i<divs.length;i++){
+        divs[i].style.cssText = `
+            position:absolute;
+            top:0;
+            left:0;
+            display:none;
+        `;
+        if(i == 0){
+            divs[i].style.display = 'block';
+            // divs[i].style.opacity = '1';
+        }
+    }
+
+
+    let btns = $('#focus li');
+    let num = 0;
+    $('#next').click(function(){
+        //让当前的消失
+        divs.eq(num).fadeOut();
+        // move({
+        //     ele:divs[num],
+        //     attrs:{
+        //         opacity:0
+        //     },
+        //     callback:function(){
+        //         // divs[num].style.display = 'none';
+        //     },
+        //     time:500
+        // });
+        num ++;
+        num%=divs.length;
+        divs.eq(num).fadeIn();
+        btns.eq(num).addClass('select').siblings('li').removeClass('select');
+        
+        // divs[num].style.display = 'block';
+
+        // move({
+        //     ele:divs[num],
+        //     attrs:{
+        //         opacity:1
+        //     },
+        //     time:500
+        // });
+    });
+
+     $('#prev').click(function(){
+        divs.eq(num).fadeOut();
+        num --;
+        if(num < 0){num = divs.length-1};
+        console.log(num)
+        divs.eq(num).css('opacity','1').fadeIn();
+        btns.eq(num).addClass('select').siblings('li').removeClass('select');
+    });
+
+    setInterval(function(){
+        $('#next').trigger('click');
+    },3000);
+    
+</script>
+</body>
+</html>

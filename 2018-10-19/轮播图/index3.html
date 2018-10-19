@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/index.css">
+<style>
+#mask{
+    width:1000px;
+    height: 300px;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: 2;
+    font-size:0;
+}
+#prev,#next{
+    width:50%;
+    height:300px;
+    display: inline-block;
+}
+
+#prev::after{
+    content: "";
+    width:28px;
+    height: 45px;
+    background:url('./img/pre.png') 0 0 no-repeat;
+    position:absolute;
+    left:0;
+    top:128px;
+    opacity: 0;
+    transition: 1s;
+    cursor: pointer;
+}
+#next::after{
+    content: "";
+    width:28px;
+    height: 45px;
+    background:url('./img/pre.png') -50px 0 no-repeat;
+    position:absolute;
+    right:0;
+    top:128px;
+    opacity: 0;
+    transition: 1s;
+    cursor: pointer;
+}
+#prev:hover::after,#next:hover::after{
+    opacity: 1;
+}
+
+
+</style>
+</head>
+<body>
+<div id="outer">
+    <div id="mask">
+        <div id="prev"></div>
+        <div id="next"></div>
+    </div>
+    <div id="swiper">
+        <div><img src="img/banner1.jpg" alt=""></div>
+        <div><img src="img/banner2.jpg" alt=""></div>
+        <div><img src="img/banner3.jpg" alt=""></div>
+        <div><img src="img/banner4.jpg" alt=""></div>
+    </div>
+    <ul id="focus">
+        <li class="select"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+<script src="./js/tween.js"></script>
+<script>
+    /*
+        1.先复制一份出来
+            设置ul宽度
+        2.当在最后一张的时候，再点，拉到第一组的最后一张上
+            num 变为第二组的第一张的数字，len/2
+            left: -1000 * num
+    */
+
+   swiper.innerHTML += swiper.innerHTML;
+
+   let len = swiper.children.length; //4
+   let w = outer.offsetWidth;
+   let num = 0;
+   let list = document.getElementById('focus').children;
+   swiper.style.width = len * w + 'px';
+
+   next.onclick = function(){
+       num ++;
+       for(let i=0;i<list.length;i++){
+           list[i].className = '';
+       }
+       list[num%=list.length].className = 'select';
+       ledbanner();
+   }
+
+   prev.onclick = function(){
+       num --;
+       for(let i=0;i<list.length;i++){
+           list[i].className = '';
+       }
+    //    list[num%=list.length].className = 'select';
+        if(num < 0){
+            list[list.length-1].className = 'select';
+        }else{
+            list[num].className = 'select';
+        }
+        ledbanner();
+   }
+
+   setInterval(next.onclick,3000);
+
+
+function ledbanner(){
+    if(num == len){
+        console.log('进')
+        swiper.style.left = (len/2-1) * -w + 'px';
+        num = len/2;
+    }
+    if(num < 0){
+        swiper.style.left = (len/2) * -w + 'px';
+        num = len/2 - 1;
+    }
+    move({
+        ele:swiper,
+        attrs:{
+            left:num * - w
+        },
+        time:500,
+        fx:'elasticOut'
+    }) 
+};
+
+
+
+    
+</script>
+</body>
+</html>
