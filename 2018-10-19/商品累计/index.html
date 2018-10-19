@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body,
+			ul,
+			li {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="price.css" />
+	</head>
+
+	<body onselectstart="return false;">
+		<div class="wrap">
+			<div class="box">
+				<ul class="list">
+					<!-- <li>
+						<i></i>
+						<em>0</em>
+						<i></i>
+						<span>
+							单价：<strong>12.5元 </strong> 小计：<strong>0元</strong>
+						</span>
+					</li> -->
+					<li>
+							<i></i>
+							<em></em>
+							<i></i>
+							<span>
+								单价：<strong></strong> 小计：<strong>0元</strong>
+							</span>
+						</li>
+					<li>
+						<i></i>
+						<em>0</em>
+						<i></i>
+						<span>
+							单价：<strong>10.5元 </strong> 小计：<strong>0元</strong>
+						</span>
+					</li>
+					<li>
+						<i></i>
+						<em>0</em>
+						<i></i>
+						<span>
+							单价：<strong>8.5元 </strong> 小计：<strong>0元</strong>
+						</span>
+					</li>
+					<li>
+						<i></i>
+						<em>0</em>
+						<i></i>
+						<span>
+							单价：<strong>8元 </strong> 小计：<strong>0元</strong>
+						</span>
+					</li>
+					<li>
+						<i></i>
+						<em>0</em>
+						<i></i>
+						<span>
+							单价：<strong>14.5元 </strong> 小计：<strong>0元</strong>
+						</span>
+					</li>
+				</ul>
+				<div class="info" id="info">
+					<span>商品公合计：<em>0</em>件</span>
+					<span>共花费了：<em>0</em>元</span>
+					<br />
+					<br />
+					<span>其中最贵的商品单价是：<em>0</em>元</span>
+				</div>
+			</div>
+		</div>
+<script>
+	function Calculator(ele,num=0,price,index){
+		this.ele = ele; //li
+		this.i = this.ele.getElementsByTagName('i'); //++按钮和--按钮
+		this.em = this.ele.getElementsByTagName('em')[0];//数量
+		this.strong = this.ele.getElementsByTagName('strong');
+		this.s1 = this.strong[0]; //单价
+		this.s2 = this.strong[1]; //小计
+		this.num = num;  //多少次
+		this.price = price; //价格
+		this.sum = 0; //小计
+		this.index = index;
+		this.info = document.getElementById('info').getElementsByTagName('em');
+		this.render();
+	}
+
+	Calculator.fn = {
+		sumall(arr){
+			let num = 0;
+			// console.log(arr);
+			arr.forEach(e=>{
+				num += e;
+			});
+			return num;
+		},
+		max(arr){
+			return Math.max(...arr);
+		}
+
+	}
+
+	Calculator.prototype = {
+		constructor:Calculator,
+		add(){
+			this.num ++;
+			return this.num;
+		},
+		remove(){
+			this.num --;
+			if(this.num <= 0) {
+				// zuigui[this.index] = this.num = 0;
+				// console.log(zuigui);	
+				this.num = 0;
+			};
+			return this.num;
+		},
+		render(){
+			this.em.innerHTML = this.num; //计数
+			this.s1.innerHTML = this.price + '元'; //单价
+			this.s2.innerHTML = this.sum + '元'; //小计
+			
+			this.info[0].innerHTML = Calculator.fn.sumall(heji);
+			this.info[1].innerHTML = Calculator.fn.sumall(sumall);
+			this.info[2].innerHTML = Calculator.fn.max(zuigui);
+		},
+		sumPrice(){
+			this.sum = this.num * this.price; //小计
+			return this.sum;
+		},
+		//只要改变数量就调用此方法
+		/*
+			要么++要么--
+			小计
+			在数组中添加东西
+			渲染页面
+
+		*/
+		change(name){
+			if(name == 'add'){
+				this.add();
+			}else{
+				let num = this.remove();
+				if(!num){
+					zuigui[this.index] = 0;
+				}
+			}
+			this.sumPrice();
+			this.heji(); 
+			this.render();
+		},
+		init(){
+			// this.render();
+			let _this = this;
+			// 点击--
+			this.i[0].onclick = function(){
+				_this.change();
+			}
+			//点击++
+			this.i[1].onclick = function(){
+				_this.change('add');
+			}
+		},
+		heji(){
+			// [5,7,8,9,0]
+			heji[this.index] = this.num;
+			sumall[this.index] = this.sum;
+			/*
+				只要选择了商品，才会有价格，有了价格才能比较最贵
+			*/
+			if(this.num){
+				zuigui[this.index] = this.price;
+			}
+			// console.log(this.sum);
+		}
+	}
+
+	const list = document.getElementsByTagName('li');
+	let arr = [12.5,10.5,8.5,8,14.5];
+	//公共的数组
+	//每个数组存放的是一组数据，放的是每一个商品的数量、小计、单价，有几个计数器，数组中就有多少项
+	/*
+		[2,3,1,0,5]
+	*/
+	let heji = [];
+	let sumall = [];
+	let zuigui = [];
+
+	arr.forEach((e,i)=>{
+		let c = new Calculator(list[i],0,e,i);
+		c.init();
+		//初始化公共数组
+		heji[i] = sumall[i] = zuigui[i] = 0;
+	});
+
+	console.log(heji)
+	
+
+
+	
+</script>
+</body>
+
+</html>

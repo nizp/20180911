@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+.a{
+    border: 1px solid #000;
+}
+.b{
+    background: red;
+}
+.c{
+    color:#fff;
+}
+</style>
+</head>
+<body>
+    <button id="btn">点击删除</button>
+    <div class="a b c" id="box">aaaa</div>
+<script>
+    /*
+        classList
+        remove(className1,className2)    删除class
+        add(className1,className2)       添加class
+        contains()   查看是否有class  有：true 没有：false
+        toggle(className,true)  如果是有这个class，没有，如果没有就加上
+        ...
+        find(callbcak) -> b
+        findIndex b index
+    */
+    btn.onclick = function(){
+        // box.className = '';
+        // box.classList.remove('a');
+        // box.classList.add('b');
+        // console.log(box.classList.contains('b'));
+        // box.classList.toggle('b');
+
+        removeClass(box,'a');
+        
+        // let className = box.className;
+        // let arr = className.split(' ');
+        // // let index = arr.findIndex(e=>e=='b');
+        // // if(index != -1){
+        // //     arr.splice(index,1);
+        // // }
+        // arr.forEach((e,i)=>{
+        //     if(e == 'a'){
+        //         arr.splice(i,1);
+        //     }
+        // });
+        // box.className = arr.join(' ');
+        // // console.log(arr.find(e=>e=='a'));
+        // console.log(arr);
+    }
+
+
+    function removeClass(ele,cname){ //删一个class
+        let className = ele.className;
+        let arr = className.split(' ');    
+        let index = arr.findIndex(e=>e==cname);
+        if(index != -1){
+            arr.splice(index,1);
+        }
+        ele.className = arr.join(' ');
+    }
+
+    function removeClass(ele,...cname){//cname是多余参数
+        let className = ele.className;
+        cname.forEach((e,i)=>{
+            let re = new RegExp('\\b'+e+'\\b');
+            className = className.replace(re,'').trim();
+        });
+        ele.className = className;
+    }
+      
+</script>
+</body>
+</html>
