@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box"></div>
+<script>
+    /*
+        属性操作
+
+          DOM  ele.style.width
+               innerHTML
+               innerText
+               value
+               href
+               src
+               link
+               id
+               className
+            如果是内置的属性查找的时候为默认值（number，''）,
+            自定义的属性，找不到就是undefined
+
+          ES  xx = {
+                name:val
+            }
+            xx.name
+
+
+        ECMAscript:
+            变量、if、for、while、数据类型：string,number,boolean,object,null,undefined,symbol
+            运算符、&&、|| 、?:、break、continue、function、预解析、作用域|链、时间
+            Math
+                .floor
+                .ceil
+                .random
+                .round
+                .min
+                .max
+                .abs
+                .sqrt
+                .pow
+            parseInt、parseFloat
+
+            switch(){}
+
+
+        
+        string：
+            字符串拼接 '++'  ``
+            '' +  -> string
+            substring
+            substr
+            slice
+            indexOf
+            lastIndex
+            replace
+            match
+            toLowerCase
+            toUpperCase
+            includes
+            split
+            trim
+
+        
+        number
+            Number()
+            toFixed
+            isNaN
+            parseInt
+            ....
+
+        boolean
+            Boolean()
+
+        
+        object: {} [] // eleObject 
+
+            Object.assigin({},{})
+            Object.create()
+            JSON.parse()
+            JSON.stringify
+            eval
+            Object.prototype.toString
+
+        
+        undefined：
+            变量没有赋值
+            对象没有这个属性
+            函数默认返回值
+            没有实参去访问形参
+            严格模式下的this
+            预解析的时候，变量和块中的函数
+
+        null
+            元素找不到
+            正则中匹配不到
+            对象销毁  
+                给引用数据类型赋值null，清除当前变量占用的内存 
+                let obj = {}
+                obj = null;
+
+        
+        array
+            []
+            下标，length
+            Array.from
+            Array.isArray()
+            pop
+            push
+            shift
+            unshift
+            slice
+            splice
+            join
+            indexOf
+            lastIndexOf
+            forEach
+            map
+            every
+            some
+            filter
+            sort
+            reverse
+            concat
+            includes
+
+
+        算法:
+            冒泡排序
+            快速排序
+            插入排序
+            递归
+            去重
+
+        
+        DOM:(通过document提供方法或者属性，赋予开发者操作页面的能力)
+            
+            树和树的*关系*
+
+            getElementById
+            getElementsByTagName
+            getElementsByClassName
+            querySelector
+            querySelectorAll
+
+            children
+            childNodes
+
+            parentNode
+
+            previousElementSibling
+            nextElementSibling
+
+            firstElementChild
+            lastElementChild
+
+            节点:
+                1   元素
+                2   属性节点
+                3   文本
+                8   注释
+                9   document
+
+            nodeType
+            nodeName
+            tagName
+
+
+            document.createElement
+            appendChild
+            insertBefore
+            removeChild
+            replaceChild
+            clone(true)
+
+            document.documentElement
+                clientWidth/clientHeight
+                scrollTop/srollLeft
+
+            文档碎片:
+                createDocumentFragment
+                    append(ele)
+
+            DOM映射
+            DOM重绘
+            DOM重排
+
+            clientWidth/clientHeight
+            offsetWidth/offsetHeight
+            scrollWidth/scrollHeight
+
+            offsetParent
+            
+            ele.getBoundingClientRect()
+
+
+        BOM:
+            window.onload
+            window.onscroll
+            window.innerHeight/window.innerWidth
+            window.pageXOffset/window.pageYOffset
+            requestAnimationFrame
+        
+
+        定时器:
+            setInterval
+            setTimeout
+            clearInterval
+            clearTimeout
+
+        时间对象:
+            new Date('2018 10 21 00:00:00')   字符串月份不用-1
+            new Date(2018,9,21,00,00,00)  数字月份要-1
+
+            getFullYear
+            getMonth
+            getDate
+            getDay
+            getHours
+            getMint
+            getMinutes
+            getSeconds
+            
+            
+
+            getComputedStyle()
+
+        
+        
+        （高级）单例模式
+        工厂模式
+        构造函数模式
+
+
+        面向对象:
+            类
+            new
+            原型
+            原型链
+            原型链的关系
+            继承
+                类式继承
+                拷贝继承
+                原型继承
+                寄生组合式继承
+                对象继承
+                ES6继承
+
+        正则:
+            //  new RegExp(''|//,修饰符)   '\b'
+            test
+            exec
+            修饰符:
+                i g m
+            量词:
+                + ? *
+
+            元字符:
+                \  \n \d \D \s \S \b \B \w \W \number
+
+            范围:
+                [0-9][A-Za-z]
+                [\u4e00-\u9fa5]
+
+            () 分组，优先级
+
+            {n,m}
+
+            [] [^]
+
+            ^ $
+
+        
+
+        
+            
+            
+        
+
+            
+                
+
+
+                
+
+
+
+
+            
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+            
+
+
+
+
+
+
+            
+
+
+        
+
+
+
+
+
+        
+
+
+        
+
+            
+
+        
+            
+
+
+
+
+
+
+
+
+            
+
+
+
+
+    */  
+   
+    // console.dir(box);
+
+    // console.log(fn);
+    // {
+    //         function fn(){}
+    // }
+
+        let str = '123123\\n'
+        
+        // console.dir(window);
+
+        let n = new Date()
+       
+    
+</script>
+</body>
+</html>
